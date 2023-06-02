@@ -21,7 +21,7 @@ const Requests = () => {
 
   const { userId } = myCookieUserObj;
   function reverseString(str) {
-    const data = str.split("").reverse().join("");
+    const data = str?.split("").reverse().join("");
     return data;
   }
   var encodedData = window.btoa(reverseString(userId));
