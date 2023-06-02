@@ -1,0 +1,54 @@
+.latest-news-container {
+  width: 60%;
+  height: auto;
+  background-color: #ebeced;
+  /* z-index: 2; */
+  margin: auto;
+  border-radius: 8px;
+  border: 6px solid rgb(196, 171, 125);
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  /* top: 200px; */
+}
+
+.news-bar {
+  /* width: 90%; */
+  height: 150px;
+  background-color: white;
+  z-index: 2;
+  margin: auto;
+  border-radius: 8px;
+  border: 3px solid rgb(196, 171, 125);
+  margin: 20px;
+}
+
+.imgNews {
+  /* width: 100px;
+  height: 100px; */
+  max-height: 100px;
+  max-width: 100px;
+  position: absolute;
+  top: 45px;
+  left: 30px;
+  border-radius: 12px;
+}
+
+.newDesc {
+  position: absolute;
+  top: 65px;
+  width: 500px;
+  left: 150px;
+}
+
+.authorNew {
+  position: absolute;
+  right: 100px;
+  top: 33px;
+}
+
+.newTitle {
+  position: absolute;
+  margin-left: 24%;
+  padding-top: 0.5 cm;
+}

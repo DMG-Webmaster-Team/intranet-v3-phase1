@@ -1,0 +1,141 @@
+.announcement-card {
+  border: 2px solid #c4ab7d;
+  // border-width: 50%;
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.announcement-card-date:hover {
+  background: none;
+  color: black !important;
+}
+
+//countdown component styles
+.counter {
+  // margin: 0 -5px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.entry {
+  text-align: center;
+  padding: 5px;
+
+  .entry-value {
+    position: relative;
+    height: 95px;
+    perspective: 200px;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    margin: 0 auto;
+  }
+
+  .entry-title {
+    min-width: 80px;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+.count {
+  background-color: #c4ab7d;
+  color: black;
+  display: block;
+  font-size: 2em;
+  line-height: 1em;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+
+  &.top {
+    height: 50%;
+    line-height: 95px;
+    transform-origin: 50% 100%;
+  }
+
+  &.bottom {
+    line-height: 0;
+    height: 50%;
+    top: 50%;
+    transform-origin: 50% 0;
+  }
+
+  &.flipTop {
+    animation-name: flipTop;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    z-index: 1;
+  }
+  &.flipBottom {
+    animation-name: flipBottom;
+    animation-duration: 0.3s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+    z-index: 1;
+  }
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #ebeced;
+  border-color: #f5c6cb;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+@keyframes flipTop {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(-90deg);
+  }
+}
+@keyframes flipBottom {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .announcement-card {
+    width: 100%;
+    padding: 0;
+  }
+  #announcement-card-img {
+    height: 22rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .announcement-card {
+    width: 80%;
+    padding: 0;
+  }
+  #announcement-card-img {
+    height: 22rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .announcement-card {
+    width: 60%;
+    padding: 0;
+  }
+  #announcement-card-img {
+    height: 22rem;
+  }
+}

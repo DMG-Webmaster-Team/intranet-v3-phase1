@@ -1,0 +1,14 @@
+.col-md-7 h4 {
+  color: #0f4c8e;
+  font-weight: bold;
+}
+
+.backColor {
+  background-color: var(--primary-color-1);
+}
+.backColor.theme-2 {
+  background-color: var(--primary-color-2);
+}
+.backColor.theme-3 {
+  background-color: var(--primary-color-3);
+}

@@ -1,0 +1,23 @@
+.navbar-zindex {
+  z-index: 1000;
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown-nav {
+    position: absolute;
+    background-color: #0f4b8f;
+    left: 0;
+    top: 56px;
+    right: 0;
+  }
+}
+.dropdown-toggle:hover {
+  background-color: inherit !important;
+  scale: 1.1;
+}
+.nav-link.active {
+  color: #fff;
+}
+.nav-link {
+  font-family: "GarageFonts";
+}

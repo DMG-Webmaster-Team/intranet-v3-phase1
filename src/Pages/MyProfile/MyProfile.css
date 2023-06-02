@@ -1,0 +1,40 @@
+h2 {
+  color: #0f4c8e;
+  font-family: "GarageFonts";
+}
+h5 {
+  background-color: #eeeff5;
+  color: #0f4c8e !important;
+  padding: 10px;
+  font-weight: bold;
+}
+.accordion-button::after {
+  display: inline-block;
+  position: absolute;
+  right: 0rem;
+  top: 30%;
+  /* padding: 1rem 1.7rem; */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
+.accordion-button {
+  background-color: #0f4c8e;
+  color: #fff;
+  padding: 1rem 1.7rem 1rem 0.4rem;
+}
+.attendance {
+  background-color: #0f4c8e;
+  color: #fff;
+  padding: 20px;
+}
+.attendance h4 {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+.accordion-item {
+  background-color: #eeeff5;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}

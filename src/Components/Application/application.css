@@ -1,0 +1,86 @@
+.appHeader {
+  color: #c4ab7d;
+  font-size: 3.5vw;
+  position: absolute;
+  left: 12%;
+  margin-top: 2%;
+  font-family: attach;
+}
+
+p {
+  margin-top: 10px;
+}
+
+#background {
+  z-index: -1;
+  position: absolute;
+  right: -14px;
+  color: 50%;
+  opacity: 0.5;
+  width: 7rem;
+}
+
+#board {
+  position: relative;
+  padding-top: 4%;
+}
+
+#vehicle-app {
+  background-color: lightcyan;
+}
+
+.appicon:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.appicon {
+  border-radius: 12px;
+}
+
+#magics-app {
+  background-color: #ccffcc;
+}
+
+#meeting-app {
+  background-color: #e5ccff;
+}
+
+#i-support-app {
+  background-color: #ccffcc;
+}
+
+#attendance-app {
+  background-color: #e5ccff;
+}
+
+#ticketing-app {
+  background-color: #ff9999;
+}
+
+#myview-app {
+  background-color: lightcyan;
+}
+
+#benfits-app {
+  background-color: #ffffcc;
+}
+
+#survey-app {
+  background-color: #ffe5cc;
+}
+
+#idbody {
+  z-index: 0;
+  position: relative;
+}
+
+.apps {
+  padding-top: 6%;
+}
+
+.appicon img {
+  max-height: 100px;
+  max-width: 100px;
+}

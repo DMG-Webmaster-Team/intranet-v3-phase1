@@ -1,0 +1,50 @@
+.tableJobs {
+  margin: auto;
+  /* position: absolute; */
+  /* z-index: 4; */
+  /* top: 800px;
+  width: 120px; */
+  /* left: 50px; */
+  /* height: 350px; */
+}
+
+/* table {
+  width: 500px;
+} */
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border: 1px black;
+}
+
+th {
+  text-align: left;
+  background-color: lightgrey;
+  color: #0f4b8f;
+  position: sticky;
+  top: 0;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+/* the first 'td' within the last 'tr' of the 'tbody': */
+tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 0.6em;
+}
+/* the last 'td' within the last 'tr' of the 'tbody': */
+tbody tr:last-child td:last-child {
+  border-radius: 0 0 0.6em 0;
+}
+
+tr:nth-child(even) {
+  background-color: #ebeced;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}

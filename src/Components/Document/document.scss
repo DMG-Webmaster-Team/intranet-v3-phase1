@@ -1,0 +1,50 @@
+.scor {
+  /* width: 40%; */
+  margin: auto;
+}
+
+.pdfORword {
+  height: 50px;
+  padding: 10px;
+}
+
+.accordion-btn {
+  background-color: #0f4b8f !important;
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #000;
+  background-color: #e7f1ff;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+#background {
+  z-index: 10;
+  position: absolute;
+  right: -14px;
+  color: 50%;
+  opacity: 0.5;
+  width: 7rem;
+}
+
+#document-background {
+  z-index: 10;
+  position: absolute;
+  right: 0px;
+  color: 50%;
+  opacity: 0.5;
+  width: 4.5rem;
+}
+
+.accordion-button::after {
+  margin-right: auto !important;
+  margin-left: 0%;
+}
+
+.new-label {
+  background-color: rgb(191, 74, 74) !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  border-radius: 50%;
+}

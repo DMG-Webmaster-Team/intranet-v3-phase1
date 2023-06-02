@@ -1,0 +1,14 @@
+footer {
+    border-top: 3px solid rgb(195, 168, 130);
+    /* display: flex;
+    justify-content: center !important;
+    align-items: center; */
+
+}
+
+.footer-img {
+    height: auto !important;
+    /* padding-bottom: 3rem; */
+    width: 100%;
+
+}
