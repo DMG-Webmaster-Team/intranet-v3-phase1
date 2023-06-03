@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import "./login.scss";
 import logo from "./Asset 1.png";
-import dmaLogo from "../../img/login-imgs/dma.png";
-import mvLogo from "../../img/login-imgs/mv.png";
-import dmeLogo from "../../img/login-imgs/dme.png";
+import dmaLogo from "./login-imgs/dma.png";
+import mvLogo from "./login-imgs/mv.png";
+import dmeLogo from "./login-imgs/dme.png";
 import { IntranetContext } from "../../context";
 import { Redirect } from "react-router-dom";
 import { Alert } from "react-bootstrap";

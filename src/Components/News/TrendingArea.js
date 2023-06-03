@@ -1,32 +1,32 @@
-import React from 'react'
-import './assets/scss/style.scss'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./assets/scss/style.scss";
+import { Link } from "react-router-dom";
 
 const TrendingArea = ({ tendingNews, isArabic }) => {
   return (
-    <div className='trending-area fix mt-5'>
-      <div className='container'>
-        <div className='trending-main'>
-          <div className='row'>
-            <div className='col-12'>
+    <div className="trending-area fix mt-5">
+      <div className="container">
+        <div className="trending-main">
+          <div className="row">
+            <div className="col-12">
               {/* <!-- Trending Top --> */}
-              <div className='trending-top mb-30'>
-                <div className='trend-top-img'>
+              <div className="trending-top mb-30">
+                <div className="trend-top-img">
                   {/* <img
                     src={tendingNews.image}
                     // className='img-fluid'
 
                     style={{
-                      height: '370px',
+                      height: "370px",
                     }}
-                    alt='pic'
+                    alt="pic"
                   /> */}
                   <div
                     className={
-                      isArabic ? 'trend-top-cap-arabic' : 'trend-top-cap'
+                      isArabic ? "trend-top-cap-arabic" : "trend-top-cap"
                     }
                   >
-                    <h2 className='trend-top-cap-title'>
+                    <h2 className="trend-top-cap-title">
                       <Link to={`/news/${tendingNews.count}`}>
                         {isArabic ? tendingNews.title_ar : tendingNews.title}
                       </Link>
@@ -39,7 +39,7 @@ const TrendingArea = ({ tendingNews, isArabic }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TrendingArea
+export default TrendingArea;

@@ -206,7 +206,6 @@ const Services = () => {
                 <div className="text">
                   <span className="text-nowrap">My Compensation</span>
                   <br />
-                  <span className="soon">Coming Soon...</span>
                 </div>
               </div>
               <div className={`more-cont ${colorTheme}`}>Coming Soon...</div>

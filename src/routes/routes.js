@@ -11,31 +11,12 @@ const routes = [
     component: lazy((props) => import("../Pages/Services/Services")),
     exact: true,
   },
-  {
-    path: "/application",
-    component: lazy((props) => import("../Pages/Applications/Applications")),
-    exact: true,
-  },
+
   // {
   //   path: "/announcements",
   //   component: lazy((props) => import("../Pages/Announcements/Announcements")),
   //   exact: true,
   // },
-  {
-    path: "/jobs",
-    component: lazy((props) => import("../Pages/Jobs/Jobs")),
-    exact: true,
-  },
-  {
-    path: "/templates",
-    component: lazy((props) => import("../Pages/Templates/Templates")),
-    exact: true,
-  },
-  {
-    path: "/documents",
-    component: lazy((props) => import("../Pages/Documents/documents")),
-    exact: true,
-  },
 
   {
     path: "/news",

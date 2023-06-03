@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import WeeklyTopNewsArea from './WeeklyTopNewsArea'
-import { motion } from 'framer-motion'
-import { Text } from '../../containers/Language'
-import Sliders from '../Sliders/Sliders'
+import WeeklyTopNewsArea from "./WeeklyTopNewsArea";
+import { motion } from "framer-motion";
+import { Text } from "../../containers/Language";
+import Sliders from "../Sliders/Sliders";
 
 const NewsFeed = ({ news, isArabic }) => {
-  const trendingNews = [...news].slice(0, 3)
-  const weeklyNews = news.slice(3)
+  const trendingNews = [...news].slice(0, 3);
+  const weeklyNews = news.slice(3);
 
   return (
     <>
@@ -24,18 +24,18 @@ const NewsFeed = ({ news, isArabic }) => {
         </motion.main>
       ) : (
         <motion.div
-          className='text-center  text-capitalize mx-auto d-block'
-          initial={{ y: '100vh' }}
+          className="text-center  text-capitalize mx-auto d-block"
+          initial={{ y: "100vh" }}
           animate={{ y: 0 }}
-          transition={{ duration: 1, type: 'spring' }}
+          transition={{ duration: 1, type: "spring" }}
         >
-          <div className='text-center no-data-available'>
-            <Text tid='noDataAvailable' />
+          <div className="text-center no-data-available">
+            <Text tid="noDataAvailable" />
           </div>
         </motion.div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default NewsFeed
+export default NewsFeed;

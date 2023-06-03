@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { IntranetContext } from "../../context";
 import Sliders from "../../Components/Sliders/Sliders";
-import Services from "../Services/Services";
 import SkeletonLoader from "../../Components/Skeleton/SkeletonLoader";
 
 const Home = () => {
@@ -15,14 +14,12 @@ const Home = () => {
     });
     setIsArabic(getLang());
   }, []);
-  // console.log(slides);
   if (isDataLoading) {
     return <SkeletonLoader />;
   } else
     return (
       <div>
         <Sliders data={slides} isArabic={isArabic} home={true} />
-        {/* <Services /> */}
       </div>
     );
 };

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, HashRouter } from "react-router-dom";
 import "./App.scss";
 
 import { IntranetContext } from "./context";
-import Footer from "./Components/Footer/Footer";
+
 import PublicRoute from "./routes/PublicRoute";
 import PrivateRoute from "./routes/PrivateRoute";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
@@ -45,7 +45,6 @@ const App = () => {
                   <Header isArabic={isArabic} />
                   <NavBar isArabic={isArabic} />
                   <ProtectedRoutes />
-                  {/* <Footer /> */}
                 </PrivateRoute>
               </>
             )}

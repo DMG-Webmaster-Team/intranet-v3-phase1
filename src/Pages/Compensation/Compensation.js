@@ -59,7 +59,7 @@ const Compensation = () => {
                     </h5>
                   </div>
                   <div className={`card-footer ${colorTheme}`}>
-                    <p className="m-1">Compensation Statement</p>
+                    <p className="m-1  text-nowrap">Compensation Statement</p>
                   </div>
                 </div>
               </div>

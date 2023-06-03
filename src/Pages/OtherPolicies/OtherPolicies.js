@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import { useContext, useEffect, useState } from "react";
-import Document from "../../Components/Document/Document";
+
 import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import { IntranetContext } from "../../context";

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./navbar.scss";
-import logoutIcon from "../../img/logout icon.png";
+import logoutIcon from "./images/logout icon.png";
 import { NavLink } from "react-router-dom";
 import { Text } from "../../containers/Language";
 import "./header.css";
