@@ -30,7 +30,7 @@ const Services = () => {
 
   return (
     <>
-      <PagesHeader data={<Text tid=" Hub" />} />
+      <PagesHeader data={<Text tid="Employees Hub" />} />
       <div className="container">
         <div className="row  mt-md-1 mt-2 justify-content-center text-center">
           <div className="col-12 col-md-6 col-lg-3 my-2">
