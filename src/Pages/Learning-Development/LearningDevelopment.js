@@ -24,34 +24,38 @@ const LearningDevelopment = () => {
           <div className="col-8">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
               <div className="col">
-                <div className="card">
-                  <div className="image-wrapper">
-                    <img src={CoursesImg} className="" alt="..." />
+                <a href="https://dmgian.corp-dmg.com/DMG-University/">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={CoursesImg} className="" alt="..." />
+                    </div>
+                    {/* <div className="card-img-overlay">
+                      <h5 className={`card-title ${colorTheme}`}>
+                        Coming Soon...
+                      </h5>
+                    </div> */}
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1">University Courses</p>
+                    </div>
                   </div>
-                  <div className="card-img-overlay">
-                    <h5 className={`card-title ${colorTheme}`}>
-                      Coming Soon...
-                    </h5>
-                  </div>
-                  <div className={`card-footer ${colorTheme}`}>
-                    <p className="m-1">Courses</p>
-                  </div>
-                </div>
+                </a>
               </div>
               <div className="col">
-                <div className="card">
-                  <div className="image-wrapper">
-                    <img src={OnlineCoursesImg} className="" alt="..." />
+                <a href="https://ehda.login.em2.oraclecloud.com/">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={OnlineCoursesImg} className="" alt="..." />
+                    </div>
+                    {/* <div className="card-img-overlay">
+                      <h5 className={`card-title ${colorTheme}`}>
+                        Coming Soon...
+                      </h5>
+                    </div> */}
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1">Online Courses</p>
+                    </div>
                   </div>
-                  <div className="card-img-overlay">
-                    <h5 className={`card-title ${colorTheme}`}>
-                      Coming Soon...
-                    </h5>
-                  </div>
-                  <div className={`card-footer ${colorTheme}`}>
-                    <p className="m-1">Online Courses</p>
-                  </div>
-                </div>
+                </a>
               </div>
               <div className="col">
                 <div className="card">
@@ -96,7 +100,8 @@ const LearningDevelopment = () => {
                     : "#1d1d1b",
               }}
               className="fs-5 text-decoration-underline"
-              href="."
+              // href="mailto:walaa.anwar@corp-dmg.com"
+              href="mailto:walaa.anwar@corp-dmg.com?subject=Intranet%20Employee%20Request"
             >
               Request a meeting with Team{" "}
               <span className="ms-3">

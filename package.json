@@ -1,5 +1,6 @@
 {
-  "name": "dma",
+  "name": "intranet",
+  "homepage": "https://dmgian.corp-dmg.com/intranet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

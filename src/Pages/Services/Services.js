@@ -21,12 +21,42 @@ const Services = () => {
   const myCookie = Cookies.get("user");
   const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
 
-  const { userId } = myCookieUserObj;
+  const { userId, userEmail } = myCookieUserObj;
   function reverseString(str) {
     const data = str.split("").reverse().join("");
     return data;
   }
   var encodedData = window.btoa(reverseString(userId));
+
+  const logToDashbard = () => {
+    const date = Date.now();
+    const encryptedBody = window.btoa(
+      JSON.stringify(
+        "employee_email=" +
+          userEmail +
+          date +
+          "&fromMobileApplication=TRUE&date=" +
+          date
+      )
+    );
+
+    const dashboardLogin = document.getElementById("benefitsLogin");
+    dashboardLogin.insertAdjacentHTML(
+      "afterbegin",
+      `<form
+        style="display:none !important"
+        method="post"
+        id="attLoginForm"
+        action="https://dmgian.corp-dmg.com/benefits/login/"
+      >
+        <input name="body" value="` +
+        encryptedBody +
+        `" />
+      </form>`
+    );
+    let loginForm = document.getElementById("attLoginForm");
+    loginForm.submit();
+  };
 
   return (
     <>
@@ -108,12 +138,13 @@ const Services = () => {
               <div className={`more-cont ${colorTheme}`}>View more</div>
             </Link>
           </div>
-          <div className="col-12 col-md-6 col-lg-3 my-2">
+          <div className="col-12 col-md-6 col-lg-3 my-2" id="benefitsLogin">
             {/* <Link to="/benefits" className={`icon overlayCont ${colorTheme}`} id="benefits"> */}
             <a
               className={`icon overlayCont ${colorTheme}`}
-              href="https://dmgian.corp-dmg.com/benefits/"
-              rel="noreferrer"
+              // href="https://dmgian.corp-dmg.com/benefits/"
+              // rel="noreferrer"
+              onClick={logToDashbard}
             >
               <motion.img
                 whileHover={{
@@ -213,9 +244,9 @@ const Services = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <a
-              href={`http://10.1.11.83:8080/ords/f?p=129:37:::::P37_CRYBTO:${encodedData}`}
+              href={`http://10.1.11.83:8080/ords/f?p=154:70:::::P70_CRYBTO:${encodedData}`}
+              // href={`http://10.1.11.83:8080/ords/f?p=151:37:::::P37_CRYBTO:${encodedData}`}
               className={`icon overlayCont ${colorTheme}`}
-              id="benefits"
             >
               <motion.img
                 whileHover={{

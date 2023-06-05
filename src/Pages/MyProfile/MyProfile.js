@@ -8,18 +8,14 @@ const MyProfile = () => {
   const myCookie = Cookies.get("user");
   const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
 
-  const {
-    userName,
-    userCompany,
-    userDepartment,
-    userId,
-    userJob,
-    userCompanyFullName,
-    userHiringDate,
-    userPromotionDate,
-    userPerformance,
-  } = myCookieUserObj;
-  console.log(myCookieUserObj);
+  const { userName, userDepartment, userId, userJob, userHiringDate } =
+    myCookieUserObj;
+
+  function reverseString(str) {
+    const data = str?.split("").reverse().join("");
+    return data;
+  }
+  var encodedData = window.btoa(reverseString(userId));
   return (
     <>
       <PagesHeader data={<Text tid="My Profile" />} />
@@ -134,7 +130,9 @@ const MyProfile = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      <a href="">
+                      <a
+                        href={`http://10.1.11.83:8080/ords/f?p=151:37:::::P37_CRYBTO:${encodedData}`}
+                      >
                         <div>
                           <p className="m-0">Marital status</p>
                           <br />

@@ -6,8 +6,9 @@ import { Text } from "../../containers/Language";
 import Sliders from "../Sliders/Sliders";
 
 const NewsFeed = ({ news, isArabic }) => {
-  const trendingNews = [...news].slice(0, 3);
-  const weeklyNews = news.slice(3);
+  console.log(news);
+  const trendingNews = [...news].slice(0, 2);
+  const weeklyNews = news.slice(2);
 
   return (
     <>

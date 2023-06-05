@@ -19,13 +19,19 @@ const Header = () => {
     setDropdownOpen(!dropdownOpen);
   }
   const { logout, loggedIn, colorTheme } = useContext(IntranetContext);
-  const myCookie = loggedIn && Cookies.get("user");
-  const myCookieUserObj = loggedIn && JSON.parse(myCookie);
+  // const myCookie = loggedIn && Cookies.get("user");
+  // const myCookieUserObj = loggedIn && JSON.parse(myCookie);
+
+  const myCookie = Cookies.get("user");
+  const myThemeCookie = Cookies.get("theme");
+  console.log(myThemeCookie);
+  const myCookieUserObj = myCookie && JSON.parse(myCookie);
 
   const userName = myCookieUserObj?.userEmail?.split("@")[0].split(".")[0];
   const userInitials = `${myCookieUserObj?.userName?.split(" ")[0][0]}${
     myCookieUserObj?.userName?.split(" ")[1][0]
   }`;
+
   function ProfilePicture(props) {
     return <h2 className={`initials`}>{userInitials}</h2>;
   }
@@ -46,7 +52,7 @@ const Header = () => {
           <Link to="/">
             <img
               className="p-2 w-100"
-              src={myCookieUserObj.userCompanyToShow === "MV" ? logo : DMELogo}
+              src={myThemeCookie === "theme-3" ? DMELogo : logo}
               alt="Dmg logo"
             />
           </Link>
@@ -75,7 +81,7 @@ const Header = () => {
             whilehover={{
               scale: 1.2,
             }}
-            className="nav-item text-black"
+            className="nav-item"
           >
             <LanguageSelector />
           </motion.li> */}
@@ -132,54 +138,14 @@ const Header = () => {
                   {/* Logout */}
                 </span>
               </NavDropdown.Item>
+              {/* <NavDropdown.Item>
+                <div className="language d-flex  ">
+                  <LanguageSelector />
+                </div>
+              </NavDropdown.Item> */}
             </NavDropdown>
           </Nav>
-
-          {/* Logout */}
-          {/* <motion.li
-            whilehover={{
-              scale: 1.1,
-            }}
-            className="nav-item d-none d-md-block logout-btn"
-            onClick={logout}
-          >
-            <img
-              src={logoutIcon}
-              alt="logout"
-              height="25"
-              width="25"
-              className="mr-2"
-            />
-            <Text tid="logout" />
-          </motion.li> */}
         </ul>
-
-        {/* <div
-          id='user-icon'
-          className=' col-4 col-md-8   d-flex  justify-content-end    align-content-center'
-        >
-          <div className='user-name  align-self-center '>
-            <h5 className='text-muted  '>{Name} &nbsp; &nbsp; &nbsp; &nbsp;</h5>
-          </div>
-          <div className='logout-lang d-none d-md-flex align-items-center'>
-            <div
-              className='  justify-content-between align-content-center h3 logout-btn '
-              onClick={logout}
-            >
-              <img
-                src={logoutIcon}
-                alt='logout'
-                height='25'
-                width='25'
-                className='mt-2 d-block'
-              />
-              <span className='logout-span'>Logout</span>
-            </div>
-          </div>
-          <div className='language d-flex  '>
-            <LanguageSelector />
-          </div>
-        </div> */}
       </div>
     </motion.div>
   );

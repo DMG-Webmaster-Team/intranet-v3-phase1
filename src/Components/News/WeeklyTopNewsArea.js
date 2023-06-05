@@ -29,7 +29,7 @@ const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
                           <img
                             src={item.image}
                             alt="pic"
-                            className="weekly2-img-image "
+                            className="weekly2-img-image"
                           />
                         </div>
                         <div

@@ -12,3 +12,5 @@
 .backColor.theme-3 {
   background-color: var(--primary-color-3);
 }
+.card-footer p {
+}

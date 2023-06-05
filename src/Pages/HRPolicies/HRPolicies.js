@@ -1,126 +1,82 @@
 import { useContext, useState } from "react";
-
+import test from "../Learning-Development/imgs/coashing.jpg";
+import test2 from "../Learning-Development/imgs/courses.jpg";
 import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import { IntranetContext } from "../../context";
+import "../Learning-Development/Learning-Development.css";
 import "./HrPolicies.css";
+import Cookies from "js-cookie";
+import rewards from "./imgs/rewards.jpg";
+import talent from "./imgs/talentManagment.jpg";
+import operation from "./imgs/hrOperation.jpg";
+import talentAcq from "./imgs/talentAcquisition.jpg";
+import talentPDF from "./imgs/TalentManagment.pdf";
+import rewardsPDF from "./imgs/Rewards.pdf";
+import operationPDF from "./imgs/HR Operations.pdf";
+import talentAcqPDF from "./imgs/TalentAcquisition.pdf";
 
 const HRPolicies = () => {
-  const { colorTheme } = useContext(IntranetContext);
+  const { colorTheme, loggedIn } = useContext(IntranetContext);
+  const myCookie = loggedIn && Cookies.get("user");
+  const myCookieUserObj = loggedIn && JSON.parse(myCookie);
   return (
     <>
       <PagesHeader data={<Text tid="HR Policies" />} />
-      <div className="container mt-md-5 mt-3">
-        <div className="row d-flex justify-content-center">
-          <div className="col-8 d-flex justify-content-center">
-            <div className="row mb-md-5 mb-3">
-              <div className="col-12">
-                <div className="row text-center mb-3">
-                  <div
-                    className="col-12 col-md-7 d-flex justify-content-center align-items-center gap-2"
-                    style={{
-                      backgroundColor: "rgb(237,237,240)",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <h4 className="m-0">Talent Management</h4>
-                  </div>
-                  <div className="col-12 col-md-4 mx-2 text-white">
-                    <div className="row">
-                      <div
-                        className={`backColor ${colorTheme} col-12 col-md-7 d-flex justify-content-center align-items-center gap-2`}
-                        style={{
-                          borderRadius: "5px",
-                        }}
-                      >
-                        <p className="mb-1 pt-2">View </p>
-                        <span className="mt-2">
-                          <i className="bi bi-eye-fill"></i>
-                        </span>
-                      </div>
+      <div className="container">
+        <div className="row d-flex justify-content-center mt-md-5 mt-3">
+          <div className="col-8">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+              <div className="col">
+                <a href={talentPDF} rel="noreferrer" target="_blank">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={talent} className="" alt="..." />
+                    </div>
+
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1 talent-text">Talent Management</p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
-              <div className="col-12 mb-3">
-                <div className="row text-center mb-3">
-                  <div
-                    className="col-12 col-md-7 d-flex justify-content-center align-items-center gap-2"
-                    style={{
-                      backgroundColor: "rgb(237,237,240)",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <h4 className="m-0">Rewards</h4>
-                  </div>
-                  <div className="col-12 col-md-4 mx-2 text-white">
-                    <div className="row">
-                      <div
-                        className={`backColor ${colorTheme} col-12 col-md-7 d-flex justify-content-center align-items-center gap-2`}
-                        style={{
-                          borderRadius: "5px",
-                        }}
-                      >
-                        <p className="mb-1 pt-2">View </p>
-                        <span className="mt-2">
-                          <i className="bi bi-eye-fill"></i>
-                        </span>
-                      </div>
+              <div className="col">
+                <a href={rewardsPDF} rel="noreferrer" target="_blank">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={rewards} className="" alt="..." />
+                    </div>
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1">Rewards</p>
                     </div>
                   </div>
-                </div>
-                <div className="row text-center mb-3">
-                  <div
-                    className="col-12 col-md-7 d-flex justify-content-center align-items-center gap-2"
-                    style={{
-                      backgroundColor: "rgb(237,237,240)",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <h4 className="m-0">HR Operation</h4>
-                  </div>
-                  <div className="col-12 col-md-4 mx-2 text-white">
-                    <div className="row">
-                      <div
-                        className={`backColor ${colorTheme} col-12 col-md-7 d-flex justify-content-center align-items-center gap-2`}
-                        style={{
-                          borderRadius: "5px",
-                        }}
-                      >
-                        <p className="mb-1 pt-2">View </p>
-                        <span className="mt-2">
-                          <i className="bi bi-eye-fill"></i>
-                        </span>
-                      </div>
+                </a>
+              </div>
+              <div className="col">
+                <a href={operationPDF} target="_blank" rel="noreferrer">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={operation} className="" alt="..." />
+                    </div>
+
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1">HR Operations</p>
                     </div>
                   </div>
-                </div>
-                <div className="row text-center mb-3">
-                  <div
-                    className="col-12 col-md-7 d-flex justify-content-center align-items-center gap-2"
-                    style={{
-                      backgroundColor: "rgb(237,237,240)",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <h4 className="m-0">To be named</h4>
-                  </div>
-                  <div className="col-12 col-md-4 mx-2 text-white">
-                    <div className="row">
-                      <div
-                        className={`backColor ${colorTheme} col-12 col-md-7 d-flex justify-content-center align-items-center gap-2`}
-                        style={{
-                          borderRadius: "5px",
-                        }}
-                      >
-                        <p className="mb-1 pt-2">View </p>
-                        <span className="mt-2">
-                          <i className="bi bi-eye-fill"></i>
-                        </span>
-                      </div>
+                </a>
+              </div>
+              <div className="col">
+                <a href={talentAcqPDF} target="_blank" rel="noreferrer">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={talentAcq} className="" alt="..." />
+                    </div>
+
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1">Talent Acquisition</p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>

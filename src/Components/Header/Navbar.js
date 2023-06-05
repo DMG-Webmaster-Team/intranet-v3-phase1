@@ -18,22 +18,21 @@ const NavBar = () => {
     MV: "https://mountainviewegypt.com/",
     DMA: "https://dma.com.eg",
   };
-  const destToGo = (userComp) => {
-    let destLink;
-    if (userComp === "MV") {
-      destLink = AboutUsLinks.MV;
-    }
-    if (userComp === "DMA") {
-      destLink = AboutUsLinks.DMA;
-    }
-    if (userComp === "DME") {
-      destLink = AboutUsLinks.DME;
-    }
-    if (userComp === "Curve") {
-      destLink = AboutUsLinks.Curve;
-    }
-    return destLink;
-  };
+
+  let destLink = AboutUsLinks.MV;
+  if (myCookieUserObj.userEmail?.toLowerCase().includes("MV")) {
+    destLink = AboutUsLinks.MV;
+  }
+  if (myCookieUserObj.userEmail?.toLowerCase().includes("DMA")) {
+    destLink = AboutUsLinks.DMA;
+  }
+  if (myCookieUserObj.userEmail?.toLowerCase().includes("DME")) {
+    destLink = AboutUsLinks.DME;
+  }
+  if (myCookieUserObj.userEmail?.toLowerCase().includes("Curve")) {
+    destLink = AboutUsLinks.Curve;
+  }
+
   return (
     <motion.nav
       className={`navbar ${colorTheme} navbar-expand-md navbar-light navbar-zindex bg-light position-relative`}
@@ -141,7 +140,7 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <a
-                href={destToGo(myCookieUserObj.userCompanyToShow)}
+                href={destLink}
                 target="_blank"
                 rel="noreferrer"
                 className="nav-link"

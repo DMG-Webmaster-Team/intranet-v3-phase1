@@ -1,0 +1,13 @@
+.downloadPDF {
+  border-radius: 5px;
+  border-top: 3px solid #fff;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #fff !important;
+}
+.view {
+  background-color: #0e4d8d !important;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none !important;
+}

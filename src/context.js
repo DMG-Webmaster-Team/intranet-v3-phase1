@@ -12,10 +12,16 @@ const IntranetProvider = ({ children }) => {
   const [colorTheme, setColorTheme] = useState("theme-1");
   function handleThemeChange(theme) {
     setColorTheme(theme);
+    Cookies.set("theme", theme);
   }
+  useEffect(() => {
+    const theme = Cookies.get("theme");
+    if (theme) setColorTheme(theme);
+  }, []);
   const [font, setFont] = useState("font-1");
   function handleFontChange(font) {
     setFont(font);
+    Cookies.set("font", font);
   }
 
   const cookiesFull = Cookies && Cookies.get("user");
@@ -127,10 +133,17 @@ const IntranetProvider = ({ children }) => {
           expires: 7,
           path: "/",
         });
-        if (companyToShow === "MV") {
-          handleThemeChange("theme-3");
+        if (userEmail.includes("mv")) {
+          handleThemeChange("theme-1");
           handleFontChange("font-1");
-          console.log("theme hi");
+        }
+        if (userEmail.includes("dma")) {
+          handleThemeChange("theme-2");
+          handleFontChange("font-2");
+        }
+        if (userEmail.includes("dme")) {
+          handleThemeChange("theme-3");
+          handleFontChange("font-3");
         }
         // localStorage.setItem('loginStatus', JSON.stringify(data.data))
       } else {
@@ -154,8 +167,9 @@ const IntranetProvider = ({ children }) => {
 
   const logout = () => {
     // localStorage.removeItem('loginStatus')
-    window.location.href = "/";
+    window.location.href = "/intranet/`";
     Cookies.remove("user");
+    Cookies.expires("user");
     setLoggedIn(false);
   };
 

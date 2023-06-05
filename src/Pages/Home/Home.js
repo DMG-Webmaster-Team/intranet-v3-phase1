@@ -14,6 +14,7 @@ const Home = () => {
     });
     setIsArabic(getLang());
   }, []);
+  console.log(slides);
   if (isDataLoading) {
     return <SkeletonLoader />;
   } else

@@ -27,7 +27,7 @@
 .card-footer p,
 center a {
   font-family: "GarageFonts";
-  font-size: 1.1rem;
+  font-size: 1.07rem;
 }
 /* images to be a bit darker */
 .image-wrapper {
@@ -85,19 +85,30 @@ center a {
 .card-footer.theme-3 {
   background-color: var(--primary-color-3);
 }
-/* .more-cont {
+.card-title {
   --primary-color: var(--primary-color-1);
   background-color: var(--primary-color);
 }
-.more-cont.theme-2 {
+.card-title.theme-2 {
   --primary-color: var(--primary-color-2);
   background-color: var(--primary-color-2);
 }
-.more-cont.theme-3 {
+.card-title.theme-3 {
   --primary-color: var(--primary-color-3);
   background-color: var(--primary-color-3);
-} */
+}
 
 .card:hover .card-title {
   opacity: 1;
+}
+
+.comp-text {
+  font-size: 0.9rem !important;
+}
+.talent-text {
+  font-size: 1.07rem !important;
+}
+.widthFixed {
+  width: 200 !important;
+  height: 260 !important;
 }

@@ -26,7 +26,6 @@ const Requests = () => {
   }
   var encodedData = window.btoa(reverseString(userId));
 
-  console.log(userId);
   return (
     <div>
       <PagesHeader data={<Text tid="HR Requests & Forms" />} />
@@ -44,7 +43,7 @@ const Requests = () => {
                       height={240}
                       src={HRLetter}
                       className=""
-                      alt="..."
+                    widthFixed  width={200} height={260} alt="..."
                     />
 
                     <div className="card-footer text-center text-nowrap">
@@ -61,7 +60,7 @@ const Requests = () => {
                       height={240}
                       src={TravelReq}
                       className=""
-                      alt="..."
+                    widthFixed  width={200} height={260} alt="..."
                     />
                     <div className="card-img-overlay">
                       <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -80,7 +79,7 @@ const Requests = () => {
                       height={240}
                       src={CarLeasing}
                       className=""
-                      alt="..."
+                    widthFixed  width={200} height={260} alt="..."
                     />
 
                     <div className="card-footer text-center text-nowrap">
@@ -97,7 +96,7 @@ const Requests = () => {
                       height={240}
                       src={FamilyFund}
                       className=""
-                      alt="..."
+                    widthFixed  width={200} height={260} alt="..."
                     />
 
                     <div className="card-footer text-center text-nowrap">
@@ -114,7 +113,7 @@ const Requests = () => {
                       height={240}
                       src={Employee}
                       className=""
-                      alt="..."
+                    widthFixed  width={200} height={260} alt="..."
                     />
 
                     <div className="card-footer text-center text-wrap">
@@ -135,7 +134,7 @@ const Requests = () => {
                       height={240}
                       src={MedicalInsurance}
                       className=""
-                      alt="..."
+                    widthFixed  width={200} height={260} alt="..."
                     />
 
                     <div className="card-footer text-center">
@@ -153,7 +152,7 @@ const Requests = () => {
           <div className="col">
             <div className="card">
               <div className="image-wrapper">
-                <img src={HRLetter} className="" alt="..." />
+                <img src={HRLetter} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -166,7 +165,7 @@ const Requests = () => {
           <div className="col">
             <div className="card">
               <div className="image-wrapper">
-                <img src={TravelReq} className="" alt="..." />
+                <img src={TravelReq} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -179,7 +178,7 @@ const Requests = () => {
           <div className="col">
             <div className="card">
               <div className="image-wrapper">
-                <img src={CarLeasing} className="" alt="..." />
+                <img src={CarLeasing} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -192,7 +191,7 @@ const Requests = () => {
           <div className="col">
             <div className="card">
               <div className="image-wrapper">
-                <img src={FamilyFund} className="" alt="..." />
+                <img src={FamilyFund} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -210,7 +209,13 @@ const Requests = () => {
             >
               <div className="card">
                 <div className="image-wrapper">
-                  <img src={Employee} className="" alt="..." />
+                  <img
+                    src={Employee}
+                    className="widthFixed"
+                    width={200}
+                    height={260}
+                    alt="..."
+                  />
                 </div>
                 <div className="card-img-overlay">
                   <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -228,7 +233,13 @@ const Requests = () => {
             >
               <div className="card">
                 <div className="image-wrapper">
-                  <img src={MedicalInsurance} className="" alt="..." />
+                  <img
+                    src={MedicalInsurance}
+                    className="widthFixed"
+                    width={200}
+                    height={260}
+                    alt="..."
+                  />
                 </div>
                 <div className="card-img-overlay">
                   {/* <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5> */}
@@ -243,7 +254,13 @@ const Requests = () => {
             <Link to="forms">
               <div className="card">
                 <div className="image-wrapper">
-                  <img src={forms} className="" alt="..." />
+                  <img
+                    src={forms}
+                    className="widthFixed"
+                    width={200}
+                    height={260}
+                    alt="..."
+                  />
                 </div>
                 {/* <div className="card-img-overlay">
                   <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
