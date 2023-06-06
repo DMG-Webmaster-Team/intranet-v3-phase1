@@ -22,7 +22,7 @@ const Header = () => {
   // const myCookie = loggedIn && Cookies.get("user");
   // const myCookieUserObj = loggedIn && JSON.parse(myCookie);
 
-  const myCookie = Cookies.get("user");
+  const myCookie = loggedIn && Cookies.get("user");
   const myThemeCookie = Cookies.get("theme");
   console.log(myThemeCookie);
   const myCookieUserObj = myCookie && JSON.parse(myCookie);

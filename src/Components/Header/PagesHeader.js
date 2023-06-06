@@ -1,10 +1,10 @@
-import React, { Component, useContext } from "react";
+import React, { useContext } from "react";
 import "./header.css";
 import { motion } from "framer-motion";
 import { IntranetContext } from "../../context";
 
 function PagesHeader({ data }) {
-  const { logout, loggedIn, colorTheme } = useContext(IntranetContext);
+  const { colorTheme } = useContext(IntranetContext);
   return (
     <motion.div
       initial={{ x: "-100vw" }}

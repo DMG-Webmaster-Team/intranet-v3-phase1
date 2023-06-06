@@ -85,3 +85,8 @@ center a {
 .card:hover .card-title {
   opacity: 1;
 }
+
+.widthFixedForms {
+  height: 220px !important;
+  width: 190px !important;
+}

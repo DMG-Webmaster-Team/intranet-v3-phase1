@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "./slider.scss";
 import "slick-carousel/slick/slick.css";
@@ -14,7 +14,8 @@ const Sliders = ({ isArabic, data, home }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
+    lazyLoad: true,
     autoplaySpeed: 3000,
     prevArrow: (
       <button type="button">

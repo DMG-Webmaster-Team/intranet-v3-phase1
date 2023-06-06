@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, Suspense } from "react";
-import { BrowserRouter as Router, Switch, HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import "./App.scss";
 
 import { IntranetContext } from "./context";
@@ -18,11 +18,9 @@ const App = () => {
   const { getLang, user, serverError } = useContext(IntranetContext);
   const isAuthenticated = user.isAuthenticated;
 
-  // console.log(user.userCompany);
-
   useEffect(() => {
     setIsArabic(getLang());
-  }, []);
+  }, [getLang]);
 
   return (
     <>

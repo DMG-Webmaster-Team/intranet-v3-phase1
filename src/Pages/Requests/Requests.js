@@ -209,13 +209,7 @@ const Requests = () => {
             >
               <div className="card">
                 <div className="image-wrapper">
-                  <img
-                    src={Employee}
-                    className="widthFixed"
-                    width={200}
-                    height={260}
-                    alt="..."
-                  />
+                  <img src={Employee} className="widthFixed" alt="..." />
                 </div>
                 <div className="card-img-overlay">
                   <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
@@ -236,8 +230,6 @@ const Requests = () => {
                   <img
                     src={MedicalInsurance}
                     className="widthFixed"
-                    width={200}
-                    height={260}
                     alt="..."
                   />
                 </div>
@@ -254,17 +246,8 @@ const Requests = () => {
             <Link to="forms">
               <div className="card">
                 <div className="image-wrapper">
-                  <img
-                    src={forms}
-                    className="widthFixed"
-                    width={200}
-                    height={260}
-                    alt="..."
-                  />
+                  <img src={forms} className="widthFixedForms" alt="..." />
                 </div>
-                {/* <div className="card-img-overlay">
-                  <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
-                </div> */}
                 <div className={`card-footer ${colorTheme}`}>
                   <p className="m-1">Forms</p>
                 </div>

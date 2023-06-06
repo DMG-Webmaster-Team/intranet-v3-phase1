@@ -220,6 +220,7 @@ const Services = () => {
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link
               to="/compensation"
+              onClick={(e) => e.preventDefault()}
               className={`icon overlayCont ${colorTheme}`}
               id="benefits"
             >

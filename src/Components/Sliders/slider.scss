@@ -35,12 +35,12 @@
 .slider-img-news {
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  filter: brightness(60%) !important;
-  transition: all 0.3s;
+  // filter: brightness(60%) !important;
+  // transition: all 0.3s;
 }
 
 .mySlides-news:hover .slider-img-news {
-  filter: brightness(80%);
+  // filter: brightness(80%);
 }
 
 .article-container h3 {

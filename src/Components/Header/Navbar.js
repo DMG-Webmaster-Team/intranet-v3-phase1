@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./navbar.scss";
 import logoutIcon from "./images/logout icon.png";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,7 @@ import { IntranetContext } from "../../context";
 import Cookies from "js-cookie";
 
 const NavBar = () => {
-  const { logout, user, colorTheme, loggedIn } = useContext(IntranetContext);
+  const { logout, colorTheme, loggedIn } = useContext(IntranetContext);
   const myCookie = Cookies.get("user");
   const myCookieUserObj = loggedIn && JSON.parse(myCookie);
   const AboutUsLinks = {
