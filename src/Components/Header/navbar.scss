@@ -15,9 +15,29 @@
   background-color: inherit !important;
   scale: 1.1;
 }
-.nav-link.active {
-  color: #fff;
-}
+// .nav-link.active {
+//   color: #fff;
+// }
 .nav-link {
   font-family: "GarageFonts";
+}
+
+.soonCont .btn-secondary {
+  background-color: #0f4b8f;
+  border: none;
+}
+
+.soonCont .btn-secondary:focus {
+  box-shadow: none;
+  border-color: #003c9f;
+}
+.soon {
+  font-size: 1.2rem;
+  color: #fff !important;
+  padding: 0;
+}
+.tooltip-trigger {
+  background-color: transparent !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }

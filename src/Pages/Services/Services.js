@@ -236,7 +236,7 @@ const Services = () => {
               />
               <div className="middle">
                 <div className="text">
-                  <span className="text-nowrap">My Compensation</span>
+                  <span className="text-nowrap">My Rewards</span>
                   <br />
                 </div>
               </div>

@@ -6,6 +6,8 @@ import { Text } from "../../containers/Language";
 import "./header.css";
 import { motion } from "framer-motion";
 import { IntranetContext } from "../../context";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+
 import Cookies from "js-cookie";
 
 const NavBar = () => {
@@ -32,7 +34,7 @@ const NavBar = () => {
   if (myCookieUserObj.userEmail?.toLowerCase().includes("Curve")) {
     destLink = AboutUsLinks.Curve;
   }
-
+  const tooltip = <Tooltip id="tooltip-top">Coming Soon...</Tooltip>;
   return (
     <motion.nav
       className={`navbar ${colorTheme} navbar-expand-md navbar-light navbar-zindex bg-light position-relative`}
@@ -63,7 +65,7 @@ const NavBar = () => {
             <li className="nav-item">
               <NavLink to="/employees-hub" className="nav-link d-sm-none">
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
-                  HR Services
+                  Employees Hub
                 </span>
               </NavLink>
               <NavLink
@@ -74,14 +76,24 @@ const NavBar = () => {
                 <Text tid="Employees Hub" />
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item soonCont">
               <a
                 href="https://dmgian.corp-dmg.com/DMG-Family-Radio/"
                 target="_blank"
                 rel="noreferrer"
                 className="nav-link"
               >
-                <Text tid="navFamilyRadio" />
+                <OverlayTrigger placement="top" overlay={tooltip}>
+                  <button
+                    type="button"
+                    className="soon tooltip-trigger btn btn-secondary"
+                  >
+                    <Text tid="navFamilyRadio" />
+                  </button>
+                </OverlayTrigger>
+
+                {/* <span className="RadioSoon"> (Soon...)</span> */}
+                {/* <Text tid=" (Soon...)" style={{ color: "green !important" }} /> */}
               </a>
             </li>
             <li className="nav-item">
@@ -105,14 +117,28 @@ const NavBar = () => {
                 <Text tid="navNews" />
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item soonCont">
               <NavLink to="/jobs" className="nav-link d-sm-none">
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
-                  Carrers
+                  <OverlayTrigger placement="top" overlay={tooltip}>
+                    <button
+                      type="button"
+                      className="soon tooltip-trigger btn btn-secondary"
+                    >
+                      <Text tid="Careers" />
+                    </button>
+                  </OverlayTrigger>
                 </span>
               </NavLink>
               <NavLink to="/jobs" className="nav-link d-none d-sm-block">
-                <Text tid="navCareers" />
+                <OverlayTrigger placement="top" overlay={tooltip}>
+                  <button
+                    type="button"
+                    className="soon tooltip-trigger btn btn-secondary"
+                  >
+                    <Text tid="navCareers" />
+                  </button>
+                </OverlayTrigger>
               </NavLink>
             </li>
             <li className="nav-item">

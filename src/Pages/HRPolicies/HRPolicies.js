@@ -9,12 +9,12 @@ import "./HrPolicies.css";
 import Cookies from "js-cookie";
 import rewards from "./imgs/rewards.jpg";
 import talent from "./imgs/talentManagment.jpg";
+import talentAcqImg from "./imgs/talentAcquisition.jpg";
 import operation from "./imgs/hrOperation.jpg";
-import talentAcq from "./imgs/talentAcquisition.jpg";
-import talentPDF from "./imgs/TalentManagment.pdf";
+import talentAcq from "./imgs/Talent Acquisition.pdf";
+import talentPDF from "./imgs/Talent Managment.pdf";
 import rewardsPDF from "./imgs/Rewards.pdf";
 import operationPDF from "./imgs/HR Operations.pdf";
-import talentAcqPDF from "./imgs/TalentAcquisition.pdf";
 
 const HRPolicies = () => {
   const { colorTheme, loggedIn } = useContext(IntranetContext);
@@ -66,10 +66,10 @@ const HRPolicies = () => {
                 </a>
               </div>
               <div className="col">
-                <a href={talentAcqPDF} target="_blank" rel="noreferrer">
+                <a href={talentAcq} target="_blank" rel="noreferrer">
                   <div className="card">
                     <div className="image-wrapper">
-                      <img src={talentAcq} className="" alt="..." />
+                      <img src={talentAcqImg} className="" alt="..." />
                     </div>
 
                     <div className={`card-footer ${colorTheme}`}>

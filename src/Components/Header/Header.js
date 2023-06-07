@@ -60,7 +60,7 @@ const Header = () => {
         <ul
           className={`navbar ${colorTheme} d-flex justify-content-center my-auto`}
         >
-          <li className=" mx-5 nav-item">
+          {/* <li className=" mx-5 nav-item">
             <form className="d-flex align-items-center" role="search">
               <input
                 className="form-control form-control-sm p-3"
@@ -70,7 +70,7 @@ const Header = () => {
               />
               <i className="bi bi-search"></i>
             </form>
-          </li>
+          </li> */}
           <li className="nav-item welcome-user p-2">
             <Text tid="welcomeUser" /> {userName} <br />{" "}
             <Text tid="happyToSeeYou" />

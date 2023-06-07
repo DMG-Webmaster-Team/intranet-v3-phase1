@@ -122,7 +122,7 @@ h1.p-2 {
   background-color: #bfc1cc;
 }
 #menu-bar {
-  background-color: rgb(196, 171, 125);
+  /* background-color: rgb(196, 171, 125); */
   height: 65px;
   font-family: attach;
   padding-left: 0;
@@ -177,8 +177,6 @@ li.dropdown {
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav {
   color: white;
-
-  /* background-color: #b9a37a; */
 }
 .nav-link:hover {
   background-color: #315c8e;
