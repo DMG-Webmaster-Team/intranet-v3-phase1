@@ -6,8 +6,17 @@
   color: #fff !important;
 }
 .view {
-  background-color: #0e4d8d !important;
+  --primary-color: var(--primary-color-1);
+  background-color: var(--primary-color-1);
   cursor: pointer;
   color: #fff;
   text-decoration: none !important;
+}
+.view.theme-2 {
+  --primary-color: var(--primary-color-2);
+  background-color: var(--primary-color-2);
+}
+.view.theme-3 {
+  --primary-color: var(--primary-color-3);
+  background-color: var(--primary-color-3);
 }

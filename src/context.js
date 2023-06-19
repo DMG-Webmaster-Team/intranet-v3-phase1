@@ -95,16 +95,16 @@ const IntranetProvider = ({ children }) => {
         }
       );
 
-      console.log(data.data);
+      // console.log(data.data);
       if (data.data.loginStatus === "SUCCESS") {
-        console.log(data.data);
+        // console.log(data.data);
         setUser({
           isLoading: false,
           isAuthenticated: true,
           error: null,
           userData: data.data,
         });
-        console.log(data.data);
+        // console.log(data.data);
         const {
           userName,
           userEmail,
@@ -133,6 +133,11 @@ const IntranetProvider = ({ children }) => {
           expires: 7,
           path: "/",
         });
+        console.log(
+          Cookies.get("user") &&
+            JSON.parse(Cookies.get("user").userCompanyToShow)
+        );
+
         if (userEmail.includes("mv")) {
           handleThemeChange("theme-1");
           handleFontChange("font-1");

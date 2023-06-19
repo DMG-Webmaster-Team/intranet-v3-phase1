@@ -24,9 +24,9 @@ const Header = () => {
 
   const myCookie = loggedIn && Cookies.get("user");
   const myThemeCookie = Cookies.get("theme");
-  console.log(myThemeCookie);
-  const myCookieUserObj = myCookie && JSON.parse(myCookie);
 
+  const myCookieUserObj = myCookie && JSON.parse(myCookie);
+  // console.log(myCookieUserObj);
   const userName = myCookieUserObj?.userEmail?.split("@")[0].split(".")[0];
   const userInitials = `${myCookieUserObj?.userName?.split(" ")[0][0]}${
     myCookieUserObj?.userName?.split(" ")[1][0]

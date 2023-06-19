@@ -77,24 +77,16 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item soonCont">
-              <a
-                href="https://dmgian.corp-dmg.com/DMG-Family-Radio/"
-                target="_blank"
-                rel="noreferrer"
-                className="nav-link"
-              >
-                <OverlayTrigger placement="top" overlay={tooltip}>
+              <NavLink to="/radio" className="nav-link">
+                {/* <OverlayTrigger placement="top" overlay={tooltip}>
                   <button
                     type="button"
                     className="soon tooltip-trigger btn btn-secondary"
                   >
-                    <Text tid="navFamilyRadio" />
                   </button>
-                </OverlayTrigger>
-
-                {/* <span className="RadioSoon"> (Soon...)</span> */}
-                {/* <Text tid=" (Soon...)" style={{ color: "green !important" }} /> */}
-              </a>
+                </OverlayTrigger> */}
+                <Text tid="navFamilyRadio" />
+              </NavLink>
             </li>
             <li className="nav-item">
               <a

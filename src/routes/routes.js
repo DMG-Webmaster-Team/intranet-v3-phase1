@@ -12,11 +12,26 @@ const routes = [
     exact: true,
   },
 
-  // {
-  //   path: "/announcements",
-  //   component: lazy((props) => import("../Pages/Announcements/Announcements")),
-  //   exact: true,
-  // },
+  {
+    path: "/radio",
+    component: lazy((props) => import("../Pages/Radio/Radio")),
+    exact: true,
+  },
+  {
+    path: "/radioS01",
+    component: lazy((props) => import("../Pages/Radio/RadioS01.js")),
+    exact: true,
+  },
+  {
+    path: "/radioS02",
+    component: lazy((props) => import("../Pages/Radio/RadioS02.js")),
+    exact: true,
+  },
+  {
+    path: "/sa3aM3El3ela",
+    component: lazy((props) => import("../Pages/Radio/Sa3aM3El3ela")),
+    exact: true,
+  },
 
   {
     path: "/news",
