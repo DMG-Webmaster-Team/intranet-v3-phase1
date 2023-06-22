@@ -1,4 +1,4 @@
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect } from "react-router-dom";
 
 function PrivateRoute({ children, isAuthenticated, ...rest }) {
   return (
@@ -10,14 +10,14 @@ function PrivateRoute({ children, isAuthenticated, ...rest }) {
         ) : (
           <Redirect
             to={{
-              pathname: '/login',
+              pathname: "/login",
               state: { from: location },
             }}
           />
-        )
+        );
       }}
     />
-  )
+  );
 }
 
-export default PrivateRoute
+export default PrivateRoute;

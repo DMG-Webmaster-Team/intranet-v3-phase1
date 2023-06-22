@@ -18,14 +18,19 @@ const RadioS02 = () => {
           <div className="col-8 ">
             <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
               <div className="col">
-                <NavLink to="/sa3aM3El3ela">
+                <NavLink to={`${process.env.PUBLIC_URL}/sa3aM3El3ela`}>
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={Sa3aM3El3Ela} className="" alt="..." />
                     </div>
 
                     <div className={`card-footer ${colorTheme}`}>
-                      <p className="m-1 talent-text">ساعة مع العيلة</p>
+                      <p
+                        className="m-1 talent-text"
+                        style={{ fontFamily: "Tajawal" }}
+                      >
+                        ساعة مع العيلة
+                      </p>
                     </div>
                   </div>
                 </NavLink>

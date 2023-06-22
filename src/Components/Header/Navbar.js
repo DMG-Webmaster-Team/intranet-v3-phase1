@@ -63,13 +63,16 @@ const NavBar = () => {
         <div className="collapse navbar-collapse dropdown-nav " id="navbarNav">
           <ul className="navbar-nav zIndex  mx-auto">
             <li className="nav-item">
-              <NavLink to="/employees-hub" className="nav-link d-sm-none">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/employees-hub`}
+                className="nav-link d-sm-none"
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   Employees Hub
                 </span>
               </NavLink>
               <NavLink
-                to="/employees-hub"
+                to={`${process.env.PUBLIC_URL}/employees-hub`}
                 className="nav-link d-none d-sm-block"
                 // aria-current='page'
               >
@@ -77,7 +80,10 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item soonCont">
-              <NavLink to="/radio" className="nav-link">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/radio`}
+                className="nav-link"
+              >
                 {/* <OverlayTrigger placement="top" overlay={tooltip}>
                   <button
                     type="button"
@@ -99,18 +105,27 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <NavLink to="/news" className="nav-link d-sm-none">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/news`}
+                className="nav-link d-sm-none"
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   News
                 </span>
               </NavLink>
 
-              <NavLink to="/news" className="nav-link d-none d-sm-block">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/news`}
+                className="nav-link d-none d-sm-block"
+              >
                 <Text tid="navNews" />
               </NavLink>
             </li>
             <li className="nav-item soonCont">
-              <NavLink to="/jobs" className="nav-link d-sm-none">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/jobs`}
+                className="nav-link d-sm-none"
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   <OverlayTrigger placement="top" overlay={tooltip}>
                     <button
@@ -122,7 +137,10 @@ const NavBar = () => {
                   </OverlayTrigger>
                 </span>
               </NavLink>
-              <NavLink to="/jobs" className="nav-link d-none d-sm-block">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/jobs`}
+                className="nav-link d-none d-sm-block"
+              >
                 <OverlayTrigger placement="top" overlay={tooltip}>
                   <button
                     type="button"
@@ -144,13 +162,16 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <NavLink to="/it-policies" className="nav-link d-sm-none">
+              <NavLink
+                to={`${process.env.PUBLIC_URL}/it-policies`}
+                className="nav-link d-sm-none"
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   Other Policies
                 </span>
               </NavLink>
               <NavLink
-                to="/other-policies"
+                to={`${process.env.PUBLIC_URL}/other-policies`}
                 className="nav-link d-none d-sm-block"
               >
                 <Text tid="Other Policies" />

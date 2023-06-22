@@ -2,107 +2,102 @@ import { lazy } from "react";
 
 const routes = [
   {
-    path: "/",
+    path: `${process.env.PUBLIC_URL}/`,
     component: lazy((props) => import("../Pages/Home/Home")),
     exact: true,
   },
   {
-    path: "/employees-hub",
+    path: `${process.env.PUBLIC_URL}/employees-hub`,
     component: lazy((props) => import("../Pages/Services/Services")),
     exact: true,
   },
 
   {
-    path: "/radio",
+    path: `${process.env.PUBLIC_URL}/radio`,
     component: lazy((props) => import("../Pages/Radio/Radio")),
     exact: true,
   },
   {
-    path: "/radioS01",
+    path: `${process.env.PUBLIC_URL}/radioS01`,
     component: lazy((props) => import("../Pages/Radio/RadioS01.js")),
     exact: true,
   },
   {
-    path: "/radioS02",
+    path: `${process.env.PUBLIC_URL}/radioS02`,
     component: lazy((props) => import("../Pages/Radio/RadioS02.js")),
     exact: true,
   },
   {
-    path: "/sa3aM3El3ela",
+    path: `${process.env.PUBLIC_URL}/sa3aM3El3ela`,
     component: lazy((props) => import("../Pages/Radio/Sa3aM3El3ela")),
     exact: true,
   },
 
   {
-    path: "/news",
+    path: `${process.env.PUBLIC_URL}/news`,
     component: lazy((props) => import("../Pages/News/News")),
     exact: true,
   },
   {
-    path: "/news/:id",
+    path: `${process.env.PUBLIC_URL}/news/:id`,
     component: lazy((props) => import("../Pages/News/Article")),
     exact: true,
   },
 
   {
-    path: "/login",
+    path: `${process.env.PUBLIC_URL}/login`,
     component: lazy((props) => import("../Pages/Login/Login")),
     exact: true,
   },
   {
-    path: "/my-profile",
+    path: `${process.env.PUBLIC_URL}/my-profile`,
     component: lazy((props) => import("../Pages/MyProfile/MyProfile")),
     exact: true,
   },
   {
-    path: "/learning-development",
+    path: `${process.env.PUBLIC_URL}/learning-development`,
     component: lazy((props) =>
       import("../Pages/Learning-Development/LearningDevelopment")
     ),
     exact: true,
   },
   {
-    path: "/policies",
+    path: `${process.env.PUBLIC_URL}/policies`,
     component: lazy((props) => import("../Pages/Policies/Policies")),
     exact: true,
   },
   {
-    path: "/hr-policies",
+    path: `${process.env.PUBLIC_URL}/hr-policies`,
     component: lazy((props) => import("../Pages/HRPolicies/HRPolicies")),
     exact: true,
   },
-  // {
-  //   path: "/other-policies",
-  //   component: lazy((props) => import("../Pages/HRPolicies/HRPolicies")),
-  //   exact: true,
-  // },
   {
-    path: "/other-policies",
+    path: `${process.env.PUBLIC_URL}/other-policies`,
     component: lazy((props) => import("../Pages/OtherPolicies/OtherPolicies")),
     exact: true,
   },
   {
-    path: "/benefits",
+    path: `${process.env.PUBLIC_URL}/benefits`,
     component: lazy((props) => import("../Pages/Benefits/Benefits")),
     exact: true,
   },
   {
-    path: "/requests",
+    path: `${process.env.PUBLIC_URL}/requests`,
     component: lazy((props) => import("../Pages/Requests/Requests")),
     exact: true,
   },
   {
-    path: "/attendance",
+    path: `${process.env.PUBLIC_URL}/attendance`,
     component: lazy((props) => import("../Pages/Attendance/Attendance")),
     exact: true,
   },
   {
-    path: "/compensation",
+    path: `${process.env.PUBLIC_URL}/compensation`,
     component: lazy((props) => import("../Pages/Compensation/Compensation")),
     exact: true,
   },
   {
-    path: "/forms",
+    path: `${process.env.PUBLIC_URL}/forms`,
     component: lazy((props) => import("../Pages/Forms/Forms")),
     exact: true,
   },

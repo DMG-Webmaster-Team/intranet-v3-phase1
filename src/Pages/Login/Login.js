@@ -110,9 +110,6 @@ const Login = () => {
                       <Alert variant="danger">{user.error}</Alert>
                     ) : null
                   ) : null}
-                  {/* <p className="mt-5 mb-3 text-muted text-center">
-                    &copy; {new Date().getFullYear()}
-                  </p> */}
                 </form>
               </div>
             </div>
@@ -121,7 +118,7 @@ const Login = () => {
       </div>
     );
   } else {
-    return <Redirect to="/"></Redirect>;
+    return <Redirect to={`${process.env.PUBLIC_URL}/`}></Redirect>;
   }
 };
 

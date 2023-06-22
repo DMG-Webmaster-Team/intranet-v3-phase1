@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
-import HRPolicies from "../HRPolicies/HRPolicies";
-import test from "../Learning-Development/imgs/7-Coaching.jpg";
 import HRLetter from "./imgs/hrLetter.jpg";
 import TravelReq from "./imgs/travel.jpg";
 import forms from "./imgs/forms.jpg";
@@ -125,10 +123,10 @@ const Requests = () => {
             </a>
           </div>
           <div className="col">
-            <Link to="forms">
+            <Link to={`${process.env.PUBLIC_URL}/forms`}>
               <div className="card">
                 <div className="image-wrapper">
-                  <img src={forms} className="widthFixedForms" alt="..." />
+                  <img src={forms} alt="..." />
                 </div>
                 <div className={`card-footer ${colorTheme}`}>
                   <p className="m-1">Forms</p>

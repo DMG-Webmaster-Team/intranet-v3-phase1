@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router basename="/">
         <Suspense fallback={<SkeletonLoader />}>
           <Switch>
             <PublicRoute path="/login" isAuthenticated={isAuthenticated}>

@@ -1,4 +1,4 @@
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect } from "react-router-dom";
 
 function PublicRoute({ children, isAuthenticated, ...rest }) {
   return (
@@ -10,14 +10,14 @@ function PublicRoute({ children, isAuthenticated, ...rest }) {
         ) : (
           <Redirect
             to={{
-              pathname: '/',
+              pathname: `${process.env.PUBLIC_URL}/`,
               state: { from: location },
             }}
           />
         )
       }
     />
-  )
+  );
 }
 
-export default PublicRoute
+export default PublicRoute;

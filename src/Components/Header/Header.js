@@ -18,16 +18,17 @@ const Header = () => {
   function toggleDropdown() {
     setDropdownOpen(!dropdownOpen);
   }
-  const { logout, loggedIn, colorTheme } = useContext(IntranetContext);
-  // const myCookie = loggedIn && Cookies.get("user");
-  // const myCookieUserObj = loggedIn && JSON.parse(myCookie);
+  const { logout, colorTheme } = useContext(IntranetContext);
 
-  const myCookie = loggedIn && Cookies.get("user");
+  const myCookie = Cookies.get("user");
+  // console.log(myCookie);
+
   const myThemeCookie = Cookies.get("theme");
-
+  // console.log(myThemeCookie);
   const myCookieUserObj = myCookie && JSON.parse(myCookie);
-  // console.log(myCookieUserObj);
+
   const userName = myCookieUserObj?.userEmail?.split("@")[0].split(".")[0];
+
   const userInitials = `${myCookieUserObj?.userName?.split(" ")[0][0]}${
     myCookieUserObj?.userName?.split(" ")[1][0]
   }`;
@@ -49,7 +50,7 @@ const Header = () => {
           id="dmg-logo"
           className="d-flex justify-content-center justify-content-sm-start"
         >
-          <Link to="/">
+          <Link to={`${process.env.PUBLIC_URL}/`}>
             <img
               className="p-2 w-100"
               src={myThemeCookie === "theme-3" ? DMELogo : logo}
@@ -94,7 +95,10 @@ const Header = () => {
               show={dropdownOpen}
               onClick={toggleDropdown}
             >
-              <NavLink className="text-primary" to="/my-profile">
+              <NavLink
+                className="text-primary"
+                to={`${process.env.PUBLIC_URL}/my-profile`}
+              >
                 My Profile{" "}
                 <span className="ms-1">
                   <svg

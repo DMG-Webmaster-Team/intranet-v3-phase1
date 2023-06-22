@@ -133,20 +133,22 @@ const IntranetProvider = ({ children }) => {
           expires: 7,
           path: "/",
         });
-        console.log(
-          Cookies.get("user") &&
-            JSON.parse(Cookies.get("user").userCompanyToShow)
-        );
 
-        if (userEmail.includes("mv")) {
+        const myCookie = Cookies.get("user");
+        const myCookieUserObj =
+          myCookie !== "undefined" && JSON.parse(myCookie);
+        const { userCompanyToShow } = myCookieUserObj;
+        console.log(userCompanyToShow);
+        console.log(userCompanyToShow);
+        if (userCompanyToShow.toLowerCase() === "mv") {
           handleThemeChange("theme-1");
           handleFontChange("font-1");
         }
-        if (userEmail.includes("dma")) {
+        if (userCompanyToShow.toLowerCase() === "dma") {
           handleThemeChange("theme-2");
           handleFontChange("font-2");
         }
-        if (userEmail.includes("dme")) {
+        if (userCompanyToShow.toLowerCase() === "dme") {
           handleThemeChange("theme-3");
           handleFontChange("font-3");
         }
@@ -172,10 +174,10 @@ const IntranetProvider = ({ children }) => {
 
   const logout = () => {
     // localStorage.removeItem('loginStatus')
-    window.location.href = "/intranet/`";
+    // Cookies.expires("user");
     Cookies.remove("user");
-    Cookies.expires("user");
-    setLoggedIn(false);
+    // setLoggedIn(false);
+    window.location.href = `${process.env.PUBLIC_URL}/`;
   };
 
   const checkCookie = () => {
