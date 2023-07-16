@@ -10,12 +10,13 @@ import { Alert } from "react-bootstrap";
 import SkeletonLoader from "../../Components/Skeleton/SkeletonLoader";
 import { Text } from "../../containers/Language";
 import Cookies from "js-cookie";
+import VoiceRecorder from "../Voice-Recorder/VoiceRecorder";
 const Login = () => {
   const { user, login, handleThemeChange } = useContext(IntranetContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
-
+  const [showRecordPage, setShowRecordPage] = useState(false);
   const { isAuthenticated, isLoading } = user;
 
   const { loggedIn, handleFontChange } = useContext(IntranetContext);
@@ -32,6 +33,9 @@ const Login = () => {
       setShowError(false);
     }, 3000);
   };
+  function handleShowRecord() {
+    setShowRecordPage((prev) => !prev);
+  }
 
   if (isLoading) {
     return <SkeletonLoader />;
@@ -44,7 +48,8 @@ const Login = () => {
             <img src={logo} alt="" className="p-2 " width={280} height={80} />
           </div>
         </div>
-        <div className="container ">
+
+        <div className="container">
           <div className="row  justify-content-center mt-5">
             <div className="col-9 col-md-7 col-lg-8 mt-5">
               <div className="row gx-md-5  gx-3">
@@ -115,6 +120,10 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <section className="container">
+          <button onClick={handleShowRecord}>Record A Note</button>
+          {showRecordPage && <VoiceRecorder />}
+        </section>
       </div>
     );
   } else {

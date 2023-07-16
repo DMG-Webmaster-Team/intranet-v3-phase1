@@ -15,7 +15,7 @@ const Sa3aM3El3ela = () => {
             {season2.map((ep) => {
               return (
                 <div className="row mb-2" key={ep.id}>
-                  <h3 className="col-12 col-md-8 bg-secondary">{ep.name}</h3>
+                  <h3 className="col-12 col-md-8 bg-secondary">{`${ep.id}-${ep.name}`}</h3>
                   <a href={ep.url} className="col-12 col-md-4 text-center">
                     <h3 className="">Listen</h3>
                   </a>

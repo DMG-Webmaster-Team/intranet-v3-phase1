@@ -61,17 +61,22 @@ const Header = () => {
         <ul
           className={`navbar ${colorTheme} d-flex justify-content-center my-auto`}
         >
-          {/* <li className=" mx-5 nav-item">
+          <li className=" mx-5 nav-item">
             <form className="d-flex align-items-center" role="search">
+              <label for="search" className="me-0 me-md-2 ">
+                HR Directory
+              </label>
               <input
+                id="search"
                 className="form-control form-control-sm p-3"
                 type="search"
-                placeholder="Search"
+                placeholder="Search for all DMG employees..."
                 aria-label="Search"
               />
+
               <i className="bi bi-search"></i>
             </form>
-          </li> */}
+          </li>
           <li className="nav-item welcome-user p-2">
             <Text tid="welcomeUser" /> {userName} <br />{" "}
             <Text tid="happyToSeeYou" />

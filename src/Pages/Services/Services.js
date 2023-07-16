@@ -89,10 +89,15 @@ const Services = () => {
             </Link>
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
-            <Link
+            {/* <Link
               to={`${process.env.PUBLIC_URL}/hr-policies`}
               className={`icon overlayCont ${colorTheme}`}
               id="policies"
+            > */}
+
+            <a
+              href="javascript:void(0)"
+              className={`icon overlayCont ${colorTheme}`}
             >
               <motion.img
                 whileHover={{
@@ -110,8 +115,9 @@ const Services = () => {
                   HR Policies
                 </div>
               </div>
-              <div className={`more-cont ${colorTheme}`}>View more</div>
-            </Link>
+              <div className={`more-cont ${colorTheme}`}>Coming Soon...</div>
+            </a>
+            {/* </Link> */}
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link

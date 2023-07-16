@@ -101,6 +101,11 @@ const routes = [
     component: lazy((props) => import("../Pages/Forms/Forms")),
     exact: true,
   },
+  // {
+  //   path: `${process.env.PUBLIC_URL}/voice-record`,
+  //   component: lazy((props) => import("../Pages/Voice-Recorder/VoiceRecorder")),
+  //   exact: true,
+  // },
   {
     component: lazy((props) => import("../Pages/Default")),
     exact: true,
