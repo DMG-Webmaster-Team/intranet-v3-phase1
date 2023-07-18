@@ -65,7 +65,7 @@ const Services = () => {
         <div className="row  mt-md-1 mt-2 justify-content-center text-center">
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link
-              to={`${process.env.PUBLIC_URL}/learning-development`}
+              to={`/learning-development`}
               className={`icon overlayCont ${colorTheme}`}
               id="learning-development"
             >
@@ -90,7 +90,7 @@ const Services = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             {/* <Link
-              to={`${process.env.PUBLIC_URL}/hr-policies`}
+              to={`/hr-policies`}
               className={`icon overlayCont ${colorTheme}`}
               id="policies"
             > */}
@@ -121,7 +121,7 @@ const Services = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link
-              to={`${process.env.PUBLIC_URL}/requests`}
+              to={`/requests`}
               className={`icon overlayCont ${colorTheme}`}
               id=""
             >
@@ -200,7 +200,7 @@ const Services = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link
-              to={`${process.env.PUBLIC_URL}/attendance`}
+              to={`/attendance`}
               // onClick={logToDashbard}
               className={`icon overlayCont ${colorTheme}`}
               id="benefits"
@@ -225,7 +225,7 @@ const Services = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link
-              to={`${process.env.PUBLIC_URL}/compensation`}
+              to={`/compensation`}
               onClick={(e) => e.preventDefault()}
               className={`icon overlayCont ${colorTheme}`}
               id="benefits"

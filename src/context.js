@@ -14,6 +14,7 @@ const IntranetProvider = ({ children }) => {
     setColorTheme(theme);
     Cookies.set("theme", theme);
   }
+
   useEffect(() => {
     const theme = Cookies.get("theme");
     if (theme) setColorTheme(theme);
@@ -177,7 +178,7 @@ const IntranetProvider = ({ children }) => {
     // Cookies.expires("user");
     Cookies.remove("user");
     // setLoggedIn(false);
-    window.location.href = `${process.env.PUBLIC_URL}/`;
+    window.location.href = `/`;
   };
 
   const checkCookie = () => {

@@ -11,7 +11,7 @@ class Default extends Component {
           <Text tid="defaultPage"></Text>
         </h1>
 
-        <Link to={`${process.env.PUBLIC_URL}/`} style={{ marginTop: "2rem" }}>
+        <Link to={`/`} style={{ marginTop: "2rem" }}>
           <Button className="default-btn">
             <Text tid="defaultBtn"></Text>
           </Button>

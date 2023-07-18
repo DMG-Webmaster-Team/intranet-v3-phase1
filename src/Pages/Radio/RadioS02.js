@@ -18,7 +18,7 @@ const RadioS02 = () => {
           <div className="col-8 ">
             <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
               <div className="col">
-                <NavLink to={`${process.env.PUBLIC_URL}/sa3aM3El3ela`}>
+                <NavLink to={`/sa3aM3El3ela`}>
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={Sa3aM3El3Ela} className="" alt="..." />

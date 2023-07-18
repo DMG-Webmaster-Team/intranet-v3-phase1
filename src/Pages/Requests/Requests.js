@@ -123,7 +123,7 @@ const Requests = () => {
             </a>
           </div>
           <div className="col">
-            <Link to={`${process.env.PUBLIC_URL}/forms`}>
+            <Link to={`/forms`}>
               <div className="card">
                 <div className="image-wrapper">
                   <img src={forms} alt="..." />

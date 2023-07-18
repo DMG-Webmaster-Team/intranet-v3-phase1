@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, Suspense } from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter, Switch } from "react-router-dom";
 import "./App.scss";
 
 import { IntranetContext } from "./context";
@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <Router basename="/">
+      <HashRouter basename="/">
         <Suspense fallback={<SkeletonLoader />}>
           <Switch>
             <PublicRoute path="/login" isAuthenticated={isAuthenticated}>
@@ -48,7 +48,7 @@ const App = () => {
             )}
           </Switch>
         </Suspense>
-      </Router>
+      </HashRouter>
     </>
   );
 };

@@ -101,6 +101,7 @@ const Login = () => {
                     </div>
                   </div>
                   <br />
+
                   <div className="btn-container text-md-end text-center">
                     <button
                       className="btn btn-lg login-btn mb-4 px-5 py-1"
@@ -110,6 +111,16 @@ const Login = () => {
                       <Text tid="signIn" />
                     </button>
                   </div>
+                  <section className="container d-no d-block">
+                    <button
+                      type="button"
+                      className="btn btn-lg login-btn"
+                      onClick={handleShowRecord}
+                    >
+                      Record A Note
+                    </button>
+                    {showRecordPage && <VoiceRecorder />}
+                  </section>
                   {showError ? (
                     user.error ? (
                       <Alert variant="danger">{user.error}</Alert>
@@ -120,14 +131,10 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <section className="container">
-          <button onClick={handleShowRecord}>Record A Note</button>
-          {showRecordPage && <VoiceRecorder />}
-        </section>
       </div>
     );
   } else {
-    return <Redirect to={`${process.env.PUBLIC_URL}/`}></Redirect>;
+    return <Redirect to={`/`}></Redirect>;
   }
 };
 

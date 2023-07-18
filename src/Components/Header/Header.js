@@ -27,7 +27,7 @@ const Header = () => {
   // console.log(myThemeCookie);
   const myCookieUserObj = myCookie && JSON.parse(myCookie);
 
-  const userName = myCookieUserObj?.userEmail?.split("@")[0].split(".")[0];
+  const userName = myCookieUserObj?.userName?.split(" ")[0];
 
   const userInitials = `${myCookieUserObj?.userName?.split(" ")[0][0]}${
     myCookieUserObj?.userName?.split(" ")[1][0]
@@ -50,7 +50,7 @@ const Header = () => {
           id="dmg-logo"
           className="d-flex justify-content-center justify-content-sm-start"
         >
-          <Link to={`${process.env.PUBLIC_URL}/`}>
+          <Link to={`/`}>
             <img
               className="p-2 w-100"
               src={myThemeCookie === "theme-3" ? DMELogo : logo}
@@ -61,7 +61,7 @@ const Header = () => {
         <ul
           className={`navbar ${colorTheme} d-flex justify-content-center my-auto`}
         >
-          <li className=" mx-5 nav-item">
+          {/* <li className=" mx-5 nav-item">
             <form className="d-flex align-items-center" role="search">
               <label for="search" className="me-0 me-md-2 ">
                 HR Directory
@@ -76,7 +76,7 @@ const Header = () => {
 
               <i className="bi bi-search"></i>
             </form>
-          </li>
+          </li> */}
           <li className="nav-item welcome-user p-2">
             <Text tid="welcomeUser" /> {userName} <br />{" "}
             <Text tid="happyToSeeYou" />
@@ -100,10 +100,7 @@ const Header = () => {
               show={dropdownOpen}
               onClick={toggleDropdown}
             >
-              <NavLink
-                className="text-primary"
-                to={`${process.env.PUBLIC_URL}/my-profile`}
-              >
+              <NavLink className="text-primary" to={`/my-profile`}>
                 My Profile{" "}
                 <span className="ms-1">
                   <svg

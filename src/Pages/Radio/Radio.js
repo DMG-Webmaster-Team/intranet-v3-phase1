@@ -32,7 +32,7 @@ const Radio = () => {
                 </a>
               </div>
               <div className="col">
-                <NavLink to={`${process.env.PUBLIC_URL}/radioS01`}>
+                <NavLink to={`/radioS01`}>
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={S01} className="" alt="..." />
@@ -44,7 +44,7 @@ const Radio = () => {
                 </NavLink>
               </div>
               <div className="col">
-                <NavLink to={`${process.env.PUBLIC_URL}/radioS02`}>
+                <NavLink to={`/radioS02`}>
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={S02} className="" alt="..." />
