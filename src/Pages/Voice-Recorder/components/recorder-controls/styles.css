@@ -45,12 +45,17 @@
   place-content: center;
   animation-name: animated-block;
   animation-duration: 2s;
+  /* background-color: #fd1; */
 }
 
 .start-button,
 .cancel-button {
   border: none;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
   background-color: #fff;
   cursor: pointer;
 }

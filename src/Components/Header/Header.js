@@ -12,13 +12,16 @@ import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import { IntranetContext } from "../../context";
 import { Nav, NavDropdown } from "react-bootstrap";
 import Cookies from "js-cookie";
+import SearchResults from "./SearchResults";
+import DataTableRes from "./DataTableRes";
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   function toggleDropdown() {
     setDropdownOpen(!dropdownOpen);
   }
-  const { logout, colorTheme } = useContext(IntranetContext);
+  const { logout, colorTheme, handleInputChange, searchQuery } =
+    useContext(IntranetContext);
 
   const myCookie = Cookies.get("user");
   // console.log(myCookie);
@@ -61,22 +64,24 @@ const Header = () => {
         <ul
           className={`navbar ${colorTheme} d-flex justify-content-center my-auto`}
         >
-          {/* <li className=" mx-5 nav-item">
+          <li className=" mx-5 nav-item">
             <form className="d-flex align-items-center" role="search">
               <label for="search" className="me-0 me-md-2 ">
                 HR Directory
               </label>
               <input
+                value={searchQuery}
+                onChange={handleInputChange}
                 id="search"
                 className="form-control form-control-sm p-3"
-                type="search"
-                placeholder="Search for all DMG employees..."
+                type="text"
+                placeholder="Search for employees..."
                 aria-label="Search"
               />
 
               <i className="bi bi-search"></i>
             </form>
-          </li> */}
+          </li>
           <li className="nav-item welcome-user p-2">
             <Text tid="welcomeUser" /> {userName} <br />{" "}
             <Text tid="happyToSeeYou" />
@@ -153,6 +158,8 @@ const Header = () => {
           </Nav>
         </ul>
       </div>
+      {/* <SearchResults /> */}
+      <DataTableRes />
     </motion.div>
   );
 };

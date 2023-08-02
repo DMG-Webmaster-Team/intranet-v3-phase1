@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import FilterComponent from "react-data-table-component";
 
 const IntranetContext = React.createContext();
 
@@ -81,6 +82,59 @@ const IntranetProvider = ({ children }) => {
     }
   };
 
+  // HR Directory Serach logic
+  const [searchQuery, setSearchQuery] = useState("");
+  const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
+
+  const [results, setResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
+
+  async function searchUsers() {
+    try {
+      const response = await axios.post(
+        `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
+        { data_type: "userSearch", credentials: { userToSearch: searchQuery } },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      setResults(response.data);
+      setFilteredResults(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const subHeaderComponentMemo = React.useMemo(() => {
+    const handleClear = () => {
+      if (searchQuery) {
+        setResetPaginationToggle(!resetPaginationToggle);
+        setSearchQuery("");
+      }
+    };
+
+    return (
+      <FilterComponent
+        onFilter={(e) => searchQuery(e.target.value)}
+        onClear={handleClear}
+        filterText={searchQuery}
+      />
+    );
+  }, [searchQuery, resetPaginationToggle]);
+  function handleInputChange(event) {
+    setSearchQuery(event.target.value);
+    const filteredUsers =
+      filteredResults.length > 0 &&
+      filteredResults.filter((user) =>
+        user.name.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+    setFilteredResults(filteredUsers);
+  }
+
+  useEffect(() => {
+    searchUsers();
+  }, [searchQuery]);
+  // HR Directory Serach logic END
+
   const login = async (username, password) => {
     setUser({
       ...user,
@@ -96,6 +150,8 @@ const IntranetProvider = ({ children }) => {
         }
       );
 
+      // dataType: userSearch
+      // credentials: { userToSearch: "" }
       // console.log(data.data);
       if (data.data.loginStatus === "SUCCESS") {
         // console.log(data.data);
@@ -210,8 +266,14 @@ const IntranetProvider = ({ children }) => {
         login,
         logout,
         handleThemeChange,
+        handleInputChange,
+        subHeaderComponentMemo,
         loggedIn,
         colorTheme,
+        results,
+        searchQuery,
+        filteredResults,
+        resetPaginationToggle,
       }}
     >
       {children}

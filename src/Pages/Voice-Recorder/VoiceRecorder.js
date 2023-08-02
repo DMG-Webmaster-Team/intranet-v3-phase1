@@ -7,8 +7,8 @@ const VoiceRecorder = () => {
   const { audio } = recorderState;
   return (
     <section className="voice-recorder">
-      <h1 className="title">Voice Recorder</h1>
-      <div className="recorder-container">
+      {/* <h1 className="title">Voice Recorder</h1> */}
+      <div className="recorder-container mt-3">
         <RecorderControls recorderState={recorderState} handlers={handlers} />
         <RecordingsList audio={audio} />
       </div>

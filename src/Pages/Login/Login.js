@@ -117,7 +117,7 @@ const Login = () => {
                       className="btn btn-lg login-btn"
                       onClick={handleShowRecord}
                     >
-                      Record A Note
+                      {showRecordPage ? "Hide Voice Recorder" : "Record A Note"}
                     </button>
                     {showRecordPage && <VoiceRecorder />}
                   </section>
