@@ -10,7 +10,7 @@ import { Alert } from "react-bootstrap";
 import SkeletonLoader from "../../Components/Skeleton/SkeletonLoader";
 import { Text } from "../../containers/Language";
 import Cookies from "js-cookie";
-import VoiceRecorder from "../Voice-Recorder/VoiceRecorder";
+
 const Login = () => {
   const { user, login, handleThemeChange } = useContext(IntranetContext);
   const [email, setEmail] = useState("");
@@ -33,9 +33,6 @@ const Login = () => {
       setShowError(false);
     }, 3000);
   };
-  function handleShowRecord() {
-    setShowRecordPage((prev) => !prev);
-  }
 
   if (isLoading) {
     return <SkeletonLoader />;
@@ -111,16 +108,6 @@ const Login = () => {
                       <Text tid="signIn" />
                     </button>
                   </div>
-                  <section className="container d-no d-block">
-                    <button
-                      type="button"
-                      className="btn btn-lg login-btn"
-                      onClick={handleShowRecord}
-                    >
-                      {showRecordPage ? "Hide Voice Recorder" : "Record A Note"}
-                    </button>
-                    {showRecordPage && <VoiceRecorder />}
-                  </section>
                   {showError ? (
                     user.error ? (
                       <Alert variant="danger">{user.error}</Alert>
