@@ -16,16 +16,16 @@ const DataTableRes = () => {
       selector: (row) => row.name,
     },
     {
+      name: "Department",
+      selector: (row) => row.department,
+    },
+    {
       name: "Title",
       selector: (row) => row.title,
     },
     {
       name: "Email",
       selector: (row) => row.email,
-    },
-    {
-      name: "Department",
-      selector: (row) => row.department,
     },
     {
       name: "Direct Manager",
@@ -49,6 +49,9 @@ const DataTableRes = () => {
             columns={column}
             data={filteredResults}
             responsive
+            striped
+            pointerOnHover
+            highlightOnHover
             pagination
             customStyles={customStyles}
             subHeaderComponent={subHeaderComponentMemo}
