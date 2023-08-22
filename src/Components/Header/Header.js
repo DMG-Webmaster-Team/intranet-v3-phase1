@@ -12,7 +12,7 @@ import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import { IntranetContext } from "../../context";
 import { Nav, NavDropdown } from "react-bootstrap";
 import Cookies from "js-cookie";
-import SearchResults from "./SearchResults";
+
 import DataTableRes from "./DataTableRes";
 
 const Header = () => {
@@ -66,7 +66,7 @@ const Header = () => {
         >
           <li className=" mx-5 nav-item">
             <form className="d-flex align-items-center" role="search">
-              <label for="search" className="me-0 me-md-2 ">
+              <label htmlFor="search" className="me-0 me-md-2 ">
                 HR Directory
               </label>
               <input
@@ -158,7 +158,7 @@ const Header = () => {
           </Nav>
         </ul>
       </div>
-      {/* <SearchResults /> */}
+
       <DataTableRes />
     </motion.div>
   );

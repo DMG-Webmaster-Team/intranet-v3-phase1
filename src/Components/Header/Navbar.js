@@ -14,25 +14,39 @@ const NavBar = () => {
   const { logout, colorTheme, loggedIn } = useContext(IntranetContext);
   const myCookie = Cookies.get("user");
   const myCookieUserObj = loggedIn && JSON.parse(myCookie);
+
+  // console.log(myCookieUserObj?.userCompanyToShow);
+
   const AboutUsLinks = {
     DMC: "https://www.dmc-egy.com/",
     Curve: "https://www.curvelandscape.com/",
     MV: "https://mountainviewegypt.com/",
     DMA: "https://dma.com.eg",
   };
-
   let destLink = AboutUsLinks.MV;
-  if (myCookieUserObj.userEmail?.toLowerCase().includes("MV")) {
+  if (myCookieUserObj?.userCompanyToShow.includes("MV")) {
     destLink = AboutUsLinks.MV;
   }
-  if (myCookieUserObj.userEmail?.toLowerCase().includes("DMA")) {
+  if (myCookieUserObj?.userCompanyToShow.includes("DMA")) {
     destLink = AboutUsLinks.DMA;
   }
-  if (myCookieUserObj.userEmail?.toLowerCase().includes("DME")) {
+  if (myCookieUserObj?.userCompanyToShow.includes("DME")) {
     destLink = AboutUsLinks.DME;
   }
-  if (myCookieUserObj.userEmail?.toLowerCase().includes("Curve")) {
+  if (myCookieUserObj?.userCompanyToShow.includes("Curve")) {
     destLink = AboutUsLinks.Curve;
+  }
+  const lighthouseLinks = {
+    MV: "https://xd.adobe.com/view/3c358f98-eb42-43e6-a6ca-f0a38ce926ee-6966/screen/7e3f74b5-8c89-4939-ac20-efd63f101ef7/?fullscreen&hints=off",
+    DME: "https://xd.adobe.com/view/c241150c-861a-4d66-a877-a71e253d5fa8-9712/?fullscreen&hints=off",
+    DMA: "",
+  };
+  let LHlink = lighthouseLinks.MV;
+  if (myCookieUserObj?.userCompanyToShow.includes("DME")) {
+    LHlink = lighthouseLinks.DME;
+  }
+  if (myCookieUserObj?.userCompanyToShow.includes("DMA")) {
+    LHlink = lighthouseLinks.DMA;
   }
   const tooltip = <Tooltip id="tooltip-top">Coming Soon...</Tooltip>;
   return (
@@ -135,13 +149,27 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <a
-                href="https://xd.adobe.com/view/3c358f98-eb42-43e6-a6ca-f0a38ce926ee-6966/screen/7e3f74b5-8c89-4939-ac20-efd63f101ef7/?fullscreen&hints=off"
+                href={LHlink}
                 target="_blank"
                 rel="noreferrer"
-                className="nav-link"
+                className={`${
+                  myCookieUserObj?.userCompanyToShow.includes("DMA")
+                    ? "nav-link d-none"
+                    : "nav-link"
+                }`}
               >
                 <Text tid="navLighthouse" />
               </a>
+              {myCookieUserObj?.userCompanyToShow.includes("DMA") && (
+                <OverlayTrigger placement="top" overlay={tooltip}>
+                  <button
+                    type="button"
+                    className="soon border-0  tooltip-trigger btn btn-secondary"
+                  >
+                    <Text tid="LH" />
+                  </button>
+                </OverlayTrigger>
+              )}
             </li>
             <li className="nav-item">
               <NavLink to={`/it-policies`} className="nav-link d-sm-none">

@@ -9,6 +9,9 @@ const DataTableRes = () => {
     subHeaderComponentMemo,
     resetPaginationToggle,
   } = useContext(IntranetContext);
+  const ExpandedComponent = ({ data }) => (
+    <pre>{JSON.stringify(data, null, 2)}</pre>
+  );
 
   const column = [
     {
@@ -38,7 +41,7 @@ const DataTableRes = () => {
   ];
   const customStyles = {
     headRow: {
-      style: { fontSize: "1.3rem" },
+      style: { fontSize: "1.37rem" },
     },
   };
   return (
@@ -49,14 +52,17 @@ const DataTableRes = () => {
             columns={column}
             data={filteredResults}
             responsive
-            striped
             pointerOnHover
             highlightOnHover
+            filteredResults
             pagination
+            // striped
+            // selectableRows
             customStyles={customStyles}
             subHeaderComponent={subHeaderComponentMemo}
             paginationResetDefaultPage={resetPaginationToggle}
-          ></DataTable>
+            expandableRowsComponent={ExpandedComponent}
+          />
         )
       ) : (
         <center>

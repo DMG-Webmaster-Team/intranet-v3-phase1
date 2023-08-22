@@ -99,6 +99,7 @@ const IntranetProvider = ({ children }) => {
         }
       );
       setResults(response.data);
+
       setFilteredResults(response.data);
     } catch (error) {
       console.error(error);
@@ -124,8 +125,10 @@ const IntranetProvider = ({ children }) => {
     setSearchQuery(event.target.value);
     const filteredUsers =
       filteredResults.length > 0 &&
-      filteredResults.filter((user) =>
-        user.name.toLowerCase().includes(event.target.value.toLowerCase())
+      filteredResults.filter(
+        (user) =>
+          user.name.toLowerCase().includes(event.target.value.toLowerCase()) ||
+          user.email.toLowerCase().includes(event.target.value.toLowerCase())
       );
     setFilteredResults(filteredUsers);
   }
@@ -155,13 +158,6 @@ const IntranetProvider = ({ children }) => {
       // console.log(data.data);
       if (data.data.loginStatus === "SUCCESS") {
         // console.log(data.data);
-        setUser({
-          isLoading: false,
-          isAuthenticated: true,
-          error: null,
-          userData: data.data,
-        });
-        // console.log(data.data);
         const {
           userName,
           userEmail,
@@ -190,6 +186,37 @@ const IntranetProvider = ({ children }) => {
           expires: 7,
           path: "/",
         });
+        // setUser({
+        //   isLoading: false,
+        //   isAuthenticated: true,
+        //   error: null,
+        //   userData: data.data,
+        // });
+        // console.log(data.data);
+        // const {
+        //   userName,
+        //   userEmail,
+        //   companyToShow,
+        //   userDepartment,
+        //   userId,
+        //   userJob,
+        //   userCompany,
+        //   userHiringDate,
+        //   userPromotionDate,
+        //   userPerformance,
+        // } = data.data;
+        // let userCookiesObject = {
+        //   userName: userName,
+        //   userEmail: userEmail,
+        //   userCompanyToShow: companyToShow,
+        //   userDepartment: userDepartment,
+        //   userId: userId,
+        //   userJob: userJob,
+        //   userCompany: userCompany,
+        //   userHiringDate: userHiringDate,
+        //   userPromotionDate: userPromotionDate,
+        //   userPerformance: userPerformance,
+        // };
 
         const myCookie = Cookies.get("user");
         const myCookieUserObj =
