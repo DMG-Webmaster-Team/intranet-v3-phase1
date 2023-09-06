@@ -15,7 +15,7 @@ const NavBar = () => {
   const myCookie = Cookies.get("user");
   const myCookieUserObj = loggedIn && JSON.parse(myCookie);
 
-  // console.log(myCookieUserObj?.userCompanyToShow);
+  console.log(myCookieUserObj);
 
   const AboutUsLinks = {
     DMC: "https://www.dmc-egy.com/",
@@ -24,16 +24,16 @@ const NavBar = () => {
     DMA: "https://dma.com.eg",
   };
   let destLink = AboutUsLinks.MV;
-  if (myCookieUserObj?.userCompanyToShow.includes("MV")) {
+  if (myCookieUserObj?.userCompanyToShow === "mv") {
     destLink = AboutUsLinks.MV;
   }
-  if (myCookieUserObj?.userCompanyToShow.includes("DMA")) {
+  if (myCookieUserObj?.userCompanyToShow === "dme") {
+    destLink = AboutUsLinks.DMC;
+  }
+  if (myCookieUserObj?.userCompanyToShow === "dma") {
     destLink = AboutUsLinks.DMA;
   }
-  if (myCookieUserObj?.userCompanyToShow.includes("DME")) {
-    destLink = AboutUsLinks.DME;
-  }
-  if (myCookieUserObj?.userCompanyToShow.includes("Curve")) {
+  if (myCookieUserObj?.userCompanyToShow === "Curve") {
     destLink = AboutUsLinks.Curve;
   }
   const lighthouseLinks = {
@@ -42,10 +42,10 @@ const NavBar = () => {
     DMA: "",
   };
   let LHlink = lighthouseLinks.MV;
-  if (myCookieUserObj?.userCompanyToShow.includes("DME")) {
+  if (myCookieUserObj?.userCompanyToShow === "dme") {
     LHlink = lighthouseLinks.DME;
   }
-  if (myCookieUserObj?.userCompanyToShow.includes("DMA")) {
+  if (myCookieUserObj?.userCompanyToShow === "dma") {
     LHlink = lighthouseLinks.DMA;
   }
   const tooltip = <Tooltip id="tooltip-top">Coming Soon...</Tooltip>;
@@ -102,15 +102,13 @@ const NavBar = () => {
                 <Text tid="navFamilyRadio" />
               </NavLink>
             </li>
-            <li className="nav-item">
-              <a
-                href="https://mountainview.foundation/"
-                target="_blank"
-                rel="noreferrer"
-                className="nav-link"
-              >
-                <Text tid="navMvFoundation" />
-              </a>
+            <li className="nav-item soonCont">
+              <OverlayTrigger placement="top" overlay={tooltip}>
+                <a href="javascript:void(0)" className="nav-link">
+                  {/* <Text tid="navMvFoundation" /> */}
+                  Goodness
+                </a>
+              </OverlayTrigger>
             </li>
             <li className="nav-item">
               <NavLink to={`/news`} className="nav-link d-sm-none">
@@ -153,22 +151,24 @@ const NavBar = () => {
                 target="_blank"
                 rel="noreferrer"
                 className={`${
-                  myCookieUserObj?.userCompanyToShow.includes("DMA")
+                  myCookieUserObj?.userCompanyToShow === "dma"
                     ? "nav-link d-none"
                     : "nav-link"
                 }`}
               >
                 <Text tid="navLighthouse" />
               </a>
-              {myCookieUserObj?.userCompanyToShow.includes("DMA") && (
-                <OverlayTrigger placement="top" overlay={tooltip}>
-                  <button
-                    type="button"
-                    className="soon border-0  tooltip-trigger btn btn-secondary"
-                  >
-                    <Text tid="LH" />
-                  </button>
-                </OverlayTrigger>
+              {myCookieUserObj?.userCompanyToShow === "dma" && (
+                <div className="nav-link">
+                  <OverlayTrigger placement="top" overlay={tooltip}>
+                    <button
+                      type="button"
+                      className="soon border-0  tooltip-trigger btn btn-secondary"
+                    >
+                      <Text tid="Lighthouse" className="fw-bold " />
+                    </button>
+                  </OverlayTrigger>
+                </div>
               )}
             </li>
             <li className="nav-item">

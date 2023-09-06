@@ -7,9 +7,18 @@
 }
 .card-footer.theme-2 {
   background-color: var(--primary-color-2);
+  font-family: Verdana !important;
 }
 .card-footer.theme-3 {
   background-color: var(--primary-color-3);
+  font-family: var(--DMA-font-family) !important;
+}
+/* fONT */
+.card-footer.font-2 {
+  font-family: var(--DME-font-family) !important;
+}
+.card-footer.font-3 {
+  font-family: var(--DMA-font-family) !important;
 }
 .card img {
   border-radius: 5px;

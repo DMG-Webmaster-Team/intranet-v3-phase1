@@ -25,7 +25,7 @@ ul {
   width: 20px !important;
 }
 .dropNav .dropdown-menu {
-  width: 200px; /* Set the desired width */
+  width: 200px;
 }
 .dropdown-menu.show {
   background-color: #fff;
@@ -84,7 +84,7 @@ h1.p-2 {
 }
 .welcome-user::before {
   position: absolute;
-  left: -5px;
+  left: -22px;
   content: "";
   width: 3px;
   height: 3rem;
@@ -233,11 +233,13 @@ li.dropdown {
 .header.theme-2 {
   --primary-color: var(--primary-color-2);
   background-color: var(--primary-color-2);
+  /* font-family: var(--DME-font-family); */
 }
 
 .header.theme-3 {
   --primary-color: var(--primary-color-3);
   background-color: var(--primary-color-3);
+  font-family: var(--DMA-font-family) !important;
 }
 
 /* .header {

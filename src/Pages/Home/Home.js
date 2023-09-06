@@ -29,12 +29,7 @@ const Home = () => {
   if (userCompanyToShow === "dme") {
     return (
       <div>
-        <img
-          src={dme}
-          width={1440}
-          height={530}
-          alt="Dar Almeamar Engineering"
-        />
+        <img src={dme} className="img-fluid " alt="Dar Almeamar Engineering" />
       </div>
     );
   }
@@ -43,8 +38,7 @@ const Home = () => {
       <>
         <img
           src={dma2}
-          width={1440}
-          height={530}
+          className="img-fluid "
           alt="Dar Almeamar Architecture "
         />
       </>

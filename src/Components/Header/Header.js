@@ -5,9 +5,9 @@ import { Text } from "../../containers/Language";
 import { motion } from "framer-motion";
 import logo from "./images/logo.png";
 import DMELogo from "./images/DMElogo.png";
-
-import profileImg from "./images/no-user-img.jpg";
-import logoutIcon from "./images/logout icon.png";
+import DMEHeaderLogo from "./images/dme-logo.png";
+import DMAHeaderLogo from "./images/DMA  blueLogofinaaaal-01.png";
+import mvLogo from "./images/MV Logo cases_MV Primary Logo white copy.png";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import { IntranetContext } from "../../context";
 import { Nav, NavDropdown } from "react-bootstrap";
@@ -39,7 +39,40 @@ const Header = () => {
   function ProfilePicture(props) {
     return <h2 className={`initials`}>{userInitials}</h2>;
   }
-
+  // const logosAttributes = {
+  //   mvSrc: mvLogo,
+  //   mvHeight: "175px",
+  //   mvWidth: "182px",
+  //   dmeSrc:DMEHeaderLogo,
+  //   dmeHeight:""
+  // }
+  let src = "",
+    width = "",
+    height = "",
+    m = "",
+    p = "";
+  // console.log(myCookieUserObj);
+  if (myCookieUserObj?.userCompanyToShow === "dma") {
+    src = DMAHeaderLogo;
+    width = "120px";
+    height = "130px";
+    m = "mx-4 mb-2";
+    p = "";
+  }
+  if (myCookieUserObj?.userCompanyToShow === "dme") {
+    src = DMEHeaderLogo;
+    width = "100px";
+    height = "50px";
+    m = "me-4";
+    p = "px-2";
+  }
+  if (myCookieUserObj?.userCompanyToShow === "mv") {
+    src = mvLogo;
+    m = "mb-3";
+    p = "px-0";
+    width = "115px";
+    height = "75px";
+  }
   return (
     <motion.div
       className={`container-fluid header ${colorTheme} py-3`}
@@ -47,7 +80,7 @@ const Header = () => {
       animate={{ x: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between">
+      <div className="d-flex  flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center ">
         {/* logo */}
         <div
           id="dmg-logo"
@@ -82,7 +115,16 @@ const Header = () => {
               <i className="bi bi-search"></i>
             </form>
           </li>
-          <li className="nav-item welcome-user p-2">
+          <li className="d-flex align-items-star m-0 justify-content-start align-items-end ">
+            <img
+              src={src}
+              width={width}
+              height={height}
+              className={`${m} ${p}`}
+              alt={`Logo`}
+            />
+          </li>
+          <li className="nav-item welcome-user py-0 ">
             <Text tid="welcomeUser" /> {userName} <br />{" "}
             <Text tid="happyToSeeYou" />
           </li>
@@ -100,7 +142,7 @@ const Header = () => {
           <Nav className="ml-auto">
             <NavDropdown
               className={`dropNav ${colorTheme}`}
-              title={<ProfilePicture src={profileImg} />}
+              title={<ProfilePicture />}
               id="basic-nav-dropdown"
               show={dropdownOpen}
               onClick={toggleDropdown}

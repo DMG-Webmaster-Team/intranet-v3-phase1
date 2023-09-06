@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("./fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "GarageFonts";
+  src: local("GarageFonts"),
+    url("./fonts/GarageFonts\ -\ FreightNeoProBlack-Regular.otf")
+      format("truetype");
+  font-weight: bold;
+}
 
 :root {
   --primary-color-1: #0f4c8e; /* MV */
@@ -25,21 +37,8 @@ body {
     monospace;
 } */
 
-@font-face {
-  font-family: "Poppins";
-  src: local("Poppins"), url("./fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "GarageFonts";
-  src: local("GarageFonts"),
-    url("./fonts/GarageFonts\ -\ FreightNeoProBlack-Regular.otf")
-      format("truetype");
-  font-weight: bold;
-}
-
 * {
-  font-family: "Poppins";
+  /* font-family: "Poppins"; */
 }
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show > .nav-link {

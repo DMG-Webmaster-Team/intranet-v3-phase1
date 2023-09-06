@@ -13,7 +13,7 @@ import { useContext } from "react";
 import { IntranetContext } from "../../context";
 import Cookies from "js-cookie";
 const Requests = () => {
-  const { colorTheme, loggedIn } = useContext(IntranetContext);
+  const { colorTheme, loggedIn, font } = useContext(IntranetContext);
   const myCookie = loggedIn && Cookies.get("user");
   const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
 
@@ -45,7 +45,7 @@ const Requests = () => {
                 <div className="card-img-overlay">
                   {/* <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5> */}
                 </div>
-                <div className={`card-footer ${colorTheme}`}>
+                <div className={`card-footer ${colorTheme} ${font}`}>
                   <p className="m-1">Medical Insurance</p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const Requests = () => {
                 <div className="image-wrapper">
                   <img src={forms} alt="..." />
                 </div>
-                <div className={`card-footer ${colorTheme}`}>
+                <div className={`card-footer ${colorTheme} ${font}`}>
                   <p className="m-1">Forms</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ const Requests = () => {
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
               </div>
-              <div className={`card-footer ${colorTheme}`}>
+              <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Family Fund</p>
               </div>
             </div>
@@ -84,7 +84,7 @@ const Requests = () => {
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
               </div>
-              <div className={`card-footer ${colorTheme}`}>
+              <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Car Leasing</p>
               </div>
             </div>
@@ -102,7 +102,7 @@ const Requests = () => {
                 <div className="card-img-overlay">
                   <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
                 </div>
-                <div className={`card-footer ${colorTheme}`}>
+                <div className={`card-footer ${colorTheme} ${font}`}>
                   <p className="m-1">Employee Referrals</p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ const Requests = () => {
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
               </div>
-              <div className={`card-footer ${colorTheme}`}>
+              <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">HR Letter</p>
               </div>
             </div>
@@ -129,7 +129,7 @@ const Requests = () => {
               <div className="card-img-overlay">
                 <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
               </div>
-              <div className={`card-footer ${colorTheme}`}>
+              <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Travel Requests</p>
               </div>
             </div>

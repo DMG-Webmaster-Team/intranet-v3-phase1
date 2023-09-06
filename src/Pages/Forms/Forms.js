@@ -51,7 +51,7 @@ const Forms = () => {
                         href={sickLeave}
                         rel="noreferrer"
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>
@@ -91,7 +91,7 @@ const Forms = () => {
                       <a
                         href={familyFund}
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>
@@ -129,7 +129,7 @@ const Forms = () => {
                       <a
                         href={resignation}
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>
@@ -167,7 +167,7 @@ const Forms = () => {
                       <a
                         href={clearence}
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>
@@ -205,7 +205,7 @@ const Forms = () => {
                       <a
                         href={maternity}
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>
@@ -243,7 +243,7 @@ const Forms = () => {
                       <a
                         href={childCare}
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>
@@ -281,7 +281,7 @@ const Forms = () => {
                       <a
                         href={carLeasing}
                         download
-                        className={`downloadPDF backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
+                        className={`downloadPDF view backColor ${colorTheme} col-12 px-2 col-md-7  d-flex justify-content-center align-items-center`}
                         style={{}}
                       >
                         <p className="mb-1 mx-1 pt-2">Download</p>

@@ -10,6 +10,7 @@ const IntranetProvider = ({ children }) => {
   const [serverError, setServerError] = useState({ show: false, msg: "" });
   const [loggedIn, setLoggedIn] = useState(false);
 
+  // Handle three themes with three companies START
   const [colorTheme, setColorTheme] = useState("theme-1");
   function handleThemeChange(theme) {
     setColorTheme(theme);
@@ -20,11 +21,19 @@ const IntranetProvider = ({ children }) => {
     const theme = Cookies.get("theme");
     if (theme) setColorTheme(theme);
   }, []);
+  // Handle three themes with three companies END
+
+  // Handle three fonts with three companies START
   const [font, setFont] = useState("font-1");
   function handleFontChange(font) {
     setFont(font);
     Cookies.set("font", font);
   }
+  useEffect(() => {
+    const font = Cookies.get("font");
+    if (font) setFont(font);
+  }, []);
+  // Handle three fonts with three companies END
 
   const cookiesFull = Cookies && Cookies.get("user");
   useEffect(() => {
@@ -98,7 +107,7 @@ const IntranetProvider = ({ children }) => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      setResults(response.data);
+      // setResults(response.data);
 
       setFilteredResults(response.data);
     } catch (error) {
@@ -153,9 +162,6 @@ const IntranetProvider = ({ children }) => {
         }
       );
 
-      // dataType: userSearch
-      // credentials: { userToSearch: "" }
-      // console.log(data.data);
       if (data.data.loginStatus === "SUCCESS") {
         // console.log(data.data);
         const {
@@ -186,44 +192,12 @@ const IntranetProvider = ({ children }) => {
           expires: 7,
           path: "/",
         });
-        // setUser({
-        //   isLoading: false,
-        //   isAuthenticated: true,
-        //   error: null,
-        //   userData: data.data,
-        // });
-        // console.log(data.data);
-        // const {
-        //   userName,
-        //   userEmail,
-        //   companyToShow,
-        //   userDepartment,
-        //   userId,
-        //   userJob,
-        //   userCompany,
-        //   userHiringDate,
-        //   userPromotionDate,
-        //   userPerformance,
-        // } = data.data;
-        // let userCookiesObject = {
-        //   userName: userName,
-        //   userEmail: userEmail,
-        //   userCompanyToShow: companyToShow,
-        //   userDepartment: userDepartment,
-        //   userId: userId,
-        //   userJob: userJob,
-        //   userCompany: userCompany,
-        //   userHiringDate: userHiringDate,
-        //   userPromotionDate: userPromotionDate,
-        //   userPerformance: userPerformance,
-        // };
 
         const myCookie = Cookies.get("user");
         const myCookieUserObj =
           myCookie !== "undefined" && JSON.parse(myCookie);
         const { userCompanyToShow } = myCookieUserObj;
-        console.log(userCompanyToShow);
-        console.log(userCompanyToShow);
+        // console.log(userCompanyToShow);
         if (userCompanyToShow.toLowerCase() === "mv") {
           handleThemeChange("theme-1");
           handleFontChange("font-1");
@@ -297,7 +271,7 @@ const IntranetProvider = ({ children }) => {
         subHeaderComponentMemo,
         loggedIn,
         colorTheme,
-        results,
+        font,
         searchQuery,
         filteredResults,
         resetPaginationToggle,
