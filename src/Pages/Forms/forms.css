@@ -15,6 +15,7 @@
 .view.theme-2 {
   --primary-color: var(--primary-color-2);
   background-color: var(--primary-color-2);
+  font-family: "gotham" !important;
 }
 .view.theme-3 {
   --primary-color: var(--primary-color-3);

@@ -18,7 +18,7 @@ const News = () => {
     });
     setIsArabic(getLang());
   }, []);
-  console.log(news);
+  console.log(getLang());
   if (isDataLoading) {
     return <SkeletonLoader />;
   } else

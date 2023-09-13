@@ -7,6 +7,11 @@ const routes = [
     exact: true,
   },
   {
+    path: `/about`,
+    component: lazy((props) => import("../Pages/AboutUs/About")),
+    exact: true,
+  },
+  {
     path: `/employees-hub`,
     component: lazy((props) => import("../Pages/Services/Services")),
     exact: true,
@@ -15,6 +20,16 @@ const routes = [
   {
     path: `/radio`,
     component: lazy((props) => import("../Pages/Radio/Radio")),
+    exact: true,
+  },
+  {
+    path: `/goodness`,
+    component: lazy((props) => import("../Pages/Goodness/Goodness")),
+    exact: true,
+  },
+  {
+    path: `/goodness/mv-foundation`,
+    component: lazy((props) => import("../Pages/Goodness/Mv-foundation")),
     exact: true,
   },
   {

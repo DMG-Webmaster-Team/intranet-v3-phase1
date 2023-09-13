@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "./slider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 // import { motion } from "framer-motion";
 // import { Text } from "../../containers/Language";
 // import { Link } from "react-router-dom";
@@ -38,17 +39,23 @@ const Sliders = ({ isArabic, data, home }) => {
           data.map((slider, key) => {
             return (
               <div
-                className={home ? "mySlides" : " mySlides mySlides-news"}
+                className={
+                  home
+                    ? "mySlides d-flex justify-content-center  "
+                    : " mySlides mySlides-news d-flex justify-content-center  "
+                }
                 key={key}
               >
-                <img
-                  src={slider.image}
-                  alt={isArabic ? slider.title_ar : slider.title}
-                  className={
-                    home ? "  slider-img" : "img-fluid slider-img-news"
-                  }
-                  // height={00}
-                />
+                <Link to={`/news/${slider.count}`}>
+                  <img
+                    src={slider.image}
+                    alt={isArabic ? slider.title_ar : slider.title}
+                    className={
+                      "img-fluid"
+                      // home ? " slider-img" : "img-fluid slider-img-news"
+                    }
+                  />
+                </Link>
 
                 {/* {home ? (
                   <div

@@ -61,7 +61,7 @@ const Services = () => {
   return (
     <>
       <PagesHeader data={<Text tid="Employees Hub" />} />
-      <div className="container">
+      <div className={`container font ${colorTheme} p-1 pt-md-4 `}>
         <div className="row  mt-md-1 mt-2 justify-content-center text-center">
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link
@@ -89,12 +89,6 @@ const Services = () => {
             </Link>
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
-            {/* <Link
-              to={`/hr-policies`}
-              className={`icon overlayCont ${colorTheme}`}
-              id="policies"
-            > */}
-
             <a
               href="javascript:void(0)"
               className={`icon overlayCont ${colorTheme}`}
@@ -110,14 +104,10 @@ const Services = () => {
                 className="rounded image"
               />
               <div className="middle">
-                <div className="text text-nowrap">
-                  {/* <Text tid="navNews" /> */}
-                  HR Policies
-                </div>
+                <div className="text text-nowrap">HR Policies</div>
               </div>
               <div className={`more-cont ${colorTheme}`}>Coming Soon...</div>
             </a>
-            {/* </Link> */}
           </div>
           <div className="col-12 col-md-6 col-lg-3 my-2">
             <Link

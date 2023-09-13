@@ -26,6 +26,7 @@
   /* width: 100%; */
   --primary-color: var(--primary-color-2);
   background-color: var(--primary-color-2);
+  font-family: "gotham" !important;
 }
 .overlayCont.theme-3 {
   /* width: 100%; */
@@ -74,6 +75,7 @@
 .more-cont.theme-2 {
   --primary-color: var(--primary-color-2);
   background-color: var(--primary-color-2);
+  font-family: "gotham" !important;
 }
 .more-cont.theme-3 {
   --primary-color: var(--primary-color-3);
@@ -102,4 +104,13 @@
 /* Mazaya arabic text */
 .mazaya {
   font-family: "Tajawal", sans-serif;
+}
+.font {
+}
+
+.font.theme-2 {
+  font-family: "gotham" !important;
+}
+.font.theme-3 {
+  font-family: Arial;
 }

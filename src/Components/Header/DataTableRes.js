@@ -65,8 +65,10 @@ const DataTableRes = () => {
           />
         )
       ) : (
-        <center>
-          <p className="text-white">No such user with your search criteria</p>
+        <center className="">
+          <p className="text-white m-0">
+            No such user with your search criteria
+          </p>
         </center>
       )}
     </>

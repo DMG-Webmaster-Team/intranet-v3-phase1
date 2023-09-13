@@ -5,6 +5,11 @@
   font-weight: bold;
 }
 @font-face {
+  font-family: "gotham";
+  src: local("gotham"), url("./fonts/Gotham\ Medium.otf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
   font-family: "GarageFonts";
   src: local("GarageFonts"),
     url("./fonts/GarageFonts\ -\ FreightNeoProBlack-Regular.otf")

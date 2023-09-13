@@ -7,19 +7,12 @@
 }
 .card-footer.theme-2 {
   background-color: var(--primary-color-2);
-  font-family: Verdana !important;
+  font-family: "gotham" !important;
 }
 .card-footer.theme-3 {
   background-color: var(--primary-color-3);
-  font-family: var(--DMA-font-family) !important;
 }
-/* fONT */
-.card-footer.font-2 {
-  font-family: var(--DME-font-family) !important;
-}
-.card-footer.font-3 {
-  font-family: var(--DMA-font-family) !important;
-}
+
 .card img {
   border-radius: 5px;
 }
@@ -30,11 +23,13 @@
   margin-top: 0.2rem;
   border-radius: 5px !important;
 }
-.card-footer p,
+.card-footer p {
+}
+/* .card-footer p,
 center a {
   font-family: "GarageFonts";
   font-size: 1.1rem;
-}
+} */
 /* images to be a bit darker */
 .image-wrapper {
   position: relative;
@@ -47,7 +42,7 @@ center a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .image-wrapper img {
@@ -81,6 +76,7 @@ center a {
 }
 .card-title.theme-2 {
   background-color: var(--primary-color-2);
+  font-family: "gotham" !important;
 }
 .card-title.theme-3 {
   background-color: var(--primary-color-3);

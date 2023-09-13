@@ -15,7 +15,7 @@ const NavBar = () => {
   const myCookie = Cookies.get("user");
   const myCookieUserObj = loggedIn && JSON.parse(myCookie);
 
-  console.log(myCookieUserObj);
+  // console.log(myCookieUserObj);
 
   const AboutUsLinks = {
     DMC: "https://www.dmc-egy.com/",
@@ -77,21 +77,26 @@ const NavBar = () => {
         <div className="collapse navbar-collapse dropdown-nav " id="navbarNav">
           <ul className="navbar-nav zIndex  mx-auto">
             <li className="nav-item">
-              <NavLink to={`/employees-hub`} className="nav-link d-sm-none">
+              <NavLink
+                to={`/employees-hub`}
+                className={`nav-link ${colorTheme} nav-link d-sm-none`}
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   Employees Hub
                 </span>
               </NavLink>
               <NavLink
                 to={`/employees-hub`}
-                className="nav-link d-none d-sm-block"
-                // aria-current='page'
+                className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
               >
                 <Text tid="Employees Hub" />
               </NavLink>
             </li>
             <li className="nav-item soonCont">
-              <NavLink to={`/radio`} className="nav-link">
+              <NavLink
+                to={`/radio`}
+                className={`nav-link ${colorTheme} nav-link`}
+              >
                 {/* <OverlayTrigger placement="top" overlay={tooltip}>
                   <button
                     type="button"
@@ -103,26 +108,35 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item soonCont">
-              <OverlayTrigger placement="top" overlay={tooltip}>
-                <a href="javascript:void(0)" className="nav-link">
-                  {/* <Text tid="navMvFoundation" /> */}
-                  Goodness
-                </a>
-              </OverlayTrigger>
+              <NavLink
+                to="/goodness"
+                className={`nav-link ${colorTheme} nav-link`}
+              >
+                Goodness
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to={`/news`} className="nav-link d-sm-none">
+              <NavLink
+                to={`/news`}
+                className={`nav-link ${colorTheme} nav-link d-sm-none`}
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   News
                 </span>
               </NavLink>
 
-              <NavLink to={`/news`} className="nav-link d-none d-sm-block">
+              <NavLink
+                to={`/news`}
+                className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
+              >
                 <Text tid="navNews" />
               </NavLink>
             </li>
             <li className="nav-item soonCont">
-              <NavLink to={`/jobs`} className="nav-link d-sm-none">
+              <a
+                href="javascript:void(0)"
+                className={`nav-link ${colorTheme} nav-link d-sm-none`}
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   <OverlayTrigger placement="top" overlay={tooltip}>
                     <button
@@ -133,8 +147,11 @@ const NavBar = () => {
                     </button>
                   </OverlayTrigger>
                 </span>
-              </NavLink>
-              <NavLink to={`/jobs`} className="nav-link d-none d-sm-block">
+              </a>
+              <NavLink
+                to={`/jobs`}
+                className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
+              >
                 <OverlayTrigger placement="top" overlay={tooltip}>
                   <button
                     type="button"
@@ -150,7 +167,7 @@ const NavBar = () => {
                 href={LHlink}
                 target="_blank"
                 rel="noreferrer"
-                className={`${
+                className={`nav-link ${colorTheme} ${
                   myCookieUserObj?.userCompanyToShow === "dma"
                     ? "nav-link d-none"
                     : "nav-link"
@@ -159,7 +176,7 @@ const NavBar = () => {
                 <Text tid="navLighthouse" />
               </a>
               {myCookieUserObj?.userCompanyToShow === "dma" && (
-                <div className="nav-link">
+                <div className={`nav-link ${colorTheme} nav-link`}>
                   <OverlayTrigger placement="top" overlay={tooltip}>
                     <button
                       type="button"
@@ -172,29 +189,43 @@ const NavBar = () => {
               )}
             </li>
             <li className="nav-item">
-              <NavLink to={`/it-policies`} className="nav-link d-sm-none">
+              <NavLink
+                to={`/it-policies`}
+                className={`nav-link ${colorTheme} nav-link d-sm-none`}
+              >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
                   Other Policies
                 </span>
               </NavLink>
               <NavLink
                 to={`/other-policies`}
-                className="nav-link d-none d-sm-block"
+                className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
               >
                 <Text tid="Other Policies" />
               </NavLink>
             </li>
-            <li className="nav-item">
-              <a
-                href={destLink}
-                target="_blank"
-                rel="noreferrer"
-                className="nav-link"
-              >
-                {/* <Text tid="navLighthouse" /> */}
-                About Us
-              </a>
-            </li>
+
+            {myCookieUserObj?.userCompanyToShow === "dme" ? (
+              <li className="nav-item">
+                <NavLink
+                  to="/about"
+                  className={`nav-link ${colorTheme} nav-link`}
+                >
+                  About Us
+                </NavLink>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <a
+                  href={destLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`nav-link ${colorTheme} nav-link`}
+                >
+                  About Us
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </div>

@@ -23,18 +23,6 @@ const IntranetProvider = ({ children }) => {
   }, []);
   // Handle three themes with three companies END
 
-  // Handle three fonts with three companies START
-  const [font, setFont] = useState("font-1");
-  function handleFontChange(font) {
-    setFont(font);
-    Cookies.set("font", font);
-  }
-  useEffect(() => {
-    const font = Cookies.get("font");
-    if (font) setFont(font);
-  }, []);
-  // Handle three fonts with three companies END
-
   const cookiesFull = Cookies && Cookies.get("user");
   useEffect(() => {
     if (cookiesFull) {
@@ -75,14 +63,8 @@ const IntranetProvider = ({ children }) => {
     }
   };
 
-  // const getUserCompany =(userEmail) => {
-  //   if(userEmail.toLowerCase().includes("mv")) {
-
-  //   }
-  // }
-
   const getLang = () => {
-    const defaultLanguage = window.localStorage.getItem("rcml-lang");
+    const defaultLanguage = window.localStorage.getItem("i18nextLng");
 
     if (defaultLanguage === "ar") {
       return true;
@@ -95,7 +77,6 @@ const IntranetProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
 
-  const [results, setResults] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
 
   async function searchUsers() {
@@ -107,7 +88,6 @@ const IntranetProvider = ({ children }) => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      // setResults(response.data);
 
       setFilteredResults(response.data);
     } catch (error) {
@@ -136,8 +116,8 @@ const IntranetProvider = ({ children }) => {
       filteredResults.length > 0 &&
       filteredResults.filter(
         (user) =>
-          user.name.toLowerCase().includes(event.target.value.toLowerCase()) ||
-          user.email.toLowerCase().includes(event.target.value.toLowerCase())
+          user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchQuery.toLowerCase())
       );
     setFilteredResults(filteredUsers);
   }
@@ -164,6 +144,7 @@ const IntranetProvider = ({ children }) => {
 
       if (data.data.loginStatus === "SUCCESS") {
         // console.log(data.data);
+        window.location.reload();
         const {
           userName,
           userEmail,
@@ -192,7 +173,12 @@ const IntranetProvider = ({ children }) => {
           expires: 7,
           path: "/",
         });
-
+        setUser({
+          isLoading: false,
+          isAuthenticated: true,
+          error: null,
+          userData: null,
+        });
         const myCookie = Cookies.get("user");
         const myCookieUserObj =
           myCookie !== "undefined" && JSON.parse(myCookie);
@@ -200,16 +186,15 @@ const IntranetProvider = ({ children }) => {
         // console.log(userCompanyToShow);
         if (userCompanyToShow.toLowerCase() === "mv") {
           handleThemeChange("theme-1");
-          handleFontChange("font-1");
         }
         if (userCompanyToShow.toLowerCase() === "dma") {
           handleThemeChange("theme-2");
-          handleFontChange("font-2");
         }
         if (userCompanyToShow.toLowerCase() === "dme") {
           handleThemeChange("theme-3");
-          handleFontChange("font-3");
         }
+        checkCookie();
+        // window.location.reload();
         // localStorage.setItem('loginStatus', JSON.stringify(data.data))
       } else {
         setUser({
@@ -232,10 +217,9 @@ const IntranetProvider = ({ children }) => {
 
   const logout = () => {
     // localStorage.removeItem('loginStatus')
-    // Cookies.expires("user");
+    window.location.href = `/`;
     Cookies.remove("user");
     // setLoggedIn(false);
-    window.location.href = `/`;
   };
 
   const checkCookie = () => {
@@ -245,12 +229,15 @@ const IntranetProvider = ({ children }) => {
       setUser({
         ...user,
         isAuthenticated: true,
-        userData: { userEmail: user },
       });
     } else {
       setUser({ ...user, isAuthenticated: false });
     }
   };
+
+  // Log to several sites with the same credentials of the user START
+
+  // Log to several sites with the same credentials of the user END
 
   useEffect(() => {
     checkCookie();
@@ -271,7 +258,6 @@ const IntranetProvider = ({ children }) => {
         subHeaderComponentMemo,
         loggedIn,
         colorTheme,
-        font,
         searchQuery,
         filteredResults,
         resetPaginationToggle,

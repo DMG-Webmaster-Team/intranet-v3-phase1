@@ -9,13 +9,14 @@ import SkeletonLoader from "../../Components/Skeleton/SkeletonLoader";
 import Cookies from "js-cookie";
 
 const Home = () => {
-  const [slides, setSlides] = useState([]);
+  const [news, setNews] = useState([]);
+
   const [isArabic, setIsArabic] = useState(false);
 
   const { getLang, fetchData, isDataLoading } = useContext(IntranetContext);
   useEffect(() => {
-    fetchData("slides").then((res) => {
-      setSlides(res.sliders);
+    fetchData("news").then((res) => {
+      setNews(res.news);
     });
     setIsArabic(getLang());
   }, []);
@@ -26,32 +27,10 @@ const Home = () => {
   if (isDataLoading) {
     return <SkeletonLoader />;
   }
-  if (userCompanyToShow === "dme") {
-    return (
-      <div>
-        <img src={dme} className="img-fluid " alt="Dar Almeamar Engineering" />
-      </div>
-    );
-  }
-  if (userCompanyToShow === "dma") {
-    return (
-      <>
-        <img
-          src={dma2}
-          className="img-fluid "
-          alt="Dar Almeamar Architecture "
-        />
-      </>
-    );
-  }
+
   return (
     <>
-      <img
-        src={mv}
-        className="img-filled"
-        alt="One of Mountain View's major compounds "
-      />
-      {/* <Sliders data={slides} isArabic={isArabic} home={true} /> */}
+      <Sliders data={news} isArabic={isArabic} home={true} />
     </>
   );
 };

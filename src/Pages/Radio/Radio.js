@@ -10,8 +10,42 @@ import S02 from "./assets/S02.jpg";
 import "../Learning-Development/Learning-Development.css";
 
 const Radio = () => {
-  const { colorTheme, loggedIn } = useContext(IntranetContext);
-  const myCookie = loggedIn && Cookies.get("user");
+  const { colorTheme } = useContext(IntranetContext);
+  // const myCookie = loggedIn && Cookies.get("user");
+
+  const myCookie = Cookies.get("user");
+  const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
+  const { userEmail } = myCookieUserObj;
+  const logToDashbard = () => {
+    const date = Date.now();
+    const encryptedBody = window.btoa(
+      JSON.stringify(
+        "employee_email=" +
+          userEmail +
+          date +
+          "&fromMobileApplication=TRUE&date=" +
+          date
+      )
+    );
+
+    const radioLogin = document.getElementById("radioLogin");
+    radioLogin.insertAdjacentHTML(
+      "afterbegin",
+      `<form
+        style="display:none !important"
+        method="post"
+        id="attLoginForm"
+        action="https://radio.mountainviewegypt.com/login/"
+      >
+        <input name="body" value="` +
+        encryptedBody +
+        `" />
+      </form>`
+    );
+    let loginForm = document.getElementById("attLoginForm");
+    loginForm.submit();
+  };
+
   return (
     <>
       <PagesHeader data={<Text tid="Family Radio" />} />
@@ -19,8 +53,14 @@ const Radio = () => {
         <div className="row d-flex justify-content-center mt-md-5 mt-3">
           <div className="col-8 ">
             <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-              <div className="col">
-                <a href="#" rel="noreferrer" target="_blank">
+              <div className="col" id="radioLogin">
+                <a
+                  onClick={logToDashbard}
+                  style={{ cursor: "pointer" }}
+                  // href="https://radio.mountainviewegypt.com/"
+                  // rel="noreferrer"
+                  // target="_blank"
+                >
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={onAir} className="" alt="..." />

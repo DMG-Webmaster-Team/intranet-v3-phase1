@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
+  console.log(weeklyNews);
   return (
     <div className="weekly2-news-area weekly2-pading  ">
       <div className="container mt-5">
@@ -39,7 +40,7 @@ const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
                               : "weekly2-caption mt-4"
                           }
                         >
-                          <h6>{isArabic ? item.title_ar : item.title}</h6>
+                          <h6>{isArabic ? item.title_ar : item.title_ar}</h6>
                         </div>
                       </motion.div>
                     </Link>

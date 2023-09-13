@@ -37,15 +37,9 @@ const Header = () => {
   }`;
 
   function ProfilePicture(props) {
-    return <h2 className={`initials`}>{userInitials}</h2>;
+    return <h2 className={`initials ${colorTheme}`}>{userInitials}</h2>;
   }
-  // const logosAttributes = {
-  //   mvSrc: mvLogo,
-  //   mvHeight: "175px",
-  //   mvWidth: "182px",
-  //   dmeSrc:DMEHeaderLogo,
-  //   dmeHeight:""
-  // }
+
   let src = "",
     width = "",
     height = "",
@@ -55,7 +49,7 @@ const Header = () => {
   if (myCookieUserObj?.userCompanyToShow === "dma") {
     src = DMAHeaderLogo;
     width = "120px";
-    height = "130px";
+    height = "75px";
     m = "mx-4 mb-2";
     p = "";
   }
@@ -75,7 +69,7 @@ const Header = () => {
   }
   return (
     <motion.div
-      className={`container-fluid header ${colorTheme} py-3`}
+      className={`container-fluid header ${colorTheme}`}
       initial={{ x: "-100vw" }}
       animate={{ x: 0 }}
       transition={{ duration: 1 }}
@@ -95,11 +89,11 @@ const Header = () => {
           </Link>
         </div>
         <ul
-          className={`navbar ${colorTheme} d-flex justify-content-center my-auto`}
+          className={`navbar ${colorTheme} d-flex justify-content-center my-0`}
         >
-          <li className=" mx-5 nav-item">
+          <li className={`mx-5 nav-item ${colorTheme}`}>
             <form className="d-flex align-items-center" role="search">
-              <label htmlFor="search" className="me-0 me-md-2 ">
+              <label htmlFor="search" className="searchLabel me-0 me-md-2 ">
                 HR Directory
               </label>
               <input
@@ -124,7 +118,7 @@ const Header = () => {
               alt={`Logo`}
             />
           </li>
-          <li className="nav-item welcome-user py-0 ">
+          <li className={`nav-item welcome-user ${colorTheme} py-0`}>
             <Text tid="welcomeUser" /> {userName} <br />{" "}
             <Text tid="happyToSeeYou" />
           </li>

@@ -16,10 +16,12 @@ ul {
 .dropNav.theme-2 {
   z-index: 9999 !important;
   background-color: var(--primary-color-2) !important;
+  font-family: Helvetica !important;
 }
 .dropNav.theme-3 {
   z-index: 9999 !important;
   background-color: var(--primary-color-3) !important;
+  font-family: "Times New Roman";
 }
 .dropNav .dropdown-menu {
   width: 20px !important;
@@ -78,9 +80,14 @@ h1.p-2 {
   height: 60px;
 }
 .welcome-user {
-  font-family: "GarageFonts";
   position: relative;
   /* background-color: #0ff; */
+}
+.welcome-user.theme-2 {
+  font-family: Helvetica !important;
+}
+.welcome-user.theme-3 {
+  font-family: "Times New Roman";
 }
 .welcome-user::before {
   position: absolute;
@@ -105,6 +112,12 @@ h1.p-2 {
 }
 .nav-item form {
   position: relative;
+}
+.nav-item.theme-2 {
+  position: relative;
+}
+.nav-item.theme-3 {
+  font-family: "Times New Roman";
 }
 .nav-item form i {
   position: absolute;
@@ -166,6 +179,7 @@ li.dropdown {
 }
 .navbar.theme-2 {
   background-color: var(--primary-color-2) !important;
+  font-family: Helvetica !important;
 }
 .navbar.theme-3 {
   background-color: var(--primary-color-3) !important;
@@ -180,6 +194,14 @@ li.dropdown {
 }
 .nav-link:hover {
   background-color: #315c8e;
+  color: #fff !important;
+}
+.nav-link.theme-2:hover {
+  /* background-color: #f0f3f6; */
+  color: #fff !important;
+}
+.nav-link.theme-3:hover {
+  background-color: #978224;
   color: #fff !important;
 }
 
@@ -233,13 +255,13 @@ li.dropdown {
 .header.theme-2 {
   --primary-color: var(--primary-color-2);
   background-color: var(--primary-color-2);
-  /* font-family: var(--DME-font-family); */
+  font-family: Helvetica !important;
 }
 
 .header.theme-3 {
   --primary-color: var(--primary-color-3);
   background-color: var(--primary-color-3);
-  font-family: var(--DMA-font-family) !important;
+  font-family: "Times New Roman";
 }
 
 /* .header {
@@ -253,6 +275,12 @@ li.dropdown {
   /* margin: 10px 50px; */
   padding: 0.5rem;
   font-family: "GarageFonts";
+}
+.page_header-header.theme-2 {
+  font-family: Helvetica !important;
+}
+.page_header-header.theme-3 {
+  font-family: "Times New Roman";
 }
 
 #header {
@@ -275,4 +303,13 @@ li.dropdown {
   padding: 8px;
   border-radius: 20px;
   margin: 0;
+}
+.initials.theme-2 {
+  font-family: Helvetica !important;
+}
+.initials.theme-3 {
+  font-family: "Times New Roman";
+}
+label.theme-3 {
+  font-family: "Times New Roman";
 }

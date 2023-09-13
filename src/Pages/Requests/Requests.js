@@ -27,7 +27,7 @@ const Requests = () => {
   return (
     <div>
       <PagesHeader data={<Text tid="HR Requests & Forms" />} />
-      <div className="container">
+      <div className={`container font ${colorTheme}`}>
         <div className="row d-flex justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 mb-2 mt-2">
           <div className="col">
             <a
@@ -46,7 +46,9 @@ const Requests = () => {
                   {/* <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5> */}
                 </div>
                 <div className={`card-footer ${colorTheme} ${font}`}>
-                  <p className="m-1">Medical Insurance</p>
+                  <p className="m-1" style={{ fontSize: "14.5px" }}>
+                    Medical Insurance
+                  </p>
                 </div>
               </div>
             </a>
@@ -69,7 +71,7 @@ const Requests = () => {
                 <img src={FamilyFund} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
-                <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
+                <h6 className={`card-title ${colorTheme}`}>Coming Soon...</h6>
               </div>
               <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Family Fund</p>
@@ -82,7 +84,7 @@ const Requests = () => {
                 <img src={CarLeasing} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
-                <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
+                <h6 className={`card-title ${colorTheme}`}>Coming Soon...</h6>
               </div>
               <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Car Leasing</p>
@@ -100,10 +102,14 @@ const Requests = () => {
                   <img src={Employee} className="widthFixed" alt="..." />
                 </div>
                 <div className="card-img-overlay">
-                  <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
+                  <h6 className={`card-title ${colorTheme}`}>Coming Soon...</h6>
                 </div>
-                <div className={`card-footer ${colorTheme} ${font}`}>
-                  <p className="m-1">Employee Referrals</p>
+                <div
+                  className={`card-footer ${colorTheme} ${font}  text-nowrap`}
+                >
+                  <p className="m-1" style={{ fontSize: "14.5px" }}>
+                    Employee Referrals
+                  </p>
                 </div>
               </div>
             </a>
@@ -114,7 +120,7 @@ const Requests = () => {
                 <img src={HRLetter} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
-                <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
+                <h6 className={`card-title ${colorTheme}`}>Coming Soon...</h6>
               </div>
               <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">HR Letter</p>
@@ -127,7 +133,7 @@ const Requests = () => {
                 <img src={TravelReq} className="widthFixed" alt="..." />
               </div>
               <div className="card-img-overlay">
-                <h5 className={`card-title ${colorTheme}`}>Coming Soon...</h5>
+                <h6 className={`card-title ${colorTheme}`}>Coming Soon...</h6>
               </div>
               <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Travel Requests</p>

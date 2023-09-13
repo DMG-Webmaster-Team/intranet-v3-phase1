@@ -1,15 +1,11 @@
 import React from "react";
-
 import WeeklyTopNewsArea from "./WeeklyTopNewsArea";
+// import TrendingArea from "./TrendingArea";
 import { motion } from "framer-motion";
 import { Text } from "../../containers/Language";
 import Sliders from "../Sliders/Sliders";
 
 const NewsFeed = ({ news, isArabic }) => {
-  console.log(news);
-  const trendingNews = [...news].slice(0, 2);
-  const weeklyNews = news.slice(2);
-
   return (
     <>
       {news && news.length !== 0 ? (
@@ -18,10 +14,10 @@ const NewsFeed = ({ news, isArabic }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          {/* <TrendingArea tendingNews={tendingNews} isArabic={isArabic} /> */}
-          <Sliders data={trendingNews} isArabic={isArabic} />
+          {/* <TrendingArea tendingNews={trendingNews} isArabic={isArabic} /> */}
+          <Sliders data={news} isArabic={isArabic} />
 
-          <WeeklyTopNewsArea isArabic={isArabic} weeklyNews={weeklyNews} />
+          <WeeklyTopNewsArea isArabic={isArabic} weeklyNews={news} />
         </motion.main>
       ) : (
         <motion.div

@@ -13,7 +13,9 @@ function PagesHeader({ data }) {
       id="Header"
       className={`header ${colorTheme} row`}
     >
-      <h3 className="page_header-header text-white text-center">{data}</h3>
+      <h3 className={`page_header-header ${colorTheme} text-white text-center`}>
+        {data}
+      </h3>
     </motion.div>
   );
 }
