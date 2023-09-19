@@ -8,6 +8,7 @@ const DataTableRes = () => {
     searchQuery,
     subHeaderComponentMemo,
     resetPaginationToggle,
+    isUserSearch,
   } = useContext(IntranetContext);
   const ExpandedComponent = ({ data }) => (
     <pre>{JSON.stringify(data, null, 2)}</pre>
@@ -44,34 +45,39 @@ const DataTableRes = () => {
       style: { fontSize: "1.37rem" },
     },
   };
+
   return (
-    <>
-      {filteredResults.length > 0 ? (
-        searchQuery && (
-          <DataTable
-            columns={column}
-            data={filteredResults}
-            responsive
-            pointerOnHover
-            highlightOnHover
-            filteredResults
-            pagination
-            // striped
-            // selectableRows
-            customStyles={customStyles}
-            subHeaderComponent={subHeaderComponentMemo}
-            paginationResetDefaultPage={resetPaginationToggle}
-            expandableRowsComponent={ExpandedComponent}
-          />
-        )
-      ) : (
-        <center className="">
-          <p className="text-white m-0">
-            No such user with your search criteria
-          </p>
+    <div>
+      {!isUserSearch && filteredResults.length > 0 && searchQuery && (
+        <DataTable
+          columns={column}
+          data={filteredResults}
+          responsive
+          pointerOnHover
+          highlightOnHover
+          filteredResults
+          pagination
+          customStyles={customStyles}
+          subHeaderComponent={subHeaderComponentMemo}
+          paginationResetDefaultPage={resetPaginationToggle}
+          expandableRowsComponent={ExpandedComponent}
+        />
+      )}
+      {!isUserSearch &&
+        filteredResults.length === 0 &&
+        searchQuery.length > 3 && (
+          <center>
+            <p className="text-white m-0 pb-4">
+              No such user with your search criteria
+            </p>
+          </center>
+        )}
+      {isUserSearch && (
+        <center>
+          <p className="text-white m-0 pb-4 ">Loading...</p>
         </center>
       )}
-    </>
+    </div>
   );
 };
 

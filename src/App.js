@@ -11,7 +11,7 @@ import NavBar from "./Components/Header/Navbar";
 import Header from "./Components/Header/Header";
 import MyModal from "./Components/modal/Modal";
 const App = () => {
-  const [isArabic, setIsArabic] = useState(false);
+  // const [isArabic, setIsArabic] = useState(false);
   const [showModal, setShowModal] = useState(true);
   const { getLang, user, serverError } = useContext(IntranetContext);
   const isAuthenticated = user.isAuthenticated;
@@ -20,9 +20,9 @@ const App = () => {
     setShowModal(false);
   };
 
-  useEffect(() => {
-    setIsArabic(getLang());
-  }, [getLang]);
+  // useEffect(() => {
+  //   setIsArabic(getLang());
+  // }, [getLang]);
 
   return (
     <div>
@@ -42,8 +42,8 @@ const App = () => {
             ) : (
               <>
                 <PrivateRoute path="/" isAuthenticated={isAuthenticated}>
-                  <Header isArabic={isArabic} />
-                  <NavBar isArabic={isArabic} />
+                  <Header />
+                  <NavBar />
                   <ProtectedRoutes />
                   <MyModal show={showModal} handleClose={handleCloseModal} />
                 </PrivateRoute>

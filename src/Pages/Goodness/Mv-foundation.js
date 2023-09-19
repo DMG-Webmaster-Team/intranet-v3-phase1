@@ -10,22 +10,13 @@ const Foundation = () => {
         <div className="container">
           <div className="row d-flex justify-content-center mt-md-5 mt-3">
             <div className="col-9">
-              <center>
-                <h3 className="headings-color fw-bold">Goodness Department</h3>
-              </center>
-              <div className="px-5">
-                <p className="px-2 m-0">• Mountain View Foundation</p>
-                <p className="px-2 m-0">
-                  • ESG (Environment, Social and Governance)
-                </p>
-              </div>
               <br />
               <center>
                 <h3 className="headings-color fw-bold">
                   Mountain View Foundation
                 </h3>
               </center>
-              <h3 dir="rtl" className="headings-color fw-bold">
+              <h3 dir="rtl" className="headings-color fw-bold Tajawal">
                 ماونتن فيو للتنمية
               </h3>
               <p className="fs-5" dir="rtl">

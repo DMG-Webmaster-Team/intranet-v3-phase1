@@ -6,7 +6,7 @@ import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import { IntranetContext } from "../../context";
 import "../Services/Services.css";
-
+import "../Learning-Development/Learning-Development.css";
 const OtherPolicies = () => {
   const { colorTheme } = useContext(IntranetContext);
 

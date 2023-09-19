@@ -49,7 +49,7 @@ const Header = () => {
   if (myCookieUserObj?.userCompanyToShow === "dma") {
     src = DMAHeaderLogo;
     width = "120px";
-    height = "75px";
+    height = "80px";
     m = "mx-4 mb-2";
     p = "";
   }
@@ -67,6 +67,12 @@ const Header = () => {
     width = "115px";
     height = "75px";
   }
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <motion.div
       className={`container-fluid header ${colorTheme}`}
@@ -104,6 +110,7 @@ const Header = () => {
                 type="text"
                 placeholder="Search for employees..."
                 aria-label="Search"
+                // onKeyDown={handleKeyDown}
               />
 
               <i className="bi bi-search"></i>

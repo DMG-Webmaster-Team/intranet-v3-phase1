@@ -75,12 +75,14 @@ const IntranetProvider = ({ children }) => {
 
   // HR Directory Serach logic
   const [searchQuery, setSearchQuery] = useState("");
+  const [isUserSearch, setIsUserSearch] = useState(false);
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
 
   const [filteredResults, setFilteredResults] = useState([]);
 
   async function searchUsers() {
     try {
+      setIsUserSearch(true);
       const response = await axios.post(
         `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
         { data_type: "userSearch", credentials: { userToSearch: searchQuery } },
@@ -90,6 +92,7 @@ const IntranetProvider = ({ children }) => {
       );
 
       setFilteredResults(response.data);
+      setIsUserSearch(false);
     } catch (error) {
       console.error(error);
     }
@@ -110,20 +113,15 @@ const IntranetProvider = ({ children }) => {
       />
     );
   }, [searchQuery, resetPaginationToggle]);
+
   function handleInputChange(event) {
-    setSearchQuery(event.target.value);
-    const filteredUsers =
-      filteredResults.length > 0 &&
-      filteredResults.filter(
-        (user) =>
-          user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          user.email.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    setFilteredResults(filteredUsers);
+    const newSearchQuery = event.target.value;
+    setSearchQuery(newSearchQuery);
   }
 
   useEffect(() => {
-    searchUsers();
+    setIsUserSearch(false);
+    if (searchQuery.length >= 3) searchUsers();
   }, [searchQuery]);
   // HR Directory Serach logic END
 
@@ -248,6 +246,7 @@ const IntranetProvider = ({ children }) => {
       value={{
         user,
         isDataLoading,
+        isUserSearch,
         serverError,
         fetchData,
         getLang,

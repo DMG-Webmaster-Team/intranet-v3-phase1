@@ -95,7 +95,8 @@ const Requests = () => {
         <div className="row d-flex justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 mb-2">
           <div className="col">
             <a
-              href={`http://10.1.11.83:8080/ords/f?p=129:37:::::P37_CRYBTO:${encodedData}`}
+              // href={`http://10.1.11.83:8080/ords/f?p=129:37:::::P37_CRYBTO:${encodedData}`}
+              href="javascript:void(0)"
             >
               <div className="card">
                 <div className="image-wrapper">

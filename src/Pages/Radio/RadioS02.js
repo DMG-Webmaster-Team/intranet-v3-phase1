@@ -42,9 +42,9 @@ const RadioS02 = () => {
                       <img src={theMentor} className="" alt="..." />
                     </div>
                     <div className="card-img-overlay">
-                      <h5 className={`card-title ${colorTheme}`}>
+                      <h6 className={`card-title ${colorTheme}`}>
                         Coming Soon...
-                      </h5>
+                      </h6>
                     </div>
                     <div className={`card-footer ${colorTheme}`}>
                       <p className="m-1">The Mentor</p>

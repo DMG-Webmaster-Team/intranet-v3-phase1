@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
-  console.log(weeklyNews);
+  // console.log(weeklyNews);
   return (
     <div className="weekly2-news-area weekly2-pading  ">
       <div className="container mt-5">
@@ -15,10 +15,10 @@ const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
             {weeklyNews.map((item, id) => {
               return (
                 <div
-                  className="col-12 col-sm-6   col-lg-3 mb-5 mb-sm-0 "
+                  className="col-12 col-sm-6  col-lg-3 mb-5 mb-sm-0 "
                   key={id}
                 >
-                  <div className="weekly2-news-active dot-style d-flex dot-style">
+                  <div className="weekly2-news-active dot-style dot-style">
                     <Link to={`/news/${item.count}`}>
                       <motion.div
                         className="weekly2-single mx-auto w-100"
@@ -36,11 +36,13 @@ const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
                         <div
                           className={
                             isArabic
-                              ? "weekly2-caption mt-4 text-right"
-                              : "weekly2-caption mt-4"
+                              ? "weekly2-caption mt-3 text-right"
+                              : "weekly2-caption mt-3"
                           }
                         >
-                          <h6>{isArabic ? item.title_ar : item.title_ar}</h6>
+                          <h6 className="Tajawal fw-bold ">
+                            {isArabic ? item.title_ar : item.title_ar}
+                          </h6>
                         </div>
                       </motion.div>
                     </Link>

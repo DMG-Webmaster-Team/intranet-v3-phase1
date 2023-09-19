@@ -79,7 +79,11 @@ const LearningDevelopment = () => {
                 </a>
               </div>
               <div className="col">
-                <a href="https://ehda.login.em2.oraclecloud.com/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://ehda.login.em2.oraclecloud.com/"
+                >
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={OnlineCoursesImg} className="" alt="..." />

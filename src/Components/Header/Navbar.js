@@ -148,8 +148,8 @@ const NavBar = () => {
                   </OverlayTrigger>
                 </span>
               </a>
-              <NavLink
-                to={`/jobs`}
+              <a
+                href="javascript:void(0)"
                 className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
               >
                 <OverlayTrigger placement="top" overlay={tooltip}>
@@ -160,7 +160,7 @@ const NavBar = () => {
                     <Text tid="navCareers" />
                   </button>
                 </OverlayTrigger>
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
               <a
