@@ -8,7 +8,7 @@ import DMELogo from "./images/DMElogo.png";
 import DMEHeaderLogo from "./images/dme-logo.png";
 import DMAHeaderLogo from "./images/DMA  blueLogofinaaaal-01.png";
 import mvLogo from "./images/MV Logo cases_MV Primary Logo white copy.png";
-import LanguageSelector from "../LanguageSelector/LanguageSelector";
+
 import { IntranetContext } from "../../context";
 import { Nav, NavDropdown } from "react-bootstrap";
 import Cookies from "js-cookie";
@@ -64,14 +64,14 @@ const Header = () => {
     src = mvLogo;
     m = "mb-3";
     p = "px-0";
-    width = "115px";
+    width = "100px";
     height = "75px";
   }
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   if (e.key === "Enter") {
+  //     e.preventDefault();
+  //   }
+  // };
 
   return (
     <motion.div

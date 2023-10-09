@@ -1,6 +1,4 @@
-import Cookies from "js-cookie";
-import { useContext, useEffect, useState } from "react";
-
+import { useContext } from "react";
 import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import { IntranetContext } from "../../context";
@@ -8,20 +6,7 @@ import itPoliciesAndProcedures from "./Extra Photos-02.jpg";
 import "../Learning-Development/Learning-Development.css";
 
 const OtherPolicies = () => {
-  const [documents, setDocuments] = useState([]);
-  const [isArabic, setIsArabic] = useState(false);
-
-  const { getLang, fetchData, loading, isDataLoading } =
-    useContext(IntranetContext);
-  useEffect(() => {
-    fetchData("documents").then((res) => {
-      setDocuments(res.documents);
-    });
-    setIsArabic(getLang());
-  }, []);
-  const { colorTheme, loggedIn } = useContext(IntranetContext);
-  const myCookie = loggedIn && Cookies.get("user");
-  const myCookieUserObj = loggedIn && JSON.parse(myCookie);
+  const { colorTheme } = useContext(IntranetContext);
   return (
     <>
       <div>
@@ -45,7 +30,9 @@ const OtherPolicies = () => {
                       </h6>
                     </div>
                     <div className={`card-footer ${colorTheme}`}>
-                      <p className="m-1">IT Policies & procedures</p>
+                      <p className="m-1 text-nowrap ">
+                        IT Policies & procedures
+                      </p>
                     </div>
                   </div>
                 </div>

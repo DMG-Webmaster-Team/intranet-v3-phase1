@@ -242,6 +242,31 @@ const Services = () => {
                 <div className={`more-cont ${colorTheme}`}>Coming Soon...</div>
               </Link>
             </div>
+            <div className="col-12 col-md-6 col-lg-3 my-2">
+              <Link
+                to={`/other-policies`}
+                className={`icon overlayCont ${colorTheme}`}
+                id="benefits"
+              >
+                <motion.img
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  id="icon"
+                  src={comp}
+                  alt="other-policies-icon"
+                  className="rounded image"
+                />
+                <div className="middle">
+                  <div className="text">
+                    <span className="text-nowrap">Other Policies</span>
+                    <br />
+                  </div>
+                </div>
+                <div className={`more-cont ${colorTheme}`}>View more...</div>
+              </Link>
+            </div>
             {/* <div className="col-12 col-md-6 col-lg-3 my-2">
               <a
                 href={`http://10.1.11.83:8080/ords/f?p=154:70:::::P70_CRYBTO:${encodedData}`}

@@ -17,7 +17,7 @@ const Sliders = ({ isArabic, data, home }) => {
     slidesToScroll: 1,
     autoplay: true,
     lazyLoad: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     prevArrow: (
       <button type="button">
         <i className="bi bi-arrow-left"></i>
@@ -36,92 +36,41 @@ const Sliders = ({ isArabic, data, home }) => {
         {data.length > 0 &&
           typeof data !== "undefined" &&
           data !== null &&
-          data.map((slider, key) => {
-            return (
-              <div
-                className={
-                  home
-                    ? "mySlides d-flex justify-content-center  "
-                    : " mySlides mySlides-news d-flex justify-content-center  "
-                }
-                key={key}
-              >
-                <Link to={`/news/${slider.count}`}>
-                  <img
-                    src={slider.image}
-                    alt={isArabic ? slider.title_ar : slider.title}
-                    className={
-                      "img-fluid"
-                      // home ? " slider-img" : "img-fluid slider-img-news"
-                    }
-                  />
-                </Link>
-
-                {/* {home ? (
-                  <div
-                    className={
-                      isArabic
-                        ? "  col-10 col-md-5 article-container-arabic   "
-                        : "article-container col-10 col-md-5"
-                    }
-                  >
-                    <div
+          data
+            .filter(
+              (item) =>
+                item.count === 1 ||
+                item.count === 2 ||
+                item.count === 3 ||
+                item.count === 5 ||
+                item.count === 6 ||
+                item.count === 7 ||
+                item.count === 9 ||
+                item.count === 12
+            )
+            .map((slider, key) => {
+              return (
+                <div
+                  className={
+                    home
+                      ? "mySlides d-flex justify-content-center  "
+                      : " mySlides mySlides-news d-flex justify-content-center  "
+                  }
+                  key={key}
+                >
+                  <Link to={`/news/${slider.count}`}>
+                    <img
+                      src={slider.image}
+                      alt={isArabic ? slider.title_ar : slider.title}
                       className={
-                        isArabic
-                          ? "article-container-titles-arabic row d-flex flex-column mr-4"
-                          : "article-container-titles row d-flex flex-column ml-4"
+                        "img-fluid"
+                        // home ? " slider-img" : "img-fluid slider-img-news"
                       }
-                    >
-                      <h1>{isArabic ? slider.title_ar : slider.title}</h1>
-                      <h4>{isArabic ? slider.details_ar : slider.details}</h4>
-                    </div>
-
-                    <motion.div
-                      className={
-                        isArabic
-                          ? "article-container-btn-arabic row justify-content-end ml-5 "
-                          : " row justify-content-end mr-5"
-                      }
-                    >
-                      <motion.a
-                        whileHover={{
-                          scale: 1.1,
-                          textShadow: "0px 0px 8px rgb(255,255,255)",
-                          boxShadow: "0px 0px 8px rgb(255,255,255)",
-                        }}
-                        className="read-more"
-                        href={slider.link}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Text tid="readMore" />
-                      </motion.a>
-                    </motion.div>
-                  </div>
-                ) : (
-                  <div
-                    className={
-                      isArabic
-                        ? "news-sliders d-flex justify-content-end mr-3"
-                        : "news-sliders d-flex justify-content-start ml-3"
-                    }
-                  >
-                    <h2
-                      className={
-                        isArabic
-                          ? "article-container-titles-arabic news-slider-title   font-weight-bold "
-                          : "news-slider-title   font-weight-bold "
-                      }
-                    >
-                      <Link to={`/news/${slider.count}`}>
-                        {isArabic ? slider.title_ar : slider.title}
-                      </Link>
-                    </h2>
-                  </div>
-                )} */}
-              </div>
-            );
-          })}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
       </Slider>
     </>
   );

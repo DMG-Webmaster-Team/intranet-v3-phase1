@@ -47,3 +47,45 @@
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+.dropdown-hover,
+.dropdown-sub-hover,
+.dropdown-sub-hub-hover {
+  opacity: 0;
+  display: flex;
+  padding: 0.5rem;
+  font-family: Arial;
+  flex-direction: column;
+  background-color: #fff;
+  color: black !important;
+}
+
+.dropdown-sub-hover {
+  right: -7rem;
+  top: 0rem;
+}
+.dropdown-sub-hub-hover {
+  right: 12rem;
+  top: -0.7rem;
+}
+.sub-drop:hover .dropdown-sub-hub-hover,
+.sub-drop:hover .dropdown-sub-hover {
+  opacity: 1;
+}
+.dropdown-hover li {
+  margin: 0.2rem 0rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.dropdown-hover li a {
+  padding: 0.2rem;
+}
+.dropdown-hover li:hover {
+  background-color: gray;
+  // padding: 0.2rem;
+
+  color: #fff;
+}
+.dropdown-parent:hover .dropdown-hover {
+  opacity: 1;
+}

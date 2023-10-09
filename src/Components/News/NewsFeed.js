@@ -4,7 +4,7 @@ import WeeklyTopNewsArea from "./WeeklyTopNewsArea";
 import { motion } from "framer-motion";
 import { Text } from "../../containers/Language";
 import Sliders from "../Sliders/Sliders";
-
+import "../../Pages/News/news.css";
 const NewsFeed = ({ news, isArabic }) => {
   return (
     <>

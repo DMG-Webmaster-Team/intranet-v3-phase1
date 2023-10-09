@@ -2,6 +2,16 @@ import { IntranetContext } from "../../context";
 import { useContext } from "react";
 import DataTable from "react-data-table-component";
 
+function NotFound() {
+  return (
+    <center>
+      <p className="text-white m-0 pb-4">
+        No such user with your search criteria
+      </p>
+    </center>
+  );
+}
+
 const DataTableRes = () => {
   const {
     filteredResults,
@@ -65,13 +75,7 @@ const DataTableRes = () => {
       )}
       {!isUserSearch &&
         filteredResults.length === 0 &&
-        searchQuery.length > 3 && (
-          <center>
-            <p className="text-white m-0 pb-4">
-              No such user with your search criteria
-            </p>
-          </center>
-        )}
+        searchQuery.length > 3 && <NotFound></NotFound>}
       {isUserSearch && (
         <center>
           <p className="text-white m-0 pb-4 ">Loading...</p>

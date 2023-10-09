@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IntranetContext } from "../../context";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
+
 import { motion } from "framer-motion";
 import { Text } from "../../containers/Language";
 import "./news.css";
@@ -21,13 +23,17 @@ const Article = (props) => {
   }, []);
 
   const { id } = props.match.params;
-
+  // console.log(id);
   const article = news && news.find((item) => item.count === Number(id));
-
+  // console.log(news);
+  // const prevRoute =
+  //   article && article.count < 1 ? "" : `/news/${article.count - 1}`;
+  const nextImgSrc = news[article.count + 1].image;
+  const nextImgAlt = news[article.count + 1].details;
   return (
     <div className="container mt-5">
       {article ? (
-        <div className="row ">
+        <div className="row">
           <img
             src={article.image}
             className="mx-auto d-block col-12 col-md-8"
@@ -35,6 +41,26 @@ const Article = (props) => {
             width="200"
             alt="..."
           />
+          <div className="d-flex justify-content-between ">
+            <div className="ms-5 h2 scale">
+              {article.count > 1 && (
+                <Link to={`/news/${article.count - 1}`}>
+                  <GrLinkPrevious />
+                </Link>
+              )}
+            </div>
+            <div className="me-5 h2 scale position-relative">
+              {article.count < news.length && (
+                <Link to={`/news/${article.count + 1}`}>
+                  <GrLinkNext />
+                </Link>
+              )}
+              <div className="position-absolute nextImgOnHover">
+                <img src={nextImgSrc} alt={nextImgAlt} className="img-fluid" />
+              </div>
+            </div>
+          </div>
+
           <div className="d-flex justify-content-center">
             <div className="col-8  mt-5 ">
               <div className="details">
@@ -66,8 +92,8 @@ const Article = (props) => {
         </div>
       ) : (
         <div className="text-center">
-          <h1>Loading...</h1>
-          {/* <Loader /> */}
+          {/* <h1>Loading...</h1> */}
+          <Loader />
           <Link to="/news" style={{ marginTop: "2rem", background: "#C4AB7D" }}>
             <Button className="default-btn " style={{ background: "#C4AB7D" }}>
               <Text tid="returnNews" />

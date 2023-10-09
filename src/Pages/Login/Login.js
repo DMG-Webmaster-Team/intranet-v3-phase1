@@ -9,20 +9,14 @@ import { Redirect } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import SkeletonLoader from "../../Components/Skeleton/SkeletonLoader";
 import { Text } from "../../containers/Language";
-import Cookies from "js-cookie";
 
 const Login = () => {
-  const { user, login, handleThemeChange } = useContext(IntranetContext);
+  const { user, login } = useContext(IntranetContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
-  const [showRecordPage, setShowRecordPage] = useState(false);
   const { isAuthenticated, isLoading } = user;
 
-  const { loggedIn, handleFontChange } = useContext(IntranetContext);
-
-  const myCookie = loggedIn && Cookies.get("user");
-  const myCookieUserObj = JSON.parse(myCookie);
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
@@ -60,7 +54,6 @@ const Login = () => {
                   <img className="w-100" src={dmeLogo} alt="" />
                 </div>
               </div>
-
               <div className="row justify-content-center">
                 <form
                   name="frmLogin"
@@ -118,6 +111,22 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <center className="mt-4">
+          <h6>
+            Watch a video tutorial?
+            <span>
+              <a
+                href="https://dmgian.corp-dmg.com/videos/intranet/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-decoration-underline "
+              >
+                {" "}
+                Click Here
+              </a>
+            </span>
+          </h6>
+        </center>
       </div>
     );
   } else {

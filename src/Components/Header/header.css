@@ -153,18 +153,18 @@ h1.p-2 {
 
 li a,
 .dropbtn {
-  display: inline-block;
+  /* display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 li a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #315c8e;
-  color: white;
-  text-decoration: none;
+  /* background-color: #315c8e; */
+  /* color: white; */
+  /* text-decoration: none; */
 }
 
 li.dropdown {
@@ -242,7 +242,7 @@ li.dropdown {
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+  /* display: block; */
 }
 
 #navbarNavDropdown {

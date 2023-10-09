@@ -6,6 +6,8 @@ import { Text } from "../../containers/Language";
 import { IntranetContext } from "../../context";
 import Sa3aM3El3Ela from "./assets/Sa3aM3El3ela.jpg";
 import theMentor from "./assets/theMentor.jpg";
+import "../Services/Services.css";
+import "../Learning-Development/Learning-Development.css";
 
 const RadioS02 = () => {
   const { colorTheme, loggedIn } = useContext(IntranetContext);

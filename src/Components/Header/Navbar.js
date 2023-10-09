@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./navbar.scss";
-import logoutIcon from "./images/logout icon.png";
-import { NavLink } from "react-router-dom";
+// import logoutIcon from "./images/logout icon.png";
+import { Link, NavLink } from "react-router-dom";
 import { Text } from "../../containers/Language";
 import "./header.css";
 import { motion } from "framer-motion";
@@ -11,7 +11,7 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Cookies from "js-cookie";
 
 const NavBar = () => {
-  const { logout, colorTheme, loggedIn } = useContext(IntranetContext);
+  const { colorTheme, loggedIn } = useContext(IntranetContext);
   const myCookie = Cookies.get("user");
   const myCookieUserObj = loggedIn && JSON.parse(myCookie);
 
@@ -49,6 +49,66 @@ const NavBar = () => {
     LHlink = lighthouseLinks.DMA;
   }
   const tooltip = <Tooltip id="tooltip-top">Coming Soon...</Tooltip>;
+
+  const { userId, userEmail } = myCookieUserObj;
+  const logToDashbard = () => {
+    const date = Date.now();
+    const encryptedBody = window.btoa(
+      JSON.stringify(
+        "employee_email=" +
+          userEmail +
+          date +
+          "&fromMobileApplication=TRUE&date=" +
+          date
+      )
+    );
+
+    const dashboardLogin = document.getElementById("benefitsLogin");
+    dashboardLogin.insertAdjacentHTML(
+      "afterbegin",
+      `<form
+        style="display:none !important"
+        method="post"
+        id="attLoginForm"
+        action={"https://dmgian.corp-dmg.com/benefits/login/"}
+      >
+        <input name="body" value="` +
+        encryptedBody +
+        `" />
+      </form>`
+    );
+    let loginForm = document.getElementById("attLoginForm");
+    loginForm.submit();
+  };
+  // const logToUniversity = () => {
+  //   const date = Date.now();
+  //   const encryptedBody = window.btoa(
+  //     JSON.stringify(
+  //       "employee_email=" +
+  //         userEmail +
+  //         date +
+  //         "&fromMobileApplication=TRUE&date=" +
+  //         date
+  //     )
+  //   );
+
+  //   const dashboardLogin = document.getElementById("universityLogin");
+  //   dashboardLogin.insertAdjacentHTML(
+  //     "afterbegin",
+  //     `<form
+  //       style="display:none !important"
+  //       method="post"
+  //       id="attLoginForm"
+  //       action={"https://dmgian.corp-dmg.com/DMG-University/login/"}
+  //     >
+  //       <input name="body" value="` +
+  //       encryptedBody +
+  //       `" />
+  //     </form>`
+  //   );
+  //   let loginForm = document.getElementById("attLoginForm");
+  //   loginForm.submit();
+  // };
   return (
     <motion.nav
       className={`navbar ${colorTheme} navbar-expand-md navbar-light navbar-zindex bg-light position-relative`}
@@ -76,7 +136,7 @@ const NavBar = () => {
         </motion.button>
         <div className="collapse navbar-collapse dropdown-nav " id="navbarNav">
           <ul className="navbar-nav zIndex  mx-auto">
-            <li className="nav-item">
+            <li className="nav-item dropdown-parent">
               <NavLink
                 to={`/employees-hub`}
                 className={`nav-link ${colorTheme} nav-link d-sm-none`}
@@ -91,8 +151,83 @@ const NavBar = () => {
               >
                 <Text tid="Employees Hub" />
               </NavLink>
+              <ul className="dropdown-hover position-absolute ">
+                <li className="position-relative sub-drop">
+                  <Link to="/learning-development">Learning & Development</Link>
+                  <ul className="dropdown-sub-hub-hover text-nowrap position-absolute ">
+                    <li id="universityLogin">
+                      <a>University Courses</a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://ehda.login.em2.oraclecloud.com/"
+                      >
+                        Online Courses
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Coaching</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Sharing Knowledge</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">HR Policies</a>
+                </li>
+                <li className="position-relative sub-drop">
+                  <Link to="/requests">HR Requests</Link>
+                  <ul className="dropdown-sub-hub-hover text-nowrap position-absolute ">
+                    <li>
+                      <a>Medical Insurance</a>
+                    </li>
+                    <li>
+                      <Link to="/forms">Forms</Link>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Family Fund</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Car Leasing</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Employee Referrals</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">HR Letter</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Travel Requests</a>
+                    </li>
+                  </ul>
+                </li>
+                <li id="benefitsLogin">
+                  <a onClick={logToDashbard}>Benefits</a>
+                </li>
+                <li>
+                  <a
+                    href="https://ehda.login.em2.oraclecloud.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Performance
+                  </a>
+                </li>
+                <li>
+                  <Link to="/attendance">Attendance</Link>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">My Rewards</a>
+                </li>
+                <li>
+                  <Link to="/other-policies">Other Policies</Link>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item soonCont">
+            <li className="nav-item dropdown-parent position-relative ">
               <NavLink
                 to={`/radio`}
                 className={`nav-link ${colorTheme} nav-link`}
@@ -106,14 +241,47 @@ const NavBar = () => {
                 </OverlayTrigger> */}
                 <Text tid="navFamilyRadio" />
               </NavLink>
+              <ul className="dropdown-hover text-nowrap position-absolute ">
+                <li>
+                  <a
+                    href="https://radio.mountainviewegypt.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Listen Live
+                  </a>
+                </li>
+                <li>
+                  <Link to="/radioS01">Season One</Link>
+                </li>
+                <li className="position-relative sub-drop">
+                  <Link to="/radioS02">Season Two</Link>
+                  <ul className="dropdown-sub-hover text-nowrap position-absolute ">
+                    <li>
+                      <Link to="/sa3aM3El3ela">ساعة مع العيلة</Link>
+                    </li>
+                    <li className="">
+                      <a href="javascript:void(0)">The Mentor</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item soonCont">
+            <li className="nav-item dropdown-parent soonCont">
               <NavLink
                 to="/goodness"
                 className={`nav-link ${colorTheme} nav-link`}
               >
                 Goodness
               </NavLink>
+              <ul className="dropdown-hover position-absolute ">
+                <li>
+                  <a href="javascript:void(0)">ESG</a>
+                </li>
+                <li>
+                  <Link to="/goodness/mv-foundation">MV Foundation</Link>
+                </li>
+              </ul>
             </li>
             <li className="nav-item">
               <NavLink
@@ -188,23 +356,6 @@ const NavBar = () => {
                 </div>
               )}
             </li>
-            <li className="nav-item">
-              <NavLink
-                to={`/it-policies`}
-                className={`nav-link ${colorTheme} nav-link d-sm-none`}
-              >
-                <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
-                  Other Policies
-                </span>
-              </NavLink>
-              <NavLink
-                to={`/other-policies`}
-                className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
-              >
-                <Text tid="Other Policies" />
-              </NavLink>
-            </li>
-
             {myCookieUserObj?.userCompanyToShow === "dme" ? (
               <li className="nav-item">
                 <NavLink

@@ -9,11 +9,12 @@
   color: #fff !important;
 }
 .view {
+  border-radius: 5px;
   --primary-color: var(--primary-color-1);
   background-color: var(--primary-color-1);
   cursor: pointer;
-  color: #fff;
-  text-decoration: none !important;
+  color: #fff !important;
+  /* text-decoration: none !important; */
 }
 .view.theme-2 {
   --primary-color: var(--primary-color-2);
@@ -23,4 +24,11 @@
 .view.theme-3 {
   --primary-color: var(--primary-color-3);
   background-color: var(--primary-color-3);
+}
+.view a {
+  color: #fff;
+}
+.title-background {
+  background-color: #ededf0;
+  border-radius: 5px;
 }
