@@ -2,7 +2,7 @@ import "./Services.css";
 import learningImg from "./images/Learning.jpg";
 import policiesImg from "./images/Policies.jpg";
 import benefitsImg from "./images/Benefits.jpg";
-import empHistory from "./images/Employe history.jpg";
+import OtherPolicies from "../OtherPolicies/other policies-01.jpg";
 import comp from "./images/compensation.jpg";
 import attend from "./images/attendance.jpg";
 import PerformanceImg from "./images/performance.jpg";
@@ -254,7 +254,7 @@ const Services = () => {
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                   id="icon"
-                  src={comp}
+                  src={OtherPolicies}
                   alt="other-policies-icon"
                   className="rounded image"
                 />

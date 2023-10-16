@@ -30,8 +30,8 @@ const OtherPolicies = () => {
                       </h6>
                     </div>
                     <div className={`card-footer ${colorTheme}`}>
-                      <p className="m-1 text-nowrap ">
-                        IT Policies & procedures
+                      <p className="m-auto text-nowrap ">
+                        IT Policies & procedures{" "}
                       </p>
                     </div>
                   </div>

@@ -19,20 +19,20 @@
 .Tajawal {
   font-family: "Tajawal" !important;
 }
-
-.news-arrows {
-  right: 20px;
-  top: 0;
-  background-color: black;
+.imgParent {
+  transition: all 1s ease-in-out;
+  right: 5.5rem;
+  opacity: 0;
+  top: -15rem;
 }
-.scale:hover {
-  scale: 1.8;
-  transition: all 0.3s ease-in-out;
+.imgParent2 {
+  transition: all 1s ease-in-out;
+  right: 1.5rem;
+  top: -15rem;
+  opacity: 0;
 }
 
-.nextImgOnHover {
-  top: -200px;
-  /* left: 1rem; */
-  width: 200px;
-  height: 10px;
+.h2:hover + .imageHover {
+  opacity: 1 !important;
+  background-color: aqua;
 }

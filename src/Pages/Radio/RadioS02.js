@@ -38,21 +38,16 @@ const RadioS02 = () => {
                 </NavLink>
               </div>
               <div className="col">
-                <a href="javascript:void(0);" rel="noreferrer" target="_blank">
+                <NavLink to="/mentor">
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={theMentor} className="" alt="..." />
-                    </div>
-                    <div className="card-img-overlay">
-                      <h6 className={`card-title ${colorTheme}`}>
-                        Coming Soon...
-                      </h6>
                     </div>
                     <div className={`card-footer ${colorTheme}`}>
                       <p className="m-1">The Mentor</p>
                     </div>
                   </div>
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

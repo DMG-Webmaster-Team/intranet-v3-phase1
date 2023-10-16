@@ -147,7 +147,7 @@ const NavBar = () => {
               </NavLink>
               <NavLink
                 to={`/employees-hub`}
-                className={`nav-link ${colorTheme} nav-link d-none d-sm-block`}
+                className={`nav-link ${colorTheme} emp-hub nav-link d-none d-sm-block`}
               >
                 <Text tid="Employees Hub" />
               </NavLink>
@@ -184,9 +184,9 @@ const NavBar = () => {
                     <li>
                       <a>Medical Insurance</a>
                     </li>
-                    <li>
-                      <Link to="/forms">Forms</Link>
-                    </li>
+                    {/* <li> */}
+                    <Link to="/forms">Forms</Link>
+                    {/* </li> */}
                     <li>
                       <a href="javascript:void(0)">Family Fund</a>
                     </li>
@@ -261,7 +261,7 @@ const NavBar = () => {
                       <Link to="/sa3aM3El3ela">ساعة مع العيلة</Link>
                     </li>
                     <li className="">
-                      <a href="javascript:void(0)">The Mentor</a>
+                      <NavLink to="/mentor">The Mentor</NavLink>
                     </li>
                   </ul>
                 </li>

@@ -51,9 +51,10 @@
 .dropdown-hover,
 .dropdown-sub-hover,
 .dropdown-sub-hub-hover {
-  opacity: 0;
+  // opacity: 0;
+  visibility: hidden;
   display: flex;
-  padding: 0.5rem;
+  padding: 0.2rem;
   font-family: Arial;
   flex-direction: column;
   background-color: #fff;
@@ -61,16 +62,17 @@
 }
 
 .dropdown-sub-hover {
-  right: -7rem;
+  right: -5.8rem;
   top: 0rem;
 }
 .dropdown-sub-hub-hover {
-  right: 12rem;
-  top: -0.7rem;
+  right: 11.6rem;
+  top: -0.3rem;
 }
 .sub-drop:hover .dropdown-sub-hub-hover,
 .sub-drop:hover .dropdown-sub-hover {
-  opacity: 1;
+  // opacity: 1;
+  visibility: visible;
 }
 .dropdown-hover li {
   margin: 0.2rem 0rem;
@@ -80,12 +82,14 @@
 .dropdown-hover li a {
   padding: 0.2rem;
 }
-.dropdown-hover li:hover {
+.dropdown-hover li:hover,
+.dropdown-hover li a:hover {
   background-color: gray;
   // padding: 0.2rem;
 
   color: #fff;
 }
 .dropdown-parent:hover .dropdown-hover {
-  opacity: 1;
+  visibility: visible;
+  // opacity: 1;
 }

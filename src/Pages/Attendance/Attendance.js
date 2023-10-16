@@ -1,7 +1,7 @@
 import "../Learning-Development/Learning-Development.css";
 import attendanceImage from "./dashboard.jpg";
 import leavesImage from "./leaves.jpg";
-import attendance from "../Services/images/attendance.jpg";
+import calendar from "./calendar.jpg";
 import { useContext } from "react";
 import { IntranetContext } from "../../context";
 import { Text } from "../../containers/Language";
@@ -51,8 +51,7 @@ const Attendance = () => {
       <div className="container">
         <div className="row d-flex justify-content-center mt-md-5 mt-3">
           <div className="col-8">
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-              <div className="col"></div>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 d-flex justify-content-center g-4">
               <div className="col" id="dashboardLogin">
                 <a onClick={logToDashbard} style={{ cursor: "pointer" }}>
                   <div className="card">
@@ -82,7 +81,23 @@ const Attendance = () => {
                   </div>
                 </a>
               </div>
-              <div className="col"></div>
+              <div className="col">
+                <a href="javascript:void(0)">
+                  <div className="card">
+                    <div className="image-wrapper">
+                      <img src={calendar} className="" alt="..." />
+                    </div>
+                    <div className="card-img-overlay">
+                      <h6 className={`card-title ${colorTheme}`}>
+                        Coming Soon...
+                      </h6>
+                    </div>
+                    <div className={`card-footer ${colorTheme}`}>
+                      <p className="m-1">Calendar</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>

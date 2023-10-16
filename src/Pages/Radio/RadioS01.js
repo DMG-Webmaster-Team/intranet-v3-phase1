@@ -22,7 +22,7 @@ const RadioS01 = () => {
                     rel="noreferrer"
                     className="col-12 col-md-4 text-center"
                   >
-                    <h3 className="">
+                    <h3 className="text-dark">
                       {" "}
                       <BsPlayCircle />
                     </h3>
