@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { IntranetContext } from "../../context";
 import { motion } from "framer-motion";
 import { Text } from "../../containers/Language";
+import video from "./interns.mp4";
 import "./news.css";
 import Loader from "../../Components/Skeleton/SkeletonLoader";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
@@ -11,6 +12,8 @@ import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 const Article = (props) => {
   const [news, setNews] = useState([]);
   const [isArabic, setIsArabic] = useState(false);
+  const [showNextImg, setShowNextImg] = useState(false);
+  const [showPrevImg, setShowPrevImg] = useState(false);
 
   const { getLang, fetchData } = useContext(IntranetContext);
 
@@ -21,7 +24,6 @@ const Article = (props) => {
     setIsArabic(getLang());
   }, []);
   // console.log(news);
-
   const { id } = props.match.params;
   // console.log(id);
 
@@ -31,72 +33,98 @@ const Article = (props) => {
     <div className="container mt-5">
       {article ? (
         <div className="row ">
-          <img
-            src={article?.image}
-            className="mx-auto d-block col-12 col-md-8"
-            height="300"
-            width="200"
-            alt="..."
-          />
+          {article.count !== 2 && (
+            <img
+              src={article?.image}
+              className="mx-auto d-block col-12 col-md-8"
+              height="300"
+              width="200"
+              alt="..."
+            />
+          )}
 
+          {article.count === 2 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <video controls autoPlay width={900}>
+                <source type="video/mp4" src={video} />
+              </video>
+            </div>
+          )}
           <div className="d-flex justify-content-between ">
-            <div>
-              {/* {article.count !== 1 && (
-                <div>
-                  <img
-                    width={200}
-                    height={200}
-                    src={`${news[id - 2].image}`}
-                    alt="Previous article image"
-                  />
-                </div>
-              )} */}
+            <div className="borderr">
               {article.count !== 1 && (
-                <div className="position-relative imgParent2">
-                  <div className="position-absolute">
+                <div className="position-relative rel">
+                  <div
+                    className={`position-aboslute abs ${
+                      showPrevImg ? "" : "opacity-0"
+                    } `}
+                  >
                     <img
                       width={200}
                       height={200}
+                      className="mg-fluid"
                       src={`${news[id - 2].image}`}
-                      alt="Next article image"
-                      className="imageHover"
+                      alt="Previous article image"
                     />
                   </div>
                 </div>
               )}
+
               {article.count > 1 && (
-                <Link className="prevArrow" to={`${article?.count - 1}`}>
-                  <div className="h2 ms-5">
+                <Link
+                  onMouseEnter={() => setShowPrevImg(true)}
+                  onMouseLeave={() => setShowPrevImg(false)}
+                  className="prevLink ms-5"
+                  to={`${article?.count - 1}`}
+                >
+                  <h2 className="ms-5">
                     <GrLinkPrevious />
-                  </div>
+                  </h2>
                 </Link>
               )}
             </div>
-            <div className="">
+            <div className="borderr">
               {article?.count !== news.length && (
-                <div className="position-relative imgParent">
-                  <div className="position-absolute">
-                    <img
-                      width={200}
-                      height={200}
-                      src={`${news[id].image}`}
-                      alt="Next article image"
-                      className="imageHover"
-                    />
+                <div className="position-relative rel">
+                  <div
+                    className={` position-aboslute abs ${
+                      showNextImg ? "" : "opacity-0"
+                    } `}
+                  >
+                    <div className="d-flex flex-column">
+                      <small
+                        style={{ width: "200px !important" }}
+                        className=" w-25 text-wrap d-inline-block "
+                      >
+                        {/* {news[id].title} */}
+                      </small>
+                      <img
+                        width={200}
+                        height={200}
+                        className="mg-fluid"
+                        src={`${news[id].image}`}
+                        alt="Next article image"
+                      />
+                    </div>
                   </div>
                 </div>
               )}
               {article?.count < news.length && (
-                <Link className="nextArrow" to={`${article?.count + 1}`}>
-                  <div className="h2 me-5">
+                <Link
+                  onMouseEnter={() => setShowNextImg(true)}
+                  onMouseLeave={() => setShowNextImg(false)}
+                  className="nextLink ms-5"
+                  to={`${article?.count + 1}`}
+                >
+                  <h2 className="ms-3">
                     <GrLinkNext />
-                  </div>
+                  </h2>
                 </Link>
               )}
             </div>
           </div>
-          <div className="d-flex justify-content-center">
-            <div className="col-8  mt-5 ">
+          <div className="d-flex justify-content-center content">
+            <div className="col-8 ">
               <div className="details">
                 <h2 className="mb-4 text-center fw-bold Tajawal">
                   {article.title_ar}

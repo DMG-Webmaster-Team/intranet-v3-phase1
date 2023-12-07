@@ -51,6 +51,13 @@ const NavBar = () => {
   const tooltip = <Tooltip id="tooltip-top">Coming Soon...</Tooltip>;
 
   const { userId, userEmail } = myCookieUserObj;
+
+  function reverseString(str) {
+    const data = str?.split("").reverse().join("");
+    return data;
+  }
+  var encodedData = window.btoa(reverseString(userId));
+
   const logToDashbard = () => {
     const date = Date.now();
     const encryptedBody = window.btoa(
@@ -109,6 +116,7 @@ const NavBar = () => {
   //   let loginForm = document.getElementById("attLoginForm");
   //   loginForm.submit();
   // };
+
   return (
     <motion.nav
       className={`navbar ${colorTheme} navbar-expand-md navbar-light navbar-zindex bg-light position-relative`}
@@ -182,13 +190,21 @@ const NavBar = () => {
                   <Link to="/requests">HR Requests</Link>
                   <ul className="dropdown-sub-hub-hover text-nowrap position-absolute ">
                     <li>
-                      <a>Medical Insurance</a>
+                      <a
+                        href={`http://10.1.11.83:8080/ords/f?p=164:37:::::P37_CRYBTO:${encodedData}`}
+                      >
+                        Medical Insurance
+                      </a>
                     </li>
                     {/* <li> */}
                     <Link to="/forms">Forms</Link>
                     {/* </li> */}
                     <li>
-                      <a href="javascript:void(0)">Family Fund</a>
+                      {/* <a
+                        href={`http://10.1.11.83:8080/ords/f?p=165:21:::::P21_CRYBTO:${encodedData}`}
+                      >
+                      </a> */}
+                      Family Fund
                     </li>
                     <li>
                       <a href="javascript:void(0)">Car Leasing</a>
@@ -216,8 +232,31 @@ const NavBar = () => {
                     Performance
                   </a>
                 </li>
-                <li>
+                <li className="position-relative sub-drop">
                   <Link to="/attendance">Attendance</Link>
+                  <ul className="dropdown-sub-hub-hover text-nowrap position-absolute ">
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://dmgian.corp-dmg.com/attendance/"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="http://erpprod.daralmimar.local:8000/OA_HTML/AppsLocalLogin.jsp?requestUrl=http%3A%2F%2Ferpprod.daralmimar.local%3A8000%2FOA_HTML%2FRF.jsp%3Ffunction_id%3D17471%26resp_id%3D51818%26resp_appl_id%3D800%26security_group_id%3D0%26lang_code%3DUS%26params%3DoR0XR4.F4jyzz9j21ymTmezlGoSAeY6q6ILPRYDaIp0%26oas%3DGAmo0KB9z-8uFhEJ9afx6g..&cancelUrl=http%3A%2F%2Ferpprod.daralmimar.local%3A8000%2FOA_HTML%2FAppsLogin&langCode=US"
+                      >
+                        Leaves
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Calendar</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <a href="javascript:void(0)">My Rewards</a>

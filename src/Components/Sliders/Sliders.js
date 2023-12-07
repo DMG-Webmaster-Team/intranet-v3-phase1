@@ -29,48 +29,40 @@ const Sliders = ({ isArabic, data, home }) => {
       </button>
     ),
   };
-
+  console.log(data);
+  const filterCondition = [1, 3, 14, 15, 16, 17];
+  const customOrder = [17, 16, 15, 14, 1, 3];
+  const filteredAndOrderedItems = data
+    .filter((item) => filterCondition.includes(item.count))
+    .sort((a, b) => customOrder.indexOf(a.count) - customOrder.indexOf(b.count))
+    .map((slider, key) => (
+      <div
+        className={
+          home
+            ? "mySlides d-flex justify-content-center  "
+            : " mySlides mySlides-news d-flex justify-content-center  "
+        }
+        key={key}
+      >
+        <Link to={`/news/${slider.count}`}>
+          <img
+            src={slider.image}
+            alt={isArabic ? slider.title_ar : slider.title}
+            className={
+              "img-fluid"
+              // home ? " slider-img" : "img-fluid slider-img-news"
+            }
+          />
+        </Link>
+      </div>
+    ));
   return (
     <>
       <Slider {...settings}>
         {data.length > 0 &&
           typeof data !== "undefined" &&
           data !== null &&
-          data
-            .filter(
-              (item) =>
-                item.count === 1 ||
-                item.count === 2 ||
-                item.count === 3 ||
-                item.count === 5 ||
-                item.count === 6 ||
-                item.count === 7 ||
-                item.count === 9 ||
-                item.count === 12
-            )
-            .map((slider, key) => {
-              return (
-                <div
-                  className={
-                    home
-                      ? "mySlides d-flex justify-content-center  "
-                      : " mySlides mySlides-news d-flex justify-content-center  "
-                  }
-                  key={key}
-                >
-                  <Link to={`/news/${slider.count}`}>
-                    <img
-                      src={slider.image}
-                      alt={isArabic ? slider.title_ar : slider.title}
-                      className={
-                        "img-fluid"
-                        // home ? " slider-img" : "img-fluid slider-img-news"
-                      }
-                    />
-                  </Link>
-                </div>
-              );
-            })}
+          filteredAndOrderedItems}
       </Slider>
     </>
   );

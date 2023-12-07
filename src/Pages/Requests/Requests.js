@@ -32,7 +32,7 @@ const Requests = () => {
           <div className="col">
             <a
               href={`http://10.1.11.83:8080/ords/f?p=164:37:::::P37_CRYBTO:${encodedData}`}
-              // href={`http://10.1.11.83:8080/ords/f?p=108:37:::::P37_CRYBTO:${userId}`}
+              // href={`http://10.1.11.83:8080/ords/f?p=155:20:::::P20_CRYBTO:${encodedData}`} FAMILY FUND
             >
               <div className="card">
                 <div className="image-wrapper">
@@ -65,18 +65,22 @@ const Requests = () => {
               </div>
             </Link>
           </div>
+          {/* Family Fund */}
           <div className="col">
             <div className="card">
               <div className="image-wrapper">
                 <img src={FamilyFund} className="widthFixed" alt="..." />
               </div>
-              <div className="card-img-overlay">
-                <h6 className={`card-title ${colorTheme}`}>Coming Soon...</h6>
-              </div>
+
               <div className={`card-footer ${colorTheme} ${font}`}>
                 <p className="m-1">Family Fund</p>
               </div>
             </div>
+            {/* <a
+              // href={`http://10.1.11.83:8080/ords/f?p=165:::::P20_CRYBTO:${encodedData}`}
+              href={`http://10.1.11.83:8080/ords/f?p=165:21:::::P21_CRYBTO:${encodedData}`}
+            >
+            </a> */}
           </div>
           <div className="col">
             <div className="card">

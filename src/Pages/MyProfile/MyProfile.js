@@ -1,7 +1,7 @@
 import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import "./MyProfile.css";
-import pic from "./40.jpg";
+import pic from "./Screenshot 2023-12-03 at 9.50.33 AM.png";
 import Cookies from "js-cookie";
 import { useContext } from "react";
 import { IntranetContext } from "../../context";
@@ -31,8 +31,8 @@ const MyProfile = () => {
       <div className="row d-flex justify-content-center pt-md-4 pt-2">
         <div className="col-11">
           <div className="row">
-            <div className="col-md-2 col-12 bg-dar text-white">
-              {/* <img src={pic} alt="" className="img-fluid h-75" /> */}
+            <div className="col-md-2 col-12 text-white">
+              {/* <img src={pic} alt="" className="img-fluid h-75 mt-5  " /> */}
             </div>
             <div className="col-md-7 col-12">
               <div className="row">
@@ -87,7 +87,7 @@ const MyProfile = () => {
                 </div>
               </div> */}
             </div>
-            <div className="col-md-3 col-12 d-flex justify-content-center">
+            <div className="col-md-2 col-12 d-flex justify-content-center">
               <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingOne">
