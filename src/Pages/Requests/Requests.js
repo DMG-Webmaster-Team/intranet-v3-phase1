@@ -67,20 +67,20 @@ const Requests = () => {
           </div>
           {/* Family Fund */}
           <div className="col">
-            <div className="card">
-              <div className="image-wrapper">
-                <img src={FamilyFund} className="widthFixed" alt="..." />
-              </div>
-
-              <div className={`card-footer ${colorTheme} ${font}`}>
-                <p className="m-1">Family Fund</p>
-              </div>
-            </div>
-            {/* <a
+            <a
               // href={`http://10.1.11.83:8080/ords/f?p=165:::::P20_CRYBTO:${encodedData}`}
               href={`http://10.1.11.83:8080/ords/f?p=165:21:::::P21_CRYBTO:${encodedData}`}
             >
-            </a> */}
+              <div className="card">
+                <div className="image-wrapper">
+                  <img src={FamilyFund} className="widthFixed" alt="..." />
+                </div>
+
+                <div className={`card-footer ${colorTheme} ${font}`}>
+                  <p className="m-1">Family Fund</p>
+                </div>
+              </div>
+            </a>
           </div>
           <div className="col">
             <div className="card">

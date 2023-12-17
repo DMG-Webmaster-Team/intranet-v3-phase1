@@ -112,6 +112,11 @@ const routes = [
     exact: true,
   },
   {
+    path: `/attendance/calendar`,
+    component: lazy((props) => import("../Pages/Attendance/Calendar.js")),
+    exact: true,
+  },
+  {
     path: `/compensation`,
     component: lazy((props) => import("../Pages/Compensation/Compensation")),
     exact: true,

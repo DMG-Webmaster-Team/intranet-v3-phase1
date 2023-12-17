@@ -200,11 +200,11 @@ const NavBar = () => {
                     <Link to="/forms">Forms</Link>
                     {/* </li> */}
                     <li>
-                      {/* <a
+                      <a
                         href={`http://10.1.11.83:8080/ords/f?p=165:21:::::P21_CRYBTO:${encodedData}`}
                       >
-                      </a> */}
-                      Family Fund
+                        Family Fund
+                      </a>
                     </li>
                     <li>
                       <a href="javascript:void(0)">Car Leasing</a>
@@ -254,7 +254,7 @@ const NavBar = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Calendar</a>
+                      <Link to="/attendance/calendar">Calendar</Link>
                     </li>
                   </ul>
                 </li>

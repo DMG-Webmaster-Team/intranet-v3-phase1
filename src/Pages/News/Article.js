@@ -50,6 +50,11 @@ const Article = (props) => {
               </video>
             </div>
           )}
+          {/* {article.count === 18 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <a href="https://www.google.com">Go to Goolge</a>
+            </div>
+          )} */}
           <div className="d-flex justify-content-between ">
             <div className="borderr">
               {article.count !== 1 && (

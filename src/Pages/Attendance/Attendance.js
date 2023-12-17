@@ -8,6 +8,7 @@ import { Text } from "../../containers/Language";
 import PagesHeader from "../../Components/Header/PagesHeader";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Attendance = () => {
   const { colorTheme, loggedIn } = useContext(IntranetContext);
@@ -82,21 +83,17 @@ const Attendance = () => {
                 </a>
               </div>
               <div className="col">
-                <a href="javascript:void(0)">
+                <Link to="/attendance/calendar">
                   <div className="card">
                     <div className="image-wrapper">
                       <img src={calendar} className="" alt="..." />
                     </div>
-                    <div className="card-img-overlay">
-                      <h6 className={`card-title ${colorTheme}`}>
-                        Coming Soon...
-                      </h6>
-                    </div>
+
                     <div className={`card-footer ${colorTheme}`}>
                       <p className="m-1">Calendar</p>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
