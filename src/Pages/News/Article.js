@@ -33,28 +33,45 @@ const Article = (props) => {
     <div className="container mt-5">
       {article ? (
         <div className="row ">
-          {article.count !== 2 && (
-            <img
-              src={article?.image}
-              className="mx-auto d-block col-12 col-md-8"
-              height="300"
-              width="200"
-              alt="..."
-            />
-          )}
+          {article.count !== 2 &&
+            article.count !== 21 &&
+            article.count !== 20 && (
+              <img
+                src={article?.image}
+                className="mx-auto d-block col-12 col-md-8"
+                height="300"
+                width="200"
+                alt="..."
+              />
+            )}
 
           {article.count === 2 && (
             <div className="mx-auto col-8  d-flex justify-content-center ">
-              <video controls autoPlay width={900}>
+              <video controls autoPlay width={1000}>
                 <source type="video/mp4" src={video} />
               </video>
             </div>
           )}
-          {/* {article.count === 18 && (
+          {article.count === 21 && (
             <div className="mx-auto col-8  d-flex justify-content-center ">
-              <a href="https://www.google.com">Go to Goolge</a>
+              <video controls autoPlay width={1000}>
+                <source
+                  type="video/mp4"
+                  src="https://dmgian.corp-dmg.com/videos/medical-refund/video.mp4"
+                />
+              </video>
             </div>
-          )} */}
+          )}
+          {article.count === 20 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <video controls autoPlay width={1000}>
+                <source
+                  type="video/mp4"
+                  src="https://dmgian.corp-dmg.com/videos/family-fund/video.mp4"
+                />
+              </video>
+            </div>
+          )}
           <div className="d-flex justify-content-between ">
             <div className="borderr">
               {article.count !== 1 && (
@@ -130,20 +147,22 @@ const Article = (props) => {
           </div>
           <div className="d-flex justify-content-center content">
             <div className="col-8 ">
-              <div className="details">
-                <h2 className="mb-4 text-center fw-bold Tajawal">
-                  {article.title_ar}
-                </h2>
-                <p
-                  dir="rtl"
-                  className={isArabic ? "Tajawal" : "Tajawal text-muted"}
-                >
-                  {article.details_ar}
-                </p>
-              </div>
+              {article.count !== 20 && article.count !== 21 && (
+                <div className="details">
+                  <h2 className="mb-4 text-center fw-bold Tajawal">
+                    {article.title_ar}
+                  </h2>
+                  <p
+                    dir="rtl"
+                    className={isArabic ? "Tajawal" : "Tajawal text-muted"}
+                  >
+                    {article.details_ar}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
-          <div className=" mx-auto text-center  ">
+          <div className=" mx-auto text-center mb-3 ">
             <Link to="/news" style={{ marginTop: "2rem" }}>
               <motion.div
                 whileHover={{
@@ -158,7 +177,7 @@ const Article = (props) => {
           </div>
         </div>
       ) : (
-        <div className="text-center">
+        <div className="text-center mb-3 ">
           <Loader />
           <Link to="/news" style={{ marginTop: "2rem", background: "#C4AB7D" }}>
             <Button className="default-btn " style={{ background: "#C4AB7D" }}>

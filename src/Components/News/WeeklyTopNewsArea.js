@@ -10,13 +10,68 @@ const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
         <div className="weekly2-wrapper">
           {/* <!-- section Tittle --> */}
 
+          {/* <div className="row">
+            <h4 dir="rtl" className="Tajawal mb-4">
+              شهر يناير ٢٠٢٤
+            </h4>
+            <div className="d-flex flex-wrap flex-row-reverse   p-0">
+              {weeklyNews
+                .filter((item) => item.count === 24)
+                .map((item, id) => {
+                  return (
+                    <div
+                      className="d-flex flex-row col-12 col-sm-6 col-lg-3 mb-5 mb-sm-3"
+                      key={id}
+                    >
+                      <div className="weekly2-news-active dot-style dot-style">
+                        <Link to={`/news/${item.count}`} className="bg-blac">
+                          <motion.div
+                            className="weekly2-single mx-auto w-100"
+                            whileHover={{
+                              scale: 1.1,
+                            }}
+                          >
+                            <div className="weekly2-img ">
+                              <img
+                                src={item.image}
+                                alt="pic"
+                                className="weekly2-img-image"
+                              />
+                            </div>
+                            <div
+                              className={
+                                isArabic
+                                  ? "weekly2-caption mt-3 text-right"
+                                  : "weekly2-caption mt-3"
+                              }
+                            >
+                              <h6 dir="rtl" className=" pe-3 Tajawal fw-bold">
+                                {isArabic ? item.title_ar : item.title_ar}
+                              </h6>
+                            </div>
+                          </motion.div>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div> */}
           <div className="row">
             <h4 dir="rtl" className="Tajawal mb-4">
               شهر ديسمبر ٢٠٢٣
             </h4>
             <div className="d-flex flex-wrap flex-row-reverse   p-0">
               {weeklyNews
-                .filter((item) => item.count === 18 || item.count === 19)
+                .filter(
+                  (item) =>
+                    item.count === 21 || //Medical Refund
+                    item.count === 18 ||
+                    item.count === 19 ||
+                    item.count === 20 || // Family Fund
+                    item.count === 22 ||
+                    item.count === 23
+                )
                 .map((item, id) => {
                   return (
                     <div
