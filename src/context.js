@@ -76,9 +76,13 @@ const IntranetProvider = ({ children }) => {
   // HR Directory Serach logic
   const [searchQuery, setSearchQuery] = useState("");
   const [isUserSearch, setIsUserSearch] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
 
   const [filteredResults, setFilteredResults] = useState([]);
+  const [allEmp, setAllEmp] = useState(
+    JSON.parse(localStorage.getItem("allEmp")) || []
+  );
 
   async function searchUsers() {
     try {
@@ -124,6 +128,28 @@ const IntranetProvider = ({ children }) => {
     if (searchQuery.length >= 3) searchUsers();
   }, [searchQuery]);
   // HR Directory Serach logic END
+
+  // Feedback System Logic START
+  async function getAllUsers() {
+    try {
+      setIsUserSearch(true);
+      const response = await axios.post(
+        `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
+        { data_type: "userSearch", credentials: { userToSearch: "COM" } },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      localStorage.setItem("allEmp", JSON.stringify(response.data));
+      setAllEmp(response.data);
+      // console.log(allEmp);
+      setIsUserSearch(false);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => getAllUsers(), []);
+  // Feedback System Logic END
 
   const login = async (username, password) => {
     setUser({
@@ -248,6 +274,11 @@ const IntranetProvider = ({ children }) => {
         isDataLoading,
         isUserSearch,
         serverError,
+        userInfo,
+        allEmp,
+        setAllEmp,
+        setUserInfo,
+        setSearchQuery,
         fetchData,
         getLang,
         login,

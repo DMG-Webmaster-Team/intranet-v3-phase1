@@ -1,6 +1,8 @@
 import { IntranetContext } from "../../context";
 import { useContext } from "react";
 import DataTable from "react-data-table-component";
+import Loader from "../Skeleton/SkeletonLoader";
+import { useHistory } from "react-router-dom";
 
 function NotFound() {
   return (
@@ -19,6 +21,9 @@ const DataTableRes = () => {
     subHeaderComponentMemo,
     resetPaginationToggle,
     isUserSearch,
+    userInfo,
+    setSearchQuery,
+    setUserInfo,
   } = useContext(IntranetContext);
   const ExpandedComponent = ({ data }) => (
     <pre>{JSON.stringify(data, null, 2)}</pre>
@@ -56,6 +61,14 @@ const DataTableRes = () => {
     },
   };
 
+  const history = useHistory();
+  function handleUserInfo(e) {
+    // console.log(e);
+    setUserInfo(e);
+    setSearchQuery("");
+    history.push("/user-info");
+  }
+
   return (
     <div>
       {!isUserSearch && filteredResults.length > 0 && searchQuery && (
@@ -65,6 +78,7 @@ const DataTableRes = () => {
           responsive
           pointerOnHover
           highlightOnHover
+          onRowClicked={handleUserInfo} // FEEDBACK SYSTEM KEY
           filteredResults
           pagination
           customStyles={customStyles}
@@ -78,7 +92,11 @@ const DataTableRes = () => {
         searchQuery.length > 3 && <NotFound></NotFound>}
       {isUserSearch && (
         <center>
+          <Loader />
+          {/* 
+          
           <p className="text-white m-0 pb-4 ">Loading...</p>
+          */}
         </center>
       )}
     </div>

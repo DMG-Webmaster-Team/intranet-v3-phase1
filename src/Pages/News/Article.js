@@ -35,7 +35,10 @@ const Article = (props) => {
         <div className="row ">
           {article.count !== 2 &&
             article.count !== 21 &&
-            article.count !== 20 && (
+            article.count !== 20 &&
+            article.count !== 25 &&
+            article.count !== 26 &&
+            article.count !== 29 && (
               <img
                 src={article?.image}
                 className="mx-auto d-block col-12 col-md-8"
@@ -70,6 +73,57 @@ const Article = (props) => {
                   src="https://dmgian.corp-dmg.com/videos/family-fund/video.mp4"
                 />
               </video>
+            </div>
+          )}
+          {article.count === 25 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <video controls autoPlay width={1000}>
+                  <source
+                    type="video/mp4"
+                    src="https://dmgian.corp-dmg.com/videos/dme-grow-event/video.mp4"
+                  />
+                </video>
+              </div>
+            </div>
+          )}
+          {article.count === 29 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <video controls autoPlay width={1000}>
+                  <source
+                    type="video/mp4"
+                    src="https://dmgian.corp-dmg.com/videos/mv-aswan/video.mp4"
+                  />
+                </video>
+              </div>
+            </div>
+          )}
+          {article.count === 26 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <h4 className="mt-5 mb-1 text-center fw-bold Tajawal">
+                  {article.title_ar}
+                </h4>
+                <p dir="rtl" className="Tajawal text-muted  text-center">
+                  لقراءة المزيد من اللقاء الصحفي للمهندس عمرو سليمان عن أليفا مع
+                  مجلة خليجي تايمز
+                  <br />
+                  <a
+                    className=" fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.khaleejtimes.com/business/realty/aliva-redefining-the-real-estate-industry-in-the-region-with-mountain-view-egypt-latest-venture?_refresh=true"
+                  >
+                    اضغط هنا
+                  </a>
+                </p>
+              </div>
             </div>
           )}
           <div className="d-flex justify-content-between ">
@@ -147,19 +201,22 @@ const Article = (props) => {
           </div>
           <div className="d-flex justify-content-center content">
             <div className="col-8 ">
-              {article.count !== 20 && article.count !== 21 && (
-                <div className="details">
-                  <h2 className="mb-4 text-center fw-bold Tajawal">
-                    {article.title_ar}
-                  </h2>
-                  <p
-                    dir="rtl"
-                    className={isArabic ? "Tajawal" : "Tajawal text-muted"}
-                  >
-                    {article.details_ar}
-                  </p>
-                </div>
-              )}
+              {article.count !== 20 &&
+                article.count !== 21 &&
+                article.count !== 26 &&
+                article.count !== 29 && (
+                  <div className="details">
+                    <h2 className="mb-4 text-center fw-bold Tajawal">
+                      {article.title_ar}
+                    </h2>
+                    <p
+                      dir="rtl"
+                      className={isArabic ? "Tajawal" : "Tajawal text-muted"}
+                    >
+                      {article.details_ar}
+                    </p>
+                  </div>
+                )}
             </div>
           </div>
           <div className=" mx-auto text-center mb-3 ">

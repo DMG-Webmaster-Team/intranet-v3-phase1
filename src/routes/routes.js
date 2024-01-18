@@ -75,6 +75,11 @@ const routes = [
     exact: true,
   },
   {
+    path: `/user-info`,
+    component: lazy((props) => import("../Pages/UserInfo/UserInfo")),
+    exact: true,
+  },
+  {
     path: `/learning-development`,
     component: lazy((props) =>
       import("../Pages/Learning-Development/LearningDevelopment")
