@@ -164,7 +164,13 @@ const NavBar = () => {
                   <Link to="/learning-development">Learning & Development</Link>
                   <ul className="dropdown-sub-hub-hover text-nowrap position-absolute ">
                     <li id="universityLogin">
-                      <a>University Courses</a>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://dmgian.corp-dmg.com/DMG-University/"
+                      >
+                        University Courses
+                      </a>
                     </li>
                     <li>
                       <a
