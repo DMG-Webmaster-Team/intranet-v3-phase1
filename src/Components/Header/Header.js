@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./header.css";
 import { Text } from "../../containers/Language";
@@ -8,15 +8,18 @@ import DMELogo from "./images/DMElogo.png";
 import DMEHeaderLogo from "./images/dme-logo.png";
 import DMAHeaderLogo from "./images/DMA  blueLogofinaaaal-01.png";
 import mvLogo from "./images/MV Logo cases_MV Primary Logo white copy.png";
-
+import { IoNotificationsCircle } from "react-icons/io5";
+import { GoDotFill } from "react-icons/go";
 import { IntranetContext } from "../../context";
 import { Nav, NavDropdown } from "react-bootstrap";
 import Cookies from "js-cookie";
 
 import DataTableRes from "./DataTableRes";
+import axios from "axios";
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [notifications, setNotifications] = useState(null);
   function toggleDropdown() {
     setDropdownOpen(!dropdownOpen);
   }
@@ -37,7 +40,7 @@ const Header = () => {
   }`;
 
   function ProfilePicture(props) {
-    return <h2 className={`initials ${colorTheme}`}>{userInitials}</h2>;
+    return <h3 className={`initials ${colorTheme}`}>{userInitials}</h3>;
   }
 
   let src = "",
@@ -67,6 +70,45 @@ const Header = () => {
     width = "100px";
     height = "75px";
   }
+
+  async function getFeedback(emp_code, emp_comp) {
+    try {
+      const response = await axios.post(
+        `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
+        {
+          data_type: "getFeedBack",
+          credentials: {
+            emp_code: emp_code,
+            emp_comp: emp_comp,
+          },
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const x = await getFeedback(
+          myCookieUserObj.userId,
+          myCookieUserObj.userCompany
+        );
+        setNotifications(x.length);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  // console.log(myCookieUserObj);
+
   // const handleKeyDown = (e) => {
   //   if (e.key === "Enter") {
   //     e.preventDefault();
@@ -97,7 +139,7 @@ const Header = () => {
         <ul
           className={`navbar ${colorTheme} d-flex justify-content-center my-0`}
         >
-          <li className={`mx-5 nav-item ${colorTheme}`}>
+          <li className={`mx-4 nav-item ${colorTheme}`}>
             <form className="d-flex align-items-center" role="search">
               <label htmlFor="search" className="searchLabel me-0 me-md-2 ">
                 HR Directory
@@ -116,6 +158,28 @@ const Header = () => {
               <i className="bi bi-search"></i>
             </form>
           </li>
+          {/* <li className="m-0 " role="button">
+            <IoNotificationsCircle color="#C0C1CB" size={60} stroke="gray" />
+          </li> */}
+          {/* <Nav className="ml-auto position-relative ">
+            <div className="notification position-absolute bg-danger text-white px-1 rounded-circle ">
+              {notifications}
+            </div>
+            <NavDropdown
+              className={`dropNav ${colorTheme}`}
+              title={<ProfilePicture />}
+              id="basic-nav-dropdown"
+              show={dropdownOpen}
+              onClick={toggleDropdown}
+            >
+              <NavLink className="text-primary" to={`/peer-to-peer`}>
+                Peer to Peer{" "}
+                <span className="ms-1">
+                  {notifications > 0 && <GoDotFill color="red" size={25} />}
+                </span>
+              </NavLink>
+            </NavDropdown>
+          </Nav> */}
           <li className="d-flex align-items-star m-0 justify-content-start align-items-end ">
             <img
               src={src}
@@ -140,7 +204,10 @@ const Header = () => {
             <LanguageSelector />
           </motion.li> */}
 
-          <Nav className="ml-auto">
+          <Nav className="ml-auto position-relative ">
+            {/* <div className="notification position-absolute bg-danger text-white px-1 rounded-circle ">
+              {notifications}
+            </div> */}
             <NavDropdown
               className={`dropNav ${colorTheme}`}
               title={<ProfilePicture />}
@@ -163,6 +230,12 @@ const Header = () => {
                   </svg>
                 </span>
               </NavLink>
+              {/* <NavLink className="text-primary" to={`/peer-to-peer`}>
+                Peer to Peer{" "}
+                <span className="ms-1">
+                  {notifications > 0 && <GoDotFill color="red" size={25} />}
+                </span>
+              </NavLink> */}
 
               <NavDropdown.Item onClick={logout}>
                 <Text tid="logout" />

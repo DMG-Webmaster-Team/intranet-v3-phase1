@@ -11,13 +11,13 @@ const WeeklyTopNewsArea = ({ isArabic, weeklyNews }) => {
         <div className="weekly2-wrapper">
           <NewsMonthComponent
             monthTitle="شهر يناير ٢٠٢٤"
-            monthFilter={[25, 26, 27, 28, 29, 30]}
+            monthFilter={[25, 26, 27, 28, 29, 30, 34]}
             weeklyNews={weeklyNews}
             isArabic={isArabic}
           />
           <NewsMonthComponent
             monthTitle="شهر ديسمبر ٢٠٢٣"
-            monthFilter={[18, 19, 20, 21, 22, 23]}
+            monthFilter={[17, 18, 19, 20, 21, 22, 23]}
             weeklyNews={weeklyNews}
             isArabic={isArabic}
           />

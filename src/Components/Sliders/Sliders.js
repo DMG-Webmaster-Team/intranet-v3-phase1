@@ -4,6 +4,8 @@ import "./slider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import YouTube from "react-youtube";
+
 // import { motion } from "framer-motion";
 // import { Text } from "../../containers/Language";
 // import { Link } from "react-router-dom";
@@ -30,8 +32,8 @@ const Sliders = ({ isArabic, data, home }) => {
     ),
   };
   // console.log(data);
-  const filterCondition = [1, 17, 22, 23, 25, 26, 28, 29, 27, 30];
-  const customOrder = [30, 27, 29, 28, 26, 25, 23, 22, 17, 1];
+  const filterCondition = [27, 33, 36, 34, 37, 35];
+  const customOrder = [35, 37, 34, 36, 33, 27];
   const filteredAndOrderedItems = data
     .filter((item) => filterCondition.includes(item.count))
     .sort((a, b) => customOrder.indexOf(a.count) - customOrder.indexOf(b.count))
@@ -39,8 +41,8 @@ const Sliders = ({ isArabic, data, home }) => {
       <div
         className={
           home
-            ? "mySlides d-flex justify-content-center  "
-            : " mySlides mySlides-news d-flex justify-content-center  "
+            ? "mySlides d-flex justify-content-center"
+            : " mySlides mySlides-news d-flex justify-content-center"
         }
         key={key}
       >
@@ -56,14 +58,31 @@ const Sliders = ({ isArabic, data, home }) => {
         </Link>
       </div>
     ));
+
+  const videoId = "ygX7dY5ox5I";
+  const opts = {
+    height: "590",
+    width: "940",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  const onReady = (event) => {
+    event.target.playVideo();
+  };
   return (
     <>
-      <Slider {...settings}>
+      <div className="d-flex justify-content-center mt-3">
+        <YouTube videoId={videoId} opts={opts} onReady={onReady} />
+      </div>
+
+      {/* <Slider {...settings}>
         {data.length > 0 &&
           typeof data !== "undefined" &&
           data !== null &&
           filteredAndOrderedItems}
-      </Slider>
+      </Slider> */}
     </>
   );
 };

@@ -38,7 +38,10 @@ const Article = (props) => {
             article.count !== 20 &&
             article.count !== 25 &&
             article.count !== 26 &&
-            article.count !== 29 && (
+            article.count !== 29 &&
+            article.count !== 34 &&
+            article.count !== 37 &&
+            article.count !== 38 && (
               <img
                 src={article?.image}
                 className="mx-auto d-block col-12 col-md-8"
@@ -126,6 +129,113 @@ const Article = (props) => {
               </div>
             </div>
           )}
+          {article.count === 34 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <h4 className="mt-5 mb-1 text-center fw-bold Tajawal">
+                  {article.title_ar}
+                </h4>
+                <p dir="rtl" className="Tajawal text-muted  text-center">
+                  لأن تعزيز تجربة عملائنا بتبدأ من تعزيز تجربة موظفينا ماونتن
+                  فيو بتقدملك تجربة جديدة، مميزة ومختلفة لكل أفراد عيلتنا داخل
+                  المجموعة "X-Line" هي خدمة جديدة بنوفرها ليك ولأي Referral تبعك
+                  من قرايبك أو صحابك من خلال الرد على أي أسئلة أو استفسارات خاصة
+                  بماونتن فيو و بمجرد الإتصال من رقمك المسجل على السيستم هيتم
+                  تحويلك تلقائيآً على خدمة X-line ومن خلالها هيتم تقديم كل الدعم
+                  من فريق متخصص ومُدرب هيساعدك في الإجابة على كل الاستفسارات
+                  وكمان متابعة كل Case بتقدمها, عشان نضمن حل سريع لأي تحدي
+                  بتواجه وده هيخلينا نقدم أفضل تجربة ممكنة ليك ولأي عميل تبعك
+                  وعشان تعرف تفاصيل أكتر
+                  <br />
+                  <a
+                    className=" fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dmgian.corp-dmg.com/videos/x-line/"
+                  >
+                    اضغط هنا لمشاهد الفيديو
+                  </a>
+                </p>
+              </div>
+            </div>
+          )}
+          {article.count === 37 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <h4 className="mt-5 mb-1 text-center fw-bold Tajawal">
+                  {article.title_ar}
+                </h4>
+                <p dir="rtl" className="Tajawal text-muted  text-center">
+                  شهر رمضان دايماً فرصة بتشجعنا إننا نمشي خطوة زيادة للعطاء
+                  والخير السنة دي مع بعض هنمشي للخير خطوات زيادة نسعد بيها أكبر
+                  عدد من الأسر وهيكون في أنشطة مختلفة. هنبدأ بتوزيع كراتين رمضان
+                  على الأسر الأكثر إحتياجاً من مستفيدين برامج مؤسسة ماونتن فيو
+                  بقرى محافظة الفيوم. سعر كرتونة الطعام هيكون 500 جنيه/15 كيلو
+                  تقدر تشارك بالتبرع، ولو عايز تعمل خطوة خير زيادة تقدر تتطوع
+                  معانا في تعبئة الكراتين وتوزيعها. للمشاركة بالتبرع أو التطوع
+                  <br />
+                  <a
+                    className=" fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dmgian.corp-dmg.com/surveyPlatform/survey.php?id=5550"
+                  >
+                    سجل هنا
+                  </a>
+                </p>
+                <p className="text-center fw-bold text-muted Tajawal">
+                  #خطوة_زيادة_لنشر_السعادة رمضان كريم
+                </p>
+              </div>
+            </div>
+          )}
+          {article.count === 38 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <h4 className="mt-5 mb-1 text-center fw-bold Tajawal">
+                  {article.title_ar}
+                </h4>
+                <p dir="rtl" className="Tajawal text-muted  text-center">
+                  بمناسبة اليوم العالمي للمرأة، في إطار احتفالنا بهذا اليوم،
+                  بندعوكم لحضور ندوة "Myself & I" مع نورهان ماهر بالتعاون مع
+                  شركة Avrelleلمنتجات الشعر يوم الخميس ٧ مارس من الساعة ١١ص وحتى
+                  الساعة ١٢ م في مبنى DMG - Innovation Room. نورهان ماهر لايف
+                  كوتش متخصصة في علم النفس الإيجابي، هتشاركنا خلال الندوة طرق
+                  الاهتمام والعناية النفسية وطريقة استخدام عجلة المشاعر
+                  بالتفاصيل ومعرفة طرق التصالح النفسي وازاي نحب نفينا وهل الحب
+                  دا فطري ولا مكتسب؟ هيكون كمان في خصم خاص ٢٠ ٪ لكل موظفينا على
+                  أي منتج من منتجات Avrelle. للمشاركة وتأكيد التسجيل
+                  <br />
+                  <a
+                    className=" fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://calendly.com/dmg-family/avrelle-seminar-x-norhan-maher?month=2024-03"
+                  >
+                    اضغط هنا
+                  </a>
+                </p>
+                <p className="text-center fw-bold text-muted Tajawal">
+                  هيكون في هدايا ومفاجأت خاصة لكل الحاضرين
+                </p>
+              </div>
+            </div>
+          )}
           <div className="d-flex justify-content-between ">
             <div className="borderr">
               {article.count !== 1 && (
@@ -204,7 +314,10 @@ const Article = (props) => {
               {article.count !== 20 &&
                 article.count !== 21 &&
                 article.count !== 26 &&
-                article.count !== 29 && (
+                article.count !== 29 &&
+                article.count !== 34 &&
+                article.count !== 37 &&
+                article.count !== 38 && (
                   <div className="details">
                     <h2 className="mb-4 text-center fw-bold Tajawal">
                       {article.title_ar}

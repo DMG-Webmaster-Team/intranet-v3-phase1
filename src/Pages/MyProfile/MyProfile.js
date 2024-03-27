@@ -1,7 +1,6 @@
 import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import "./MyProfile.css";
-import pic from "./Screenshot 2023-12-03 at 9.50.33 AM.png";
 import Cookies from "js-cookie";
 import { useContext, useState, useEffect } from "react";
 import { IntranetContext } from "../../context";
@@ -30,41 +29,6 @@ const MyProfile = () => {
     return data;
   }
   var encodedData = window.btoa(reverseString(userId));
-
-  async function getFeedback(emp_code, emp_comp) {
-    try {
-      const response = await axios.post(
-        `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
-        {
-          data_type: "getFeedBack",
-          credentials: {
-            emp_code: emp_code,
-            emp_comp: emp_comp,
-          },
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const x = await getFeedback(userId, userCompany);
-        // console.log(x);
-        setFeedbacks(x);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
   return (
     <>
       <PagesHeader data={<Text tid="My Profile" />} />
@@ -170,38 +134,7 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-        <div className="col-8 ">
-          {feedbacks.length > 0 && (
-            <>
-              <hr />
-              <h2 className="ps-5">
-                You have received {feedbacks.length}{" "}
-                {`Feedback${feedbacks.length === 1 ? "" : "s"}`}{" "}
-                <span>
-                  <GrNotification className="text-primary" />
-                </span>
-              </h2>
-              {feedbacks.map((message, index) => (
-                <section key={index} className="px-5">
-                  {message.showName === "yes" && <h5>From: {message.from}</h5>}
-                  <h5>Message: {message.message}</h5>
-                  <h5>Date: {message.date}</h5>
-                  <h5>Feedback Type: {message.feedbackType}</h5>
-                  <h5>Assess: {message.assess}</h5>
-                  <hr />
-                </section>
-              ))}
-            </>
-          )}
-          {feedbacks.length === 0 && (
-            <center>
-              <h2 className="ps-5">You are all caught up!</h2>
-              <p className="ps-5 fw-bolder">No messages for you yet!</p>
-            </center>
-          )}
-        </div>
       </div>
-      <div className="row text-black d-flex justify-content-center"></div>
     </>
   );
 };

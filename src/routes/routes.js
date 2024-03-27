@@ -75,6 +75,11 @@ const routes = [
     exact: true,
   },
   {
+    path: `/peer-to-peer`,
+    component: lazy((props) => import("../Pages/Peer2Peer/Peer2Peer")),
+    exact: true,
+  },
+  {
     path: `/user-info`,
     component: lazy((props) => import("../Pages/UserInfo/UserInfo")),
     exact: true,
