@@ -4,8 +4,6 @@ import "./slider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import YouTube from "react-youtube";
-
 // import { motion } from "framer-motion";
 // import { Text } from "../../containers/Language";
 // import { Link } from "react-router-dom";
@@ -32,8 +30,8 @@ const Sliders = ({ isArabic, data, home }) => {
     ),
   };
   // console.log(data);
-  const filterCondition = [27, 33, 36, 34, 37, 35];
-  const customOrder = [35, 37, 34, 36, 33, 27];
+  const filterCondition = [27, 33, 36, 34, 40, 42];
+  const customOrder = [42, 40, 34, 36, 33, 27];
   const filteredAndOrderedItems = data
     .filter((item) => filterCondition.includes(item.count))
     .sort((a, b) => customOrder.indexOf(a.count) - customOrder.indexOf(b.count))
@@ -46,43 +44,38 @@ const Sliders = ({ isArabic, data, home }) => {
         }
         key={key}
       >
-        <Link to={`/news/${slider.count}`}>
-          <img
-            src={slider.image}
-            alt={isArabic ? slider.title_ar : slider.title}
-            className={
-              "img-fluid"
-              // home ? " slider-img" : "img-fluid slider-img-news"
-            }
-          />
-        </Link>
+        {slider.count === 42 ? (
+          <a
+            href="https://www.figma.com/file/lsLtWroCmAjPeyKryD4Rei/Speak-UP?type=design&node-id=79-13092&mode=design&t=fmYGMiLaI18YaBHu-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={slider.image}
+              alt={isArabic ? slider.title_ar : slider.title}
+              className="img-fluid"
+            />
+          </a>
+        ) : (
+          <Link to={`/news/${slider.count}`}>
+            <img
+              src={slider.image}
+              alt={isArabic ? slider.title_ar : slider.title}
+              className="img-fluid"
+            />
+          </Link>
+        )}
       </div>
     ));
 
-  const videoId = "ygX7dY5ox5I";
-  const opts = {
-    height: "590",
-    width: "940",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
-
-  const onReady = (event) => {
-    event.target.playVideo();
-  };
   return (
     <>
-      <div className="d-flex justify-content-center mt-3">
-        <YouTube videoId={videoId} opts={opts} onReady={onReady} />
-      </div>
-
-      {/* <Slider {...settings}>
+      <Slider {...settings}>
         {data.length > 0 &&
           typeof data !== "undefined" &&
           data !== null &&
           filteredAndOrderedItems}
-      </Slider> */}
+      </Slider>
     </>
   );
 };

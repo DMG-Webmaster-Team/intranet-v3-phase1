@@ -41,7 +41,8 @@ const Article = (props) => {
             article.count !== 29 &&
             article.count !== 34 &&
             article.count !== 37 &&
-            article.count !== 38 && (
+            article.count !== 38 &&
+            article.count !== 40 && (
               <img
                 src={article?.image}
                 className="mx-auto d-block col-12 col-md-8"
@@ -236,6 +237,31 @@ const Article = (props) => {
               </div>
             </div>
           )}
+          {article.count === 40 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <br />
+                <br />
+                <br />
+                <center>
+                  <a
+                    className=" fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dmgian.corp-dmg.com/videos/mustafa-housney/"
+                  >
+                    لمشاهدة الفيديو اضغط هنا
+                  </a>
+                </center>
+              </div>
+            </div>
+          )}
+
           <div className="d-flex justify-content-between ">
             <div className="borderr">
               {article.count !== 1 && (
@@ -317,7 +343,8 @@ const Article = (props) => {
                 article.count !== 29 &&
                 article.count !== 34 &&
                 article.count !== 37 &&
-                article.count !== 38 && (
+                article.count !== 38 &&
+                article.count !== 40 && (
                   <div className="details">
                     <h2 className="mb-4 text-center fw-bold Tajawal">
                       {article.title_ar}

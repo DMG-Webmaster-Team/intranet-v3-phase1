@@ -5,7 +5,7 @@ import { IntranetContext } from "../../context";
 import "./forms.css";
 import clearence from "./assets/Clearance.pdf";
 import familyFund from "./assets/Family Fund.pdf";
-import resignation from "./assets/Resignation.pdf";
+import resignation from "./assets/Resignation-updated.pdf";
 import sickLeave from "./assets/Sick leave.pdf";
 import maternity from "./assets/Matenity leave.pdf";
 import childCare from "./assets/Child care vacation.pdf";
