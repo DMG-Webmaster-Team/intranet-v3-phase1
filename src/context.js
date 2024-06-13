@@ -94,7 +94,6 @@ const IntranetProvider = ({ children }) => {
           headers: { "Content-Type": "application/json" },
         }
       );
-
       setFilteredResults(response.data);
       setIsUserSearch(false);
     } catch (error) {
@@ -258,10 +257,6 @@ const IntranetProvider = ({ children }) => {
       setUser({ ...user, isAuthenticated: false });
     }
   };
-
-  // Log to several sites with the same credentials of the user START
-
-  // Log to several sites with the same credentials of the user END
 
   useEffect(() => {
     checkCookie();

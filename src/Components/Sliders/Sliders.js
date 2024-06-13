@@ -30,8 +30,8 @@ const Sliders = ({ isArabic, data, home }) => {
     ),
   };
   // console.log(data);
-  const filterCondition = [27, 33, 36, 34, 40, 42];
-  const customOrder = [42, 40, 34, 36, 33, 27];
+  const filterCondition = [44, 45, 46, 47];
+  const customOrder = [47, 46, 45, 44];
   const filteredAndOrderedItems = data
     .filter((item) => filterCondition.includes(item.count))
     .sort((a, b) => customOrder.indexOf(a.count) - customOrder.indexOf(b.count))
@@ -44,27 +44,16 @@ const Sliders = ({ isArabic, data, home }) => {
         }
         key={key}
       >
-        {slider.count === 42 ? (
-          <a
-            href="https://www.figma.com/file/lsLtWroCmAjPeyKryD4Rei/Speak-UP?type=design&node-id=79-13092&mode=design&t=fmYGMiLaI18YaBHu-0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={slider.image}
-              alt={isArabic ? slider.title_ar : slider.title}
-              className="img-fluid"
-            />
-          </a>
-        ) : (
-          <Link to={`/news/${slider.count}`}>
-            <img
-              src={slider.image}
-              alt={isArabic ? slider.title_ar : slider.title}
-              className="img-fluid"
-            />
-          </Link>
-        )}
+        <Link to={`/news/${slider.count}`}>
+          <img
+            src={slider.image}
+            alt={isArabic ? slider.title_ar : slider.title}
+            className={
+              "img-fluid"
+              // home ? " slider-img" : "img-fluid slider-img-news"
+            }
+          />
+        </Link>
       </div>
     ));
 

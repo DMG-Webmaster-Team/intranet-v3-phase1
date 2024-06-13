@@ -42,7 +42,10 @@ const Article = (props) => {
             article.count !== 34 &&
             article.count !== 37 &&
             article.count !== 38 &&
-            article.count !== 40 && (
+            article.count !== 40 &&
+            article.count !== 43 &&
+            article.count !== 44 &&
+            article.count !== 46 && (
               <img
                 src={article?.image}
                 className="mx-auto d-block col-12 col-md-8"
@@ -237,6 +240,7 @@ const Article = (props) => {
               </div>
             </div>
           )}
+
           {article.count === 40 && (
             <div className="mx-auto col-8  d-flex justify-content-center ">
               <div className="details">
@@ -256,6 +260,111 @@ const Article = (props) => {
                     href="https://dmgian.corp-dmg.com/videos/mustafa-housney/"
                   >
                     لمشاهدة الفيديو اضغط هنا
+                  </a>
+                </center>
+              </div>
+            </div>
+          )}
+          {article.count === 43 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <br />
+                <br />
+                <br />
+                <center>
+                  <p>
+                    تقدم WellSpring Campsتجربة لا مثيل لها لطفلك من التعلم و
+                    الترابط خصم ٥٠ ٪ العرض ساري لمدة ١٥ يوم للحجز والاستعلام عن
+                    تفاصيل الكامب
+                  </p>
+                  <a
+                    className="fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://wellspringegypt.com/camps/sub-camp/10"
+                  >
+                    اضغط هنا
+                  </a>
+                </center>
+              </div>
+            </div>
+          )}
+          {article.count === 44 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <br />
+                <br />
+                <br />
+                <center>
+                  <p>
+                    كل سنة وأنتم طيبين بمناسبة اقتراب عيد الأضحى المبارك ٢٠٢٣
+                    قدرنا ننشر السعادة على ١٤٤٠ أسرة بأضحيتنا ونسد جزء من
+                    احتياجتهم الغذائية هدفنا في ٢٠٢٤ السنة دي أكبر، ومع بعض
+                    هنشارك بأضحيتنا في نشر السعادة على ٢٥٠٠ أسرة مستحقة شارك
+                    معانا في برنامج "صك الأضحية - بلدي" بالتعاون مع جمعية صناع
+                    الخير الأضحية الواحدة تشمل ٧ أسهم وتقدر تشارك بسهم أو اكتر
+                    بالمشاركة مع زمايلك أو قرايبك قيمة السهم = ١٠٠٠٠ جنيه (عشرة
+                    آلاف جنيه مصري) حصة الفرد/ السهم = ٩ كيلو جرام إمكانية تقسيط
+                    المبلغ خصماً من الراتب الشهري بحد أقصي ١٠ أشهر، مع إمكانية
+                    التوصيل للمنازل داخل القاهرة والجيزة في حالة الكاجوال أو
+                    الدفع النقدي: سيتم توفير مندوب من الجمعية في شركاتنا يومي
+                    الإثنين أو الأربعاء من كل اسبوع بدءاً ٢٠ مايو وحتى ٥ يونيو
+                    من الساعة ١٢ ظهرا ًوحتى الساعة ٣ عصراً ولمزيد من الإستفسارات
+                    يرجي الإتصال بالأرقام التالية: سحر حسن (ماونتن فيو)
+                    ٠١٠٢٥٧٩٩٩٠٣ علياء محمد (DMA) ٠١٢٢٣٢٩٤٥٩٤ محمد ياسر ) DME )
+                    ٠١٢٢٧٨٣٧٧٣٤ أخر ميعاد للتسجيل يوم الأحد الموافق ٩ يونيو ٢٠٢٤
+                  </p>
+                  <a
+                    className="fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dmgian.corp-dmg.com/surveyPlatform/survey.php?id=5081"
+                  >
+                    سجل هنا
+                  </a>
+                </center>
+              </div>
+            </div>
+          )}
+          {article.count === 46 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <br />
+                <br />
+                <br />
+                <center>
+                  <p> إنطلاق المرحلة التانية من Benefits Bot</p>
+                  <br />
+                  <p>
+                    تسهيلاً منا على كل موظفينا، يسعدنا إضافة خدمات برنامج مزايا
+                    موجودة على .عشان تعرف كل العروض والخصومات المقدمة من
+                    مجموعتنا ليك ولكل فرد من أفراد عيلتك :لمعرفة طريقة إستخدام
+                    Benefits Bot لأول مرة ١- سجل رقم الــــــ Benefits Bot علي
+                    تليفونك 01050505058 أو Scan QR Code .٢- اكتب hi ثم اختار
+                    اللغة .٣- اختار الخدمة اللي انت محتاجها
+                  </p>
+                  <a
+                    className="fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dmgian.corp-dmg.com/videos/benefits-bot-phase-2/"
+                  >
+                    ولمعرفة تفاصيل أكتر شاهد الفيديو
                   </a>
                 </center>
               </div>
@@ -344,7 +453,10 @@ const Article = (props) => {
                 article.count !== 34 &&
                 article.count !== 37 &&
                 article.count !== 38 &&
-                article.count !== 40 && (
+                article.count !== 40 &&
+                article.count !== 43 &&
+                article.count !== 44 &&
+                article.count !== 46 && (
                   <div className="details">
                     <h2 className="mb-4 text-center fw-bold Tajawal">
                       {article.title_ar}
