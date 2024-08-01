@@ -30,8 +30,8 @@ const Sliders = ({ isArabic, data, home }) => {
     ),
   };
   // console.log(data);
-  const filterCondition = [44, 45, 46, 47];
-  const customOrder = [47, 46, 45, 44];
+  const filterCondition = [45, 47, 52];
+  const customOrder = [52, 47, 45];
   const filteredAndOrderedItems = data
     .filter((item) => filterCondition.includes(item.count))
     .sort((a, b) => customOrder.indexOf(a.count) - customOrder.indexOf(b.count))

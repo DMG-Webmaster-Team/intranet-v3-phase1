@@ -45,7 +45,8 @@ const Article = (props) => {
             article.count !== 40 &&
             article.count !== 43 &&
             article.count !== 44 &&
-            article.count !== 46 && (
+            article.count !== 46 &&
+            article.count !== 49 && (
               <img
                 src={article?.image}
                 className="mx-auto d-block col-12 col-md-8"
@@ -370,6 +371,44 @@ const Article = (props) => {
               </div>
             </div>
           )}
+          {article.count === 49 && (
+            <div className="mx-auto col-8  d-flex justify-content-center ">
+              <div className="details">
+                <img
+                  src={article?.image}
+                  className="mx-auto d-block col-12 "
+                  alt="..."
+                />
+                <br />
+                <br />
+                <br />
+                <center>
+                  <p>بمناسبة يوم المتبرعين بالدم</p>
+                  <br />
+                  في إطار مسئوليتنا تجاه المجتمع والمساهمة في إنقاذ الأرواح،
+                  يسعدنا التعاون مع خدمات نقل الدم القومية والتي ستتواجد في
+                  شركاتنا خلال الأسبوع القادم لتمكنكم من التبرع بالدم. تعد خدمات
+                  نقل الدم القومية شبكة بنوك دم تتكون من ٢٨ مركز وهي الجهة
+                  الشرعية الوحيدة التابعة لوزارة الصحة، مشاركتك هتساهم في إنقاذ
+                  كلاً من: مرضى الدم. - مرضى الثلاسيميا. - ​مرضى الهيموفيليا. -
+                  مصابين الحوادث. - - مصابين غزة. إرشادات التبرع: - مدة التبرع
+                  ١٥ دقيقة. -قبل التبرع هيتعمل تحليل أنيميا للموظف. - بعد التبرع
+                  سيتم إبلاغك بفصيلة الدم خلال اسبوع على الإيميل. - في حالة وجود
+                  اي مشكلة صحية لا ينصح بالتبرع. سيتواجد فريق خدمات نقل الدم
+                  القومية في الأوقات والمواقع التالية: للتسجيل
+                  <br />
+                  <a
+                    className="fw-bold Tajawal"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dmgian.corp-dmg.com/surveyPlatform/survey.php?id=6152"
+                  >
+                    اضغط هنا
+                  </a>
+                </center>
+              </div>
+            </div>
+          )}
 
           <div className="d-flex justify-content-between ">
             <div className="borderr">
@@ -456,7 +495,8 @@ const Article = (props) => {
                 article.count !== 40 &&
                 article.count !== 43 &&
                 article.count !== 44 &&
-                article.count !== 46 && (
+                article.count !== 46 &&
+                article.count !== 49 && (
                   <div className="details">
                     <h2 className="mb-4 text-center fw-bold Tajawal">
                       {article.title_ar}

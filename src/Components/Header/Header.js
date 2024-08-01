@@ -19,6 +19,7 @@ import axios from "axios";
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [showBadge, setShowBadge] = useState(false);
   const [notifications, setNotifications] = useState(null);
   function toggleDropdown() {
     setDropdownOpen(!dropdownOpen);
@@ -48,7 +49,6 @@ const Header = () => {
     height = "",
     m = "",
     p = "";
-  // console.log(myCookieUserObj);
   if (myCookieUserObj?.userCompanyToShow === "dma") {
     src = DMAHeaderLogo;
     width = "120px";
@@ -203,10 +203,15 @@ const Header = () => {
             <LanguageSelector />
           </motion.li> */}
 
-          <Nav className="ml-auto position-relative ">
-            {/* <div className="notification position-absolute bg-danger text-white px-1 rounded-circle ">
-              {notifications}
-            </div> */}
+          <Nav
+            className="ml-auto position-relative "
+            onClick={() => setShowBadge(true)}
+          >
+            {!showBadge && (
+              <div className="notification position-absolute bg-danger text-danger px-1 rounded-circle ">
+                {notifications}
+              </div>
+            )}
             <NavDropdown
               className={`dropNav ${colorTheme}`}
               title={<ProfilePicture />}
@@ -229,12 +234,14 @@ const Header = () => {
                   </svg>
                 </span>
               </NavLink>
-              {/* <NavLink className="text-primary" to={`/peer-to-peer`}>
-                Peer to Peer{" "}
+              <NavLink className="text-primary" to={`/peer-to-peer`}>
+                Peer to Peer
                 <span className="ms-1">
-                  {notifications > 0 && <GoDotFill color="red" size={25} />}
+                  {notifications > 0 && showBadge && (
+                    <GoDotFill color="red" size={25} />
+                  )}
                 </span>
-              </NavLink> */}
+              </NavLink>
 
               <NavDropdown.Item onClick={logout}>
                 <Text tid="logout" />

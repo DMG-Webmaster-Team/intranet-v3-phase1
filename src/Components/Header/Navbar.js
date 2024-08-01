@@ -77,7 +77,7 @@ const NavBar = () => {
         style="display:none !important"
         method="post"
         id="attLoginForm"
-        action={"https://dmgian.corp-dmg.com/benefits/login/"}
+        action="https://dmgian.corp-dmg.com/benefits/login/"
       >
         <input name="body" value="` +
         encryptedBody +
