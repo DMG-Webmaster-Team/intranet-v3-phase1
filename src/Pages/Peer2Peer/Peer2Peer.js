@@ -45,7 +45,7 @@ const Peer2Peer = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -72,11 +72,11 @@ const Peer2Peer = () => {
         <div className="container">
           <div className="row d-flex justify-content-center mt-md-5 mt-3">
             <div className="col-9">
-              {feedbacks.length > 0 && (
+              {feedbacks?.length > 0 && (
                 <>
                   <hr />
                   <h2 className="ps-5">
-                    You have received {feedbacks.length}{" "}
+                    You have received {feedbacks?.length}{" "}
                     {`Feedback${feedbacks.length === 1 ? "" : "s"}`}{" "}
                     <span>
                       <GrNotification className="text-primary" />
@@ -84,13 +84,13 @@ const Peer2Peer = () => {
                   </h2>
                   {feedbacks.map((message, index) => (
                     <section key={index} className="px-5">
-                      {message.showName === "yes" && (
-                        <h5>From: {message.from}</h5>
+                      {message?.showName === "yes" && (
+                        <h5>From: {message?.from}</h5>
                       )}
-                      <h5>Message: {message.message}</h5>
-                      <h5>Date: {message.date}</h5>
-                      <h5>Feedback Type: {message.feedbackType}</h5>
-                      <h5>Assess: {message.assess}</h5>
+                      <h5>Message: {message?.message}</h5>
+                      <h5>Date: {message?.date}</h5>
+                      <h5>Feedback Type: {message?.feedbackType}</h5>
+                      <h5>Assess: {message?.assess}</h5>
                       <hr />
                     </section>
                   ))}

@@ -117,6 +117,11 @@ const routes = [
     exact: true,
   },
   {
+    path: `/code-of-conduct`,
+    component: lazy((props) => import("../Pages/CodeOfConduct/CodeOfConduct.jsx")),
+    exact: true,
+  },
+  {
     path: `/attendance`,
     component: lazy((props) => import("../Pages/Attendance/Attendance")),
     exact: true,

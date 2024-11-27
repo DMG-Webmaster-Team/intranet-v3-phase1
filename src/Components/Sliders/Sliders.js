@@ -30,10 +30,9 @@ const Sliders = ({ isArabic, data, home }) => {
     ),
   };
   // console.log(data);
-  const filterCondition = [45, 47, 52];
-  const customOrder = [52, 47, 45];
-  const filteredAndOrderedItems = data
-    .filter((item) => filterCondition.includes(item.count))
+  const filterCondition = [45, 47, 52, 53, 54, 57, 61, 62, 63, 69, 70, 71, 72, 73, 74];
+  const customOrder = [74, 73, 72, 71, 70, 69, 63, 62, 61, 57, 54, 53, 52, 47, 45];
+  const filteredAndOrderedItems = data?.filter((item) => filterCondition.includes(item.count))
     .sort((a, b) => customOrder.indexOf(a.count) - customOrder.indexOf(b.count))
     .map((slider, key) => (
       <div
@@ -60,8 +59,7 @@ const Sliders = ({ isArabic, data, home }) => {
   return (
     <>
       <Slider {...settings}>
-        {data.length > 0 &&
-          typeof data !== "undefined" &&
+        {data.length > 0 && typeof data !== "undefined" &&
           data !== null &&
           filteredAndOrderedItems}
       </Slider>

@@ -126,7 +126,7 @@ const IntranetProvider = ({ children }) => {
     setIsUserSearch(false);
     if (searchQuery.length >= 3) searchUsers();
   }, [searchQuery]);
-  // HR Directory Serach logic END
+  // HR Directory Search logic END
 
   // Feedback System Logic START
   async function getAllUsers() {
@@ -166,7 +166,7 @@ const IntranetProvider = ({ children }) => {
       );
 
       if (data.data.loginStatus === "SUCCESS") {
-        // console.log(data.data);
+        console.log(data.data);
         window.location.reload();
         const {
           userName,
@@ -180,6 +180,8 @@ const IntranetProvider = ({ children }) => {
           userPromotionDate,
           userPerformance,
         } = data.data;
+        localStorage.setItem("user123", JSON.stringify(data?.data))
+        localStorage.setItem("codeOfCOnductAgreement", JSON.stringify(data?.data?.codeOfCOnductAgreement))
         let userCookiesObject = {
           userName: userName,
           userEmail: userEmail,

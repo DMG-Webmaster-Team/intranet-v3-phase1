@@ -2,13 +2,10 @@ import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import "./MyProfile.css";
 import Cookies from "js-cookie";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { IntranetContext } from "../../context";
-import axios from "axios";
-import { GrNotification } from "react-icons/gr";
 
 const MyProfile = () => {
-  const [feedbacks, setFeedbacks] = useState([]);
 
   const myCookie = Cookies.get("user");
   const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
@@ -18,11 +15,12 @@ const MyProfile = () => {
     userName,
     userDepartment,
     userId,
-    userCompany,
     userJob,
     userHiringDate,
-    userCompanyToShow,
   } = myCookieUserObj;
+
+  console.log(myCookieUserObj);
+
 
   function reverseString(str) {
     const data = str?.split("").reverse().join("");

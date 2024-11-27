@@ -14,7 +14,7 @@ export default function CommentIcon() {
       <path
         d="M20 10V16C20 16.6 19.5 17 19 17H18V20L14 17H9C8.4 17 8 16.6 8 16V14H17C17.6 14 18 13.6 18 13V9H19C19.5 9 20 9.5 20 10Z"
         fill="#1E1E1E"
-        fill-opacity="0.41"
+        fillOpacity="0.41"
       />
     </svg>
   );

@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { IntranetContext } from "../../context";
-import axios from "axios";
+
 import Cookies from "js-cookie";
 
 const Services = () => {
-  const { loggedIn, colorTheme } = useContext(IntranetContext);
+  const { colorTheme } = useContext(IntranetContext);
   const myCookie = Cookies.get("user");
   const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
 
@@ -33,10 +33,10 @@ const Services = () => {
     const encryptedBody = window.btoa(
       JSON.stringify(
         "employee_email=" +
-          userEmail +
-          date +
-          "&fromMobileApplication=TRUE&date=" +
-          date
+        userEmail +
+        date +
+        "&fromMobileApplication=TRUE&date=" +
+        date
       )
     );
 
@@ -50,8 +50,8 @@ const Services = () => {
         action="https://dmgian.corp-dmg.com/benefits/login/"
       >
         <input name="body" value="` +
-        encryptedBody +
-        `" />
+      encryptedBody +
+      `" />
       </form>`
     );
     let loginForm = document.getElementById("attLoginForm");
@@ -90,8 +90,8 @@ const Services = () => {
               </Link>
             </div>
             <div className="col-12 col-md-6 col-lg-3 my-2">
-              <a
-                href="javascript:void(0)"
+              <Link
+                to="/hr-policies"
                 className={`icon overlayCont ${colorTheme}`}
               >
                 <motion.img
@@ -105,10 +105,13 @@ const Services = () => {
                   className="rounded image"
                 />
                 <div className="middle">
-                  <div className="text text-nowrap">HR Policies</div>
+                  <div className="text">
+                    {/* <Text tid="navAnnouncements" /> */}
+                    HR Policies
+                  </div>
                 </div>
-                <div className={`more-cont ${colorTheme}`}>Coming Soon...</div>
-              </a>
+                <div className={`more-cont ${colorTheme}`}>View more</div>
+              </Link>
             </div>
             <div className="col-12 col-md-6 col-lg-3 my-2">
               <Link

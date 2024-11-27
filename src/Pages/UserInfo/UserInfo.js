@@ -22,48 +22,48 @@ export default function UserInfo() {
   const myCookie = Cookies.get("user");
   const myCookieUserObj = myCookie !== "undefined" && JSON.parse(myCookie);
 
-  async function setFeedback(created_by, emp_code, emp_comp, details) {
-    try {
-      const response = await axios.post(
-        `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
-        {
-          data_type: "setFeedBack",
-          credentials: {
-            created_by: created_by,
-            emp_code: emp_code,
-            emp_comp: emp_comp,
-            details: details,
-          },
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async function setFeedback(created_by, emp_code, emp_comp, details) {
+  //   try {
+  //     const response = await axios.post(
+  //       `https://dmgian.corp-dmg.com/_intranet_dashboard/ajaxResponse.php`,
+  //       {
+  //         data_type: "setFeedBack",
+  //         credentials: {
+  //           created_by: created_by,
+  //           emp_code: emp_code,
+  //           emp_comp: emp_comp,
+  //           details: details,
+  //         },
+  //       },
+  //       {
+  //         headers: { "Content-Type": "application/json" },
+  //       }
+  //     );
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  const addMessageToUser = (targetUserName, messageContent) => {
-    const currentDate = new Date();
-    const newMessage = {
-      message: messageContent,
-      from: myCookieUserObj.userName,
-      to: targetUserName,
-      date: currentDate.toLocaleString(),
-      feedbackType: feedbackType,
-      assess: assess,
-      showName: showName,
-    };
+  // const addMessageToUser = (targetUserName, messageContent) => {
+  //   const currentDate = new Date();
+  //   const newMessage = {
+  //     message: messageContent,
+  //     from: myCookieUserObj.userName,
+  //     to: targetUserName,
+  //     date: currentDate.toLocaleString(),
+  //     feedbackType: feedbackType,
+  //     assess: assess,
+  //     showName: showName,
+  //   };
 
-    setFeedback(
-      myCookieUserObj.userId,
-      userInfo.code,
-      userInfo.company,
-      newMessage
-    );
-  };
+  //   setFeedback(
+  //     myCookieUserObj.userId,
+  //     userInfo.code,
+  //     userInfo.company,
+  //     newMessage
+  //   );
+  // };
 
   useEffect(() => {
     if (submissionMessage) {

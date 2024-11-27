@@ -3,7 +3,7 @@ import PagesHeader from "../../Components/Header/PagesHeader";
 import { Text } from "../../containers/Language";
 import { IntranetContext } from "../../context";
 import "./forms.css";
-import clearence from "./assets/Clearance.pdf";
+import clearance from "./assets/Clearance.pdf";
 import familyFund from "./assets/Family Fund.pdf";
 import resignation from "./assets/Resignation-updated.pdf";
 import sickLeave from "./assets/Sick leave.pdf";
@@ -18,7 +18,7 @@ const Forms = () => {
     { title: "Sick Leave", href: sickLeave },
     { title: "Family Fund", href: familyFund },
     { title: "Resignation", href: resignation },
-    { title: "Clearance", href: clearence },
+    { title: "Clearance", href: clearance },
     { title: "Maternity Leave", href: maternity },
     { title: "Children Vacation", href: childCare },
     { title: "Car Leasing", href: carLeasing },

@@ -63,10 +63,10 @@ const NavBar = () => {
     const encryptedBody = window.btoa(
       JSON.stringify(
         "employee_email=" +
-          userEmail +
-          date +
-          "&fromMobileApplication=TRUE&date=" +
-          date
+        userEmail +
+        date +
+        "&fromMobileApplication=TRUE&date=" +
+        date
       )
     );
 
@@ -80,8 +80,8 @@ const NavBar = () => {
         action="https://dmgian.corp-dmg.com/benefits/login/"
       >
         <input name="body" value="` +
-        encryptedBody +
-        `" />
+      encryptedBody +
+      `" />
       </form>`
     );
     let loginForm = document.getElementById("attLoginForm");
@@ -190,7 +190,7 @@ const NavBar = () => {
                   </ul>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">HR Policies</a>
+                  <Link to="/code-of-conduct">Code of conduct</Link>
                 </li>
                 <li className="position-relative sub-drop">
                   <Link to="/requests">HR Requests</Link>
@@ -380,11 +380,10 @@ const NavBar = () => {
                 href={LHlink}
                 target="_blank"
                 rel="noreferrer"
-                className={`nav-link ${colorTheme} ${
-                  myCookieUserObj?.userCompanyToShow === "dma"
+                className={`nav-link ${colorTheme} ${myCookieUserObj?.userCompanyToShow === "dma"
                     ? "nav-link d-none"
                     : "nav-link"
-                }`}
+                  }`}
               >
                 <Text tid="navLighthouse" />
               </a>

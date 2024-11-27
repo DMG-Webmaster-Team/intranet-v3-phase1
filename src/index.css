@@ -5,6 +5,11 @@
   font-weight: bold;
 }
 @font-face {
+  font-family: "Poppinsbold";
+  src: local("Poppins"), url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
   font-family: "gotham";
   src: local("gotham"), url("./fonts/Gotham\ Medium.otf") format("truetype");
   font-weight: bold;
@@ -15,6 +20,25 @@
     url("./fonts/GarageFonts\ -\ FreightNeoProBlack-Regular.otf")
       format("truetype");
   font-weight: bold;
+}
+
+@font-face {
+  font-family: "Tajawal";
+  src: local("Tajawal"), url("./fonts/Tajawal-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "TajawalSemi";
+  src: local("Tajawal"), url("./fonts/Tajawal-Medium.ttf") format("truetype");
+  font-weight: "medium";
+}
+@font-face {
+  font-family: "Tajawalbold";
+  src: local("Tajawal"), url("./fonts/Tajawal-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tajawalblack";
+  src: local("Tajawal"), url("./fonts/Tajawal-Black.ttf") format("truetype");
 }
 
 :root {
@@ -36,14 +60,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-
+.tajawal {
+  font-family: "Tajawal" !important;
+}
+.tajawal_bold {
+  font-family: "Tajawalbold" !important;
+}
+.tajawal_black {
+  font-family: "Tajawalblack" !important;
+}
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
 
-* {
-  /* font-family: "Poppins"; */
+.Poppinsbold {
+  font-family: "Poppinsbold";
 }
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show > .nav-link {
